@@ -1,0 +1,27 @@
+body {
+  text-align: center;
+}
+#yes{
+    text-align: center;
+}
+    
+.checked {
+        color:rgb(13,110,253);
+    }
+    #content{
+   display: grid;
+   grid-template-columns:repeat(3,1fr);
+
+    }
+    #content > div {
+        width: 100%;
+        height: auto;
+    }
+    
+    #content > div img {
+        width: 60%;
+        height: 500px; 
+        object-fit: cover;
+        margin: 2% 0; 
+        border-radius: 2%;
+    }
