@@ -2,6 +2,8 @@
 
 A Dynamic Website built on HTML, CSS and JS that lets you book travel destinations.</br>
 
+<h2>• Group Members</h2>
+
 "Faisal - Product Page, Product Details Page, Admin Page </br>
 
 "Nikita - Home page, Login/ SignUp </br>
