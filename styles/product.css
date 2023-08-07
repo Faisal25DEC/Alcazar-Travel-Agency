@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Open+Sans:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "Nunito";
+}
+
+#banner {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/001/958/544/small/outline-world-map-and-continents-with-dots-vector.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#banner-left {
+  width: 45%;
+}
+
+#banner-right {
+  width: 50%;
+}
+
+.banner-left-title {
+  width: 60%;
+  margin-left: auto;
+  margin-right: 7.5%;
+  margin-top: 20%;
+}
+
+.banner-left-title > h1 {
+  font-size: 4.2rem;
+  font-weight: bolder;
+}
+
+.banner-left-title > h1 > span {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: rgb(224, 226, 75);
+}
+
+.banner-right-images {
+  display: flex;
+  gap: 1rem;
+}
+
+.banner-right-images > * {
+  width: 100%;
+}
+
+.banner-right-images img {
+  display: block;
+  width: 75%;
+  height: 70vh;
+  border-radius: 10rem;
+  margin: auto;
+}
+
+.banner-right-images > .image-2 {
+  margin-top: 4rem;
+}
+
+.search-bar {
+  position: absolute;
+  width: 50%;
+  left: 15%;
+  bottom: 5%;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 10px;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+.search-bar > .search-query {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.search-bar > .search-query img {
+  height: 20px;
+  width: 20px;
+}
+.search-bar > .search-query > .search-query-input {
+  display: flex;
+  flex-direction: column;
+}
+.search-bar > .search-query > .search-query-input label {
+  font-weight: bold;
+  font-size: 14px;
+}
+.search-bar > .search-query > .search-query-input input {
+  outline: none;
+  border: none;
+}
+.search-bar > .search-destination {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 10px 10px;
+}
+.search-bar > .search-destination img {
+  height: 20px;
+  width: 20px;
+}
+.search-bar > .search-destination > .search-destination-input {
+  display: flex;
+  flex-direction: column;
+}
+.search-bar > .search-destination > .search-destination-input label {
+  font-weight: bold;
+  font-size: 14px;
+}
+.search-bar > .search-destination > .search-destination-input input {
+  outline: none;
+  border: none;
+}
+
+.search-bar > .search-country {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 10px 10px;
+}
+.search-bar > .search-country img {
+  height: 20px;
+  width: 20px;
+}
+.search-bar > .search-country > .search-country-input {
+  display: flex;
+  flex-direction: column;
+}
+.search-bar > .search-country > .search-country-input label {
+  font-weight: bold;
+  font-size: 14px;
+}
+.search-bar > .search-country > .search-country-input input {
+  outline: none;
+  border: none;
+}
+
+/* KeyFrames */
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.search-btn {
+  flex: 1;
+  height: 100%;
+}
+.search-btn > button {
+  display: block;
+  width: 100%;
+  height: 3rem;
+  background-color: rgb(7, 166, 214);
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+/*# sourceMappingURL=product.css.map */
