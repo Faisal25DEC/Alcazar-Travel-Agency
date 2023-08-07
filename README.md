@@ -7,7 +7,6 @@ A Dynamic Website built on HTML, CSS and JS that lets you book travel destinatio
 "Nikita - Home page, Login/ SignUp </br>
 
 "Shubham - Cart and Wishlist Page"</br>
-</br>
 
 "Sneha - Payment , About us and Components"</br>
 
