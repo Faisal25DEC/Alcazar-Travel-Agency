@@ -1,11 +1,14 @@
 # Alcazar-Travel-Agency
-A Dynamic Website built on HTML, CSS and JS that lets you book travel destinations <br/>
 
-Faisal - Product Page, Product Details Page, Admin Page  </br>
+A Dynamic Website built on HTML, CSS and JS that lets you book travel destinations.em space </br>
 
-Nikita - Home page, Login/ SignUp </br>
+"Faisal - Product Page, Product Details Page, Admin Page em space </br>
 
-Shubham - Cart and Wishlist Page</br>
+"Nikita - Home page, Login/ SignUp em space </br>
 
-Sneha - Payment , About us and Components</br>
+"Shubham - Cart and Wishlist Page"em space </br>
+em space </br>
 
+"Sneha - Payment , About us and Components"em space </br>
+
+<em>"Font-Family": "Nunito"</em></br>
