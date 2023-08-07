@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="./home.css">
+</head>
+
+<body>
+    <div id="container">
+    <div id="navbar">
+        <div id="first">
+            <img src="data:image/png;base64,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" alt="">
+            <h3>Alcazar</h3>
+        </div>
+        <div id="second">
+            <a href="">Guide</a>
+            <a href="">My bookings</a>
+            <a href="">Saved</a>
+
+        </div>
+        <div id="third">
+            <h3 id="popbtn">Login/Signup</h3>
+            <h3 id="logout" style="display:none;">Logout</h3>
+        </div>
+    </div>
+
+
+    <!-- below div
+     -->
+<div id="text">
+  <h2 id="travel">Travel around the world</h2>
+  <p class="pt">Trusted by 80 million travellers. Aalcazar is the world's most comprehensive travel, flight and accomodation provider,</p>
+   <p class="pt">  very easy to access on your smarttree and desktop
+  </p>
+</div>
+
+  
+
+  <!-- search -->
+  <div id="search">
+    
+    <div id="location">
+      <img  id="loc" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrKGNlZhsmotfuoYQdf0Rod9_KaVkPbGXw7A&usqp=CAU" alt="">
+    </div>
+    <div id="indiv">
+      <input type="text" id="in" >
+
+    </div>
+    <div id="mag" >
+      <img  id="round" src="data:image/jpeg;base64,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" alt="">
+
+    </div>
+  </div>
+
+</div>
+    <!-- footer -->
+    
+    
+
+
+    <!-- popup -->
+
+    <div id="cool">
+    <div id="pop" class="pop" style="display:none;">
+        <div class="pop-content">
+            <span id="close" class="close">&times;</span>
+
+            <!-- login form -->
+<h2 id="titleoform">Login</h2>
+<form id="loginform" >
+    <label for="user">Email</label>
+    <input type="text" id="user" required>
+    <label for="pass">Password</label>
+    <input type="text" id="pass" required>
+
+    <p class="toggle">Dont have account?<a id="signuplink"> Signup!</a></p>
+    <button type="submit" class="submitbtn" id="lbtn">Login</button>
+
+
+</form>
+
+<!-- sign up form -->
+<form id="signupform" style="display: none;">
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+
+    <!-- Login Form Link -->
+    <p class="toggle">Already have an account?<a id="loginlink"> Login</a></p>
+
+    <button type="submit" class="submitbtn" id="sbtn">Sign Up</button>
+</form>
+
+
+        </div>
+
+    </div>
+    
+
+</div>
+
+</body>
+</html>
+<script type="module">
+
+
+
+var popbtn = document.getElementById("popbtn");
+// var piku = document.getElementById("piku");
+var pop = document.getElementById("pop");
+var closebtn = document.getElementById("close");
+var loginform = document.getElementById("loginform");
+var signupform = document.getElementById("signupform");
+var titleoform = document.getElementById("titleoform");
+var loginlink = document.getElementById("loginlink");
+var signuplink = document.getElementById("signuplink");
+var log=document.getElementById("logout");
+
+
+// Show content when btn clicked
+popbtn.addEventListener("click", () => {
+  pop.style.display = "block";
+});
+
+closebtn.addEventListener("click", () => {
+  pop.style.display = "none";
+});
+
+window.addEventListener("click", (event) => {
+  if (event.target === pop) {
+    pop.style.display = "none";
+  }
+});
+
+loginlink.addEventListener("click", () => {
+  loginform.style.display = "block";
+  signupform.style.display = "none";
+  titleoform.innerText = "Login";
+});
+
+signuplink.addEventListener("click", () => {
+  loginform.style.display = "none";
+  signupform.style.display = "block";
+  titleoform.innerText = "SIGN UP";
+});
+
+
+
+
+// storing pasrt
+    
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+    
+    const firebaseConfig = {
+      apiKey: "AIzaSyBHHxqdFZiyBTugOrwa5IYiIGiWzoiFws8",
+      authDomain: "myalcazar-54aa9.firebaseapp.com",
+      projectId: "myalcazar-54aa9",
+      storageBucket: "myalcazar-54aa9.appspot.com",
+      messagingSenderId: "902327114641",
+      appId: "1:902327114641:web:6ba16ea9f45fdc432ed830"
+    };
+  
+
+    
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    document.getElementById("sbtn").addEventListener("click",function(){
+
+      event.preventDefault();
+           var email=document.getElementById("email").value;
+             var password=document.getElementById("password").value;
+             var userName=document.getElementById("name").value;
+
+
+             createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log(user);
+    alert("You have successfully created your account");
+    loginform.style.display = "block";
+  signupform.style.display = "none";
+  titleoform.innerText = "Login";
+
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+    })
+
+    // import { getAuth, d } from "firebase/auth";
+
+// const auth = getAuth();
+
+document.getElementById("lbtn").addEventListener("click",function(){
+
+event.preventDefault();
+
+var email=document.getElementById("user").value;
+             var password=document.getElementById("pass").value;
+signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    alert("login successfull");
+  popbtn.style.display = "none";
+pop.style.display = "none";
+  log.style.display="block";
+
+
+
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage);
+  });
+
+});
+
+log.addEventListener("click",function(){
+  event.preventDefault();
+
+
+  signOut(auth).then(() => {
+  alert("Sign-out successful") ;
+  popbtn.style.display = "block";
+  log.style.display="none";
+
+
+}).catch((error) => {
+  // An error happened.
+  console.log(error);
+  
+
+
+});
+
+})
+
+  </script>
