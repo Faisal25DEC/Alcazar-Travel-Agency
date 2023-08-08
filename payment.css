@@ -1,288 +1,68 @@
-*{
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-#heading{
-    width: 60%;
-    margin: auto;
+    overflow: hidden;
+    background-image: linear-gradient(red);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .payment-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-
-}
-#heading>img{
-    width: 180px;
-    margin-top: -15px;
-    margin-left: 40%;
-   
-}
-#heading>p{
-    margin-top: px;
-    margin-left: 280px;
-    color: #9cb57a;
-
-}
-hr{
-    width: 60%;
-    margin: auto;
-}
-#fedex{
-    width: 60%;
-    margin: auto;
-    margin-top: 15px;
-    justify-content: space-between;
-    display: flex;
-}
-#fedex>div>img{
-    width: 130px;
-    height: 40px;
-}
-#fedex>div{
-    display: flex;
-}
-#fedex>select{
-    margin-top: 50px;
-    text-decoration: underline;
-}
-
-#fedex>div>p{
-   margin-top: 7px;
-   margin-left: 10px;  
-}
-#country_lag{
-    width: 15%;
-}
-#back_to_cart{
-    margin: auto;
-    width: 57%;
-    margin-top: 18px;
-    text-decoration: underline;
-}
-#address_main_div {
-    
-    margin: auto;
-   display: flex;
-   gap: 20px;
-    width: 60%;
-    justify-content: center;
-}
-#billing_address{
-   
-    border: 1px solid grey;
-    border-top: 1px solid white;
-    width: 50%;
-
-}
-.heading{
-    background-color: #f0ece0;
-    height: 30px;
-    padding-left:5px ;
-    padding-top: 5px;
-  
-    font-weight: bold;
-    border: 1px solid grey;
-    border-left:0.5px solid white ;
-    border-right:0.5px solid white ;
-}
-.heading p{
-    padding-bottom: 10px;
-}
-
-   #country{
-    width: 55%;
-   }
-  
-
-
-   #card_payment_section{
-    margin: auto;
-    margin-top: 25px;
-    height: 330px;
-   
- 
-   gap: 20px;
-    width: 60%;
-    border: 1px solid grey;
- 
-
-   }
-   #heading_of_card_payment{
-    background-color: #f0ece0;
-    height: 30px;
-    padding-left:5px ;
-    padding-top: 5px;
-  
-    font-weight: bold;
-    border: 1px solid grey;
-    border-top: none ;
-    border-left:0.5px solid white ;
-    border-right:0.5px solid white ;
-
-   }
-   #payment_box{
-   
-    border-top: 1px solid white;
-    width: 70%;
-    
-    
-   }
-
-   #card_icon_box{
-    padding: 5px 5px;
-   }
-
-#payment_submit{
-    margin-left: 25%;
-    margin-top: 35px;
-
-}
-#payment_submit{
-    
-    border-radius: 5px;
-    background-color: #81a555 ;
+    background-color: rgb(0, 0, 0);
     color: white;
-    width: 30%;
-    height: 30px;
-    border: none;
-    font-size: 15px;
-
-}
-
-.submit{
-   
-    border-radius: 5px;
-    background-color: #81a555 ;
-    color: white;
-    width: 30%;
-    height: 30px;
-    border: none;
-    font-size: 15px;
- 
-
-   }
-
-   #Customer_Testimonials{
-    width: 60%;
-    margin: auto;
-    border-bottom: 1px solid grey;
+  }
+  
+  .payment-content {
+    padding: 40px;
+  }
+  
+  .payment-content h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .payment-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .payment-content input {
+    width: 100%;
     padding: 10px;
-   }
-   #AUSTRALIAN_FLAG{
-    display: flex;
-    gap: 10px;
-    margin: auto;
+    margin-bottom: 15px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .payment-content button {
+    background-color: #ff5500;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .payment-image {
+    background-image: url('img/travel.png');
+    background-size: cover;
     width: 60%;
-    margin-top: 25px;
-
-   }
-   #AUSTRALIAN_FLAG img{
-    width: 70px;
-    height: 40px;
-   }
-   #return_policy{
-    display: flex;
-    margin: auto;
-    width: 60%;
-    justify-content: space-between;
-    margin-top: 35px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid grey;
-
-   }
-   #right_reserved{
-    display: flex;
-    margin: auto;
-    width: 60%;
-    justify-content: space-between;
-    margin-top:10px ;
-
-   }
-   /* CSS for the billing address form */
-#billing_address label {
-display: block;
-margin-bottom: 5px;
-font-weight: bold;
-}
-
-#billing_address input,
-#billing_address select {
-width: 100%;
-padding: 5px;
-margin-bottom: 10px;
-box-sizing: border-box;
-}
-
-/* CSS for the payment information form */
-#pay_form label {
-display: block;
-margin-bottom: 5px;
-font-weight: bold;
-}
-
-#pay_form input {
-width: 100%;
-padding: 5px;
-margin-bottom: 10px;
-box-sizing: border-box;
-}
-
-/* CSS for responsive layout */
-@media screen and (min-width: 600px) {
-#billing_address label,
-#pay_form label {
-width: 40%;
-display: inline-block;
-vertical-align: top;
-margin-right: 10px;
-margin-bottom: 0;
-}
-
-#billing_address input,
-#billing_address select,
-#pay_form input {
-width: 60%;
-display: inline-block;
-}
-
-#billing_address br,
-#pay_form br {
-display: none;
-}
-}
-
-/* Additional styles for the form submit button */
-.submit {
-margin-top: 10px;
-padding: 10px 20px;
-background-color: #4CAF50;
-color: white;
-border: none;
-cursor: pointer;
-}
-
-.submit:hover {
-background-color: #45a049;
-}
-#card_payment_section{
-height: 10%;
-
-}
-
-#form_address{
-margin-left: 5%;
-margin-top: 1%;
-}
-#pay_form{
-margin-left: 5%;
-margin-top: 1%;
-}
-#pay_form input[type ="submit"]
-{
-margin-left: -0.5%;
-}
-
-#totalamt{
-   font-size: larger;
-   padding: 20px;
-}
+    height: 100vh;
+    animation: slide 10s infinite alternate;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(20px);
+    }
+  }
+  
