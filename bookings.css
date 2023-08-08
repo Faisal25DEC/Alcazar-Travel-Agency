@@ -14,6 +14,7 @@ body {
   width: 98%;
   margin: auto;
   padding: 1%;
+  
 
 }
 
@@ -25,7 +26,10 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin-top: 1%;
+  width: 80%;
+  margin:auto;
+  /* border: 1px solid black; */
+  place-items: center;
 }
 
 .cr {
@@ -41,7 +45,6 @@ body {
   object-fit: cover;
   border-radius: 4% 4% 0 0;
 }
-
 .btn-group {
   background-color: 07A6D6;
   color: white;
@@ -96,3 +99,52 @@ p {
   margin-left: 2%;
   margin-bottom: 2%;
 }
+#explore {
+  position: relative;
+  display: flexbox;
+  margin-top: 2%;
+  margin-left: 30%;
+  margin-right: 30%;
+
+}
+#explore img{
+  width: 100%;
+  height: 25rem;
+  margin-top: auto;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  /* background-color: rgba(0, 0, 0, 0.6); */
+  color: white;
+  padding: 20px;
+  text-align: left;
+}
+
+.get-started-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  /* padding: 10px 20px; */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* CSS to position modal on the right without transition */
+.modal.modal-right .modal-dialog {
+  position: fixed;
+  margin: 0%;
+  top: 0;
+  right: 0; /* Position the modal on the right side */
+  transform: translateX(100%); /* Initially hide the modal off-screen */
+}
+
+.modal.modal-right.show .modal-dialog {
+  transform: translateX(0); /* Show the modal by translating it back to 0 */
+}
+

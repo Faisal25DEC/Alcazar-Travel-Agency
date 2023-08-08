@@ -64,28 +64,33 @@ var close = [
         "location": "https://www.google.co.in/maps/place/Swaraj+Dweep/@11.9656084,92.9194242,12z/data=!3m1!4b1!4m5!3m4!1s0x3088d3d85e0fe039:0x25c8aaaa513ef4bf!8m2!3d11.9760503!4d92.9875565",
         "id": 5,
         "price": "513.3",
-        "ratings": "3.2",
+        ratings: "3.2",
         "recommended": false,
-        "trending": false,
+        trending: false,
         sdate: "2-Aug",
         edate: "5-Aug",
         guest: "4",
     }]
 document.querySelector("#btnradio1").addEventListener("click", function () {
     updateDisplay(bookings);
-    var ratingsElements = document.querySelectorAll(".ratings");
-    ratingsElements.forEach(function (element) {
-        element.style.display = "none";
-    });
+    // var ratingsElements = document.querySelectorAll(".ratings");
+    // ratingsElements.forEach(function (element) {
+    //     element.style.display = "block";
+    // });
 })
 document.querySelector("#btnradio2").addEventListener("click", function () {
     updateDisplay(close);
+    var ratingsElements = document.querySelectorAll(".ratings");
+    ratingsElements.forEach(function (element) {
+        element.style.display = "block";
+    });
 
 })
 var main = document.querySelector("#content");
 function updateDisplay(arr) {
     main.innerHTML = "";
     arr.forEach(element => {
+        console.log(element);
         var card = document.createElement("div");
         card.setAttribute("class", "cr")
         var img = document.createElement("img");
@@ -99,7 +104,9 @@ function updateDisplay(arr) {
         var bt_div = document.createElement("div");
         bt_div.setAttribute("class", "bt-div");
         var details = document.createElement("button");
+
         details.setAttribute("class", "b")
+        details.setAttribute("id","openModalBtn")
         details.innerText = "Details";
         var cancel = document.createElement("button");
         cancel.innerText = "Cancel";
@@ -108,12 +115,24 @@ function updateDisplay(arr) {
         var rev = document.createElement("div");
         rev.innerHTML = "Ratings :-  "
         rev.setAttribute("class", "ratings");
+        rev.setAttribute("style","display:none;")
         review(rev);
         var price = document.createElement("h4");
         price.innerText = "Amount: Rs. " + element.price;
+
+
+        details.addEventListener("click",function(){
+            console.log(element);
+        var title=document.querySelector("#modal-title");
+        title.innerHTML="";
+        title.innerText=element.name;
+        var info=document.getElementById("modal-body");
+        info.innerHTML="";
+        info.innerText=`${element.info} \n \n Ratings:- ${element.ratings}`;
+        $('#myModal').modal('show'); // Show the modal
+        })
         card.append(img, name, price, guest, p, bt_div, rev);
         main.append(card);
-
     });
 
 }
@@ -145,3 +164,10 @@ function review(rev) {
 }
 updateDisplay(bookings);
 // console.log(bookings);
+
+// Open the modal
+
+  
+  // Close the modal
+
+  
