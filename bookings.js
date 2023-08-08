@@ -73,10 +73,7 @@ var close = [
     }]
 document.querySelector("#btnradio1").addEventListener("click", function () {
     updateDisplay(bookings);
-    // var ratingsElements = document.querySelectorAll(".ratings");
-    // ratingsElements.forEach(function (element) {
-    //     element.style.display = "block";
-    // });
+   
 })
 document.querySelector("#btnradio2").addEventListener("click", function () {
     updateDisplay(close);
