@@ -260,7 +260,8 @@ var displayTouristDestinations = function (touristDestinations, statesData) {
     timeIcon.src = "../Product-images/time.png";
 
     let duration = document.createElement("p");
-    duration.textContent = `${Math.floor(Math.random() * 10)} days`;
+    let durationV = Math.floor(Math.random() * 5) + 3;
+    duration.textContent = `${durationV} days`;
 
     timeDiv.append(timeIcon, duration);
 
@@ -340,7 +341,16 @@ var displayTouristDestinations = function (touristDestinations, statesData) {
     );
     productCard.append(productCardTop, productCardBody);
     productsBody.append(productCard);
+    button.addEventListener("click", () => {
+      touristDestination["duration"] = durationV;
+      localStorage.setItem(
+        "touristDestinationDetails",
+
+        JSON.stringify(touristDestination)
+      );
+    });
   });
+
   let debouncedFunc = debounce(showQueryResults, 3000);
   searchQuery.addEventListener("keyup", (event) => {
     let inputValue = event.target.value;
