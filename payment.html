@@ -2,23 +2,219 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="payment.css">
-    <title>Payment Page</title>
+    <title>payment_and_address</title>
+  <link rel="stylesheet" href="payment.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Payment Details</h1>
-        <form id="payment-form">
-            <label for="card-number">Card Number:</label>
-            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
-            <label for="expiration">Expiration Date:</label>
-            <input type="text" id="expiration" placeholder="MM/YY" required>
-            <label for="cvv">CVV:</label>
-            <input type="text" id="cvv" placeholder="123" required>
-            <button type="submit">Pay Now</button>
-        </form>
+    <!-- this div is for heading part -->
+    <div id="heading">
+        <img src="img/travel.png" alt="logo_heading">
+        <p>You are using our secure server</p>
+      
+      
     </div>
-    <script src="payment.js"></script>
+    <hr>
+    <!-- this is fedex logo and content part hello-->
+    <div id="fedex">
+
+        <div>
+        <img src="https://th.bing.com/th/id/OIP.2Y_xC7mK3O1zoGcPL9aD4QHaD4?pid=ImgDet&rs=1" alt="fedex_logo">
+        <p>
+            Secure checkout provided by Razorpay. <br>
+            Your order total includes customs and taxes, if applicable.</p>
+        </div>
+            <select name="country/language" id="country_lag">
+                
+                <option value="United Kingdom / English">United Kingdom / English</option>
+                <option value="Lebanon/ Arabe">Lebanon/ Arabe</option>
+                <option value="Russia / Russian">Russia / Russian</option>
+                <option value="Deutschland / Deutsch">Deutschland / Deutsch</option>
+                <option value="France / Français">France / Français</option>
+                <option value="Italia / Italiano">Italia / Italiano</option>
+                <option value="Portugal / Português">Portugal / Português</option>
+                <option value="United Kingdom / English">United Kingdom / English</option>
+                <option value="United Kingdom / English">United Kingdom / English</option>
+                <option value="China / Chinese">China / Chinese</option>
+            </select>
+
+
+    </div>
+
+    <!-- fedex part and other detail end here -->
+   
+    <div id="back_to_cart"><p> << Back to cart</p></div>
+    <div id="address_main_div">
+        
+        <div id="billing_address">
+            <div class="heading">Billing Address</div>
+
+
+            <form action="submit_form.php" method="POST" id="form_address">
+                <label for="email">Email* </label>
+                
+                <input type="email" id="email" name="email" required><br>
+            
+                <label for="firstName">First Name*</label>
+                <input type="text" id="firstName" name="firstName" required><br>
+            
+                <label for="lastName">Last Name*</label>
+                <input type="text" id="lastName" name="lastName" required><br>
+            
+                <label for="company">Company </label>
+                <input type="text" id="company" name="company"><br>
+            
+                <label for="taxId">Tax ID  </label>
+                <input type="text" id="taxId" name="taxId"><br>
+            
+                <label for="addressLine1">Address Line 1*</label>
+                <input type="text" id="addressLine1" name="addressLine1" required ><br>
+            
+                <label for="addressLine2">Address Line 2</label>
+                <input type="text" id="addressLine2" name="addressLine2" ><br>
+            
+                <label for="country">Country*</label>
+                <select id="country" name="country" required >
+                  <option value="select">Select Country</option>
+                  <!-- Add more options here -->
+                  <option value="usa">United States</option>
+                  <option value="canada">Canada</option>
+                  <!-- Add more countries as needed -->
+                </select><br>
+            
+                <label for="city">City*</label>
+                <input type="text" id="city" name="city" required ><br>
+            
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" ><br>
+            
+                <label for="zipCode">ZIP Code</label>
+                <input type="text" id="zipCode" name="zipCode" ><br>
+            
+                <label for="phone">Phone #*</label>
+                <input type="tel" id="phone" name="phone" required ><br>
+            
+                <!-- <input type="submit" value="Submit"> -->
+                <!-- <input type="submit" value="Submit" class="submit"> -->
+              </form>
+        </div>
+        <div id="billing_address">
+            <div class="heading">Shipping Address</div>
+
+
+            <form action="submit_form.php" method="POST" id="form_address">
+                <label for="email">Email* </label>
+                
+                <input type="email" id="email" name="email" required><br>
+            
+                <label for="firstName">First Name*</label>
+                <input type="text" id="firstName" name="firstName" required><br>
+            
+                <label for="lastName">Last Name*</label>
+                <input type="text" id="lastName" name="lastName" required><br>
+            
+                <label for="company">Company </label>
+                <input type="text" id="company" name="company"><br>
+            
+                <label for="taxId">Tax ID  </label>
+                <input type="text" id="taxId" name="taxId"><br>
+            
+                <label for="addressLine1">Address Line 1*</label>
+                <input type="text" id="addressLine1" name="addressLine1" required ><br>
+            
+                <label for="addressLine2">Address Line 2</label>
+                <input type="text" id="addressLine2" name="addressLine2" ><br>
+            
+                <label for="country">Country*</label>
+                <select id="country" name="country" required >
+                  <option value="select">Select Country</option>
+                  <!-- Add more options here -->
+                  <option value="usa">United States</option>
+                  <option value="canada">Canada</option>
+                  <!-- Add more countries as needed -->
+                </select><br>
+            
+                <label for="city">City*</label>
+                <input type="text" id="city" name="city" required ><br>
+            
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" ><br>
+            
+                <label for="zipCode">ZIP Code</label>
+                <input type="text" id="zipCode" name="zipCode" ><br>
+            
+                <label for="phone">Phone #*</label>
+                <input type="tel" id="phone" name="phone" required ><br>
+            
+                <!-- <input type="submit" value="Submit"> -->
+                <!-- <input type="submit" value="Submit" class="submit"> -->
+              </form>
+        </div>
+      
+    </div>
+
+    <div id="card_payment_section">
+      <div id="heading_of_card_payment">Total Price</div>
+      <span id="totalamt"></span>
+    
+
+  </div>
+
+    <div id="card_payment_section">
+        <div id="heading_of_card_payment">Payment Information</div>
+        <div id="card_icon_box">
+            <img src="https://checkout-ostk.crossborder.fedex.com/static/css/images/pm/visa.png" alt="vesa">
+            <img src="https://checkout-ostk.crossborder.fedex.com/static/css/images/pm/mastercard.png" alt="vesa">
+        </div>
+        <div id="payment_box">
+        <form onsubmit="return validateForm()" id="pay_form">
+           
+            <label for="cardNumber" class="pay_label">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" required class="pay_input"><br>
+        
+            <label for="cvv" class="pay_label">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required class="pay_input"><br>
+        
+            <label for="expiryDate" class="pay_label">Expiry Date (MM/YYYY):</label>
+            <input type="text" id="expiryDate" name="expiryDate" required class="pay_input"><br>
+        
+            <label for="name" class="pay_label">Name:</label>
+            <input type="text" id="name" name="name" required class="pay_input"><br>
+        
+            <input type="submit" value="Place Order" id="payment_submit">
+          </form>
+        </div>
+
+    </div>
+
+    <div id="Customer_Testimonials"><h2>Customer Testimonials:</h2></div>
+    <div id="AUSTRALIAN_FLAG">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2qTeny86Fkd3L7wuETwsGBug53jyBjAOYqaYIxl1MIg&usqp=CAU&ec=48665698" alt="aus_flag">
+        <p> </p>
+    </div>
+    <div id="return_policy">
+        <div>Return Policy</div>
+        <div>Contact Customer Care</div>
+        <div>FAQ</div>
+        <div>Privacy Policy</div>
+        <div>Site User Terms & Conditions*</div>
+    </div>
+    <div id="right_reserved">
+        <div><p>© 2023 Alcazar.com All Rights Reserved</p></div>
+        <div>
+            <img src="https://ak1.ostkcdn.com/img/mxc/20200630-intl-privacy_shield.png" alt="image">
+        </div>
+    </div>
+
+  
+    
+
+   
+
+    
 </body>
+
+<script src="payment.js"></script>
+
 </html>
