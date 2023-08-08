@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+
 #container{
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(https://imagedelivery.net/9sCnq8t6WEGNay0RAQNdvQ/clc81r70a002jp6p4ns06c542_1/public);
+    background-image: url(b.jpg);
     
-min-height:100vh;
+min-height:90%;
 background-position:center center;
 display: flex;
 flex-direction: column;
@@ -14,7 +17,8 @@ flex-direction: column;
 *{
     margin: 0;
     padding: 0;
-   
+
+   font-family: "Nunito";
 }
 body{
 height:100vh;
@@ -74,86 +78,7 @@ a{
 
 /* pop */
 
-    #cool {
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: calc(100vh -200px);
-}
-
-.pop {
-
-display: block;
-margin: auto;
-transform: translate(-50%, -50%);
-top: 50%;
-left: 50%;
-right: auto;
-bottom: auto;
-z-index: 1001;
-position: absolute;
-background-color: #ace6f7;
-/* border: 6px solid rgb(175, 230, 175); */
-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-padding:4%;
-}
    
-    .close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  background-color: rgb(249, 247, 245);
-  width:20px;
-  height:20px;
-  text-align: center;
-}
-label {
-  display: block;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  color: brown;
-}
-
-input, select {
-  width: 90%;
-  padding: 3%;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-/* #submit {
-  width: 100%;
-  padding: 8px 15px;
-  background-color: #282a28;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#submit:hover {
-  background-color: #45a049;
-} */
-.submitbtn{
-    width:40%;
-    background-color: aliceblue;
-    color: black;
-    padding:2%;
-    border: 0px ;
-    margin-top: 6%;
-    margin-left: 26%;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: large;
-    color: black;
-    font-weight:bold ;
-
-}
-.submitbtn:active {
-transform: translateX(1px) translateY(2px);
-}
-
-
 
 /* travel  */
 #text{
@@ -185,7 +110,7 @@ transform: translateX(1px) translateY(2px);
     display:flex;
     justify-content: space-between;
     align-items: center;
-    border:10px solid rgb(210, 239, 240);
+    border:10px solid rgb(236, 224, 233);
     width:50%;
     /* height:25px; */
     margin-left: 25%;
@@ -221,3 +146,138 @@ transform: translateX(1px) translateY(2px);
 #mag{
     width:15%;
 }
+
+
+/* review */
+#review{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    /* gap:1%; */
+    margin-left: 15%;
+    margin-top: 6%;
+    width:80%;
+}
+#m{
+    display:flex;
+    flex-direction: column;
+    width:60%;
+    padding:7%;
+    /* border: 1px solid black; */
+    margin-bottom: 12%;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+}
+#O{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    gap:1%;
+    margin-top: 3%;
+    margin-bottom: 10%;
+    /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
+    padding:3%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+#a{
+    width:20%;
+    gap:4px;
+}
+#a img{
+    width:100%;
+    height:80%;
+    gap:3px;
+}
+#b{
+    text-align: left;
+    font-family: Nunito;
+    font-family: cursive;
+
+}
+#b>p{
+    color: gray;
+
+}
+#c{
+    width:20%;
+    display: flex;
+    /* text-align: center; */
+}
+#c>img{
+    width:40%;
+    height:70%;
+    margin-top: 10%;
+}
+#c h5{
+    text-align: center;
+    margin-top: 52%;
+    margin-left: 5%;
+    font-family: cursive;
+    color: grey;
+}
+#t{
+    font-family: cursive;
+    color: rgb(52, 52, 52);
+}
+#ad{
+    /* text-align: center; */
+    margin-top: 1%;
+    font-family: cursive;
+    color: rgb(52, 52, 52);
+    font-size: 5vh;
+    margin-left: 2%;
+    margin-right: 2%;
+
+}
+#show{
+display: flex;
+margin-left: 17%;
+width:80%;
+/* border: 1px solid black; */
+margin-top: 5%;
+
+}
+.tick{
+    width:13%;
+}
+
+.image-container {
+    position: relative; /* Set the parent div as a reference for positioning */
+    width: 70%;
+    height:50vh;
+    margin-left: 15%;
+    margin-top: 5%;
+    margin-bottom: 35%;
+    
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+
+  .overlay {
+    position: absolute; /* Position the overlay content relative to the parent */
+    top: 0;
+    left: 0;
+    width:50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgba(0, 0, 0, 0.5); Semi-transparent black background */
+    color:rgb(89, 19, 19);
+    text-align: center;
+    margin-left: 25%;
+    font-family: cursive;
+    margin-top: 5%;
+  }
+  #alert{
+    font-size: 30px;
+    margin-bottom: 5%;
+  }
+  #ai{
+    margin-bottom: 9%;
+  }
+

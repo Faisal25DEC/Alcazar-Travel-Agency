@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+    <style>
+         #cool {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: calc(100vh -200px);
+}
+
+.pop {
+
+display: block;
+margin: auto;
+transform: translate(-50%, -50%);
+top: 50%;
+left: 50%;
+right: auto;
+bottom: auto;
+z-index: 1001;
+position: absolute;
+
+
+/* box-shadow: rgba(199, 199, 199, 0.2) 0px 2px 8px 0px; */
+/* padding:24%; */
+padding-left: 15%;
+width:40%;
+height:70%;
+}
+   
+
+label {
+  display: block;
+  /* margin-bottom: 5px; */
+  /* margin-top: 5px; */
+  color: white;
+  font-size: 24px;
+  font-style:Nunito;
+margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, select {
+    /* align-items: center; */
+  width: 60%;
+  padding: 3%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-style:Nunito;
+
+}
+
+.submitbtn{
+    /* width:25%; */
+    background-color: rgb(249, 250, 252);
+    color: rgb(16, 15, 15);
+    padding:2%;
+    padding-left: 4%;
+    padding-right: 4%;
+    border: 0px ;
+    border-radius: 10px;
+    margin-top: 2%;
+    margin-left: 21%;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    font-size: large;
+    /* color: black; */
+    font-weight:bold ;
+  font-style:Nunito;
+  margin-bottom: 10px;
+
+
+}
+.submitbtn:active {
+transform: translateX(1px) translateY(2px);
+}
+#signuplink,#loginlink,#google{
+    font-size: 20px;
+    text-decoration: underline;
+    color: rgb(249, 245, 245);
+  margin-left:15px;
+  font-style:Nunito;
+  /* font-weight: bold; */
+
+}
+#titleoform{
+    /* text-align: center; */
+    margin-left: 16%;
+    text-decoration: underline;
+    /* font-family:Nunito ; */
+    font-size: 43px;
+    color: rgb(249, 245, 245);
+  font-weight: bold;
+
+
+}
+#cool{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url( https://images.unsplash.com/photo-1501884428012-aa321a256730?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwxMTIzNjQwfHxlbnwwfHx8fHw%3D&w=1000&q=80);
+    
+min-height:100vh;
+background-position:center center;
+display: flex;
+flex-direction: column;
+    
+
+}
+#name,#email,#gender,#password{
+    width:50%;
+    height:10px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="cool">
+        <div id="pop" class="pop" >
+            <div class="pop-content">
+                <!-- <span id="close" class="close">&times;</span> -->
+    
+                <!-- login form -->
+    <h2 id="titleoform">Login</h2>
+    <form id="loginform" >
+        <label for="user">Email</label>
+        <input type="text" id="user" required>
+        <label for="pass">Password</label>
+        <input type="text" id="pass" required>
+    
+        <p class="toggle">Dont have account?<a id="signuplink"> Signup!</a></p>
+        <p id="google">Sign in using google</p>
+        <button type="submit" class="submitbtn" id="lbtn">Login</button>
+    
+    
+    </form>
+    
+    <!-- sign up form -->
+    <form id="signupform" style="display: none;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+    
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+    
+        
+    
+        
+    
+        <!-- Login Form Link -->
+        <p class="toggle">Already have an account?<a id="loginlink"> Login</a></p>
+    
+        <button type="submit" class="submitbtn" id="sbtn">Sign Up</button>
+    </form>
+    
+    
+            </div>
+    
+        </div>
+        
+    
+    </div>
+    
+</body>
+</html>
+<script type="module">
+
+
+
+    var pop = document.getElementById("pop");
+    // var closebtn = document.getElementById("close");
+    var loginform = document.getElementById("loginform");
+    var signupform = document.getElementById("signupform");
+    var titleoform = document.getElementById("titleoform");
+    var loginlink = document.getElementById("loginlink");
+    var signuplink = document.getElementById("signuplink");
+    // var log=document.getElementById("logout");
+    var google
+    
+    
+
+    
+    loginlink.addEventListener("click", () => {
+      loginform.style.display = "block";
+      signupform.style.display = "none";
+      titleoform.innerText = "Login";
+    });
+    
+    signuplink.addEventListener("click", () => {
+      loginform.style.display = "none";
+      signupform.style.display = "block";
+      titleoform.innerText = "SIGN UP";
+    });
+    
+    
+    
+    
+    // storing pasrt
+        
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+        
+        const firebaseConfig = {
+          apiKey: "AIzaSyBHHxqdFZiyBTugOrwa5IYiIGiWzoiFws8",
+          authDomain: "myalcazar-54aa9.firebaseapp.com",
+          projectId: "myalcazar-54aa9",
+          storageBucket: "myalcazar-54aa9.appspot.com",
+          messagingSenderId: "902327114641",
+          appId: "1:902327114641:web:6ba16ea9f45fdc432ed830"
+        };
+      
+    
+        
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        document.getElementById("sbtn").addEventListener("click",function(){
+    
+          event.preventDefault();
+               var email=document.getElementById("email").value;
+                 var password=document.getElementById("password").value;
+                 var userName=document.getElementById("name").value;
+    
+    
+                 createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log(user);
+        alert("You have successfully created your account");
+        loginform.style.display = "block";
+      signupform.style.display = "none";
+      titleoform.innerText = "Login";
+    
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
+        })
+    
+     
+    
+    document.getElementById("lbtn").addEventListener("click",function(){
+    
+    event.preventDefault();
+    
+    var email=document.getElementById("user").value;
+                 var password=document.getElementById("pass").value;
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        alert("login successfull");
+        window.location.assign("./home.html");
+    //   popbtn.style.display = "none";
+    pop.style.display = "none";
+   
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorMessage);
+      });
+    
+    });
+    
+   
+
+    const provider = new GoogleAuthProvider();
+
+
+// const auth = getAuth();
+signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
+    
+      </script>

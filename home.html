@@ -21,8 +21,8 @@
 
         </div>
         <div id="third">
-            <h3 id="popbtn">Login/Signup</h3>
-            <h3 id="logout" style="display:none;">Logout</h3>
+            <a href="./login.html"><h3>Login/Signup</h3></a>
+            <!-- <h3 id="logout" style="display:none;">Logout</h3> -->
         </div>
     </div>
 
@@ -55,206 +55,133 @@
   </div>
 
 </div>
-    <!-- footer -->
     
     
-
-
-    <!-- popup -->
-
-    <div id="cool">
-    <div id="pop" class="pop" style="display:none;">
-        <div class="pop-content">
-            <span id="close" class="close">&times;</span>
-
-            <!-- login form -->
-<h2 id="titleoform">Login</h2>
-<form id="loginform" >
-    <label for="user">Email</label>
-    <input type="text" id="user" required>
-    <label for="pass">Password</label>
-    <input type="text" id="pass" required>
-
-    <p class="toggle">Dont have account?<a id="signuplink"> Signup!</a></p>
-    <button type="submit" class="submitbtn" id="lbtn">Login</button>
-
-
-</form>
-
-<!-- sign up form -->
-<form id="signupform" style="display: none;">
-    <label for="email">Email:</label>
-    <input type="email" id="email" required>
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" required>
-
-    <label for="name">Name:</label>
-    <input type="text" id="name" required>
-
-    <label for="gender">Gender:</label>
-    <select id="gender" required>
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-      <option value="other">Other</option>
-    </select>
-
-    <!-- Login Form Link -->
-    <p class="toggle">Already have an account?<a id="loginlink"> Login</a></p>
-
-    <button type="submit" class="submitbtn" id="sbtn">Sign Up</button>
-</form>
-
-
-        </div>
-
+    <!-- customer review -->
+    <div id="show">
+      <img class="tick" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAkFBMVEX///8Af/8Aef8Aff8Ad/8Adv8Ae/8AhP/1+//4/f8Agv/8///A3/+oy/+dxP8Ahv/s9P+52/+01//d7f/P5v+uz/+kyP8Aif+Rvv+bw/+Yxv/y+P/a6//R5//I4//k8P+Euv9Gl/9ws/+t0v9Uo/9Fm/9lrv8yjv9osP9bqf83kP9Env+IvP9Yof8+k/8bjP9fPkljAAAEmklEQVR4nO3b7XaiOhQG4CbEoFALChZUEARRUav3f3cniYhIP47YzqGceZ9fM7NcuHmXyd4T9OkJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH5SPx21XUJ3zRPa27ddRFf1Y0YJe267jI6aUUoIXbVdRjeNLUYI4d6g7UK6KDwyTaSnGXbblXSQvepxItPjTtuldE8/pio8opGg7Vo6x5xpVIVHuB61XUznpKpjSHQ3b7uYrkm9S3iEYWJpSISnFeFpvVnb1XRMeirDI9Ry2y6nUwbD6ydPLNwcw3ID84NRCY8aOGRpIEg4LbMjnCX9tivqkNGeVcLT2BK73t0i32P8Gh5hXtp2SZ0xGK8o1arhWTO0jDu5iXHzwdOYjvDuFPmn6o4nG8ZpiPDuEs2Wt4uWUJphVrnL++w40xMcTN3D+SA7bTX6sTnPNM2B1Ffmgm3bUeQ4QRCGoeu6C+lZGinj8XiiDCteK15K57+rF0wK6SQVFxjLC6lrimu7rnijIHCcKIrEe8/nqhJZk2l+794C/3ibnUaZ8ZZ+fRpvqixEDJEThK64c3HH4l5fp1P/EMdxkmzXef62z5bL426z2ZwUz7MsXTcI55QJvYL8M6M/qn69+ttRTnTdsjxZ1Waz2x2Xy+xtla+TJI4P05dXkb9IfhEGkS2CHnyasONv2O3nTiO75PncLUwRkB0F4UKEMxm++CKWbb7KjkeZh8hCJ1RV9cG98wutgvw619qKcmuhi3sjugh5d8xEtrE/HD+HUf/SS0dZbc0S4uX+5NWPt3l23Jw8ncgrsNtUfmsWf8wlXhVBr0esXT55eupve/yDF/Mip78roq9o5ceS9bjlHfM4DZ72nH70yiK5vy46jRQr+Lp2xcLjhtggd8uVXLmv6Wjh2P1iIwyXrJ6fka3jQ5Jny53c2gx1gQ+2tN+7l1XUNrXatnbZ2WQXMXTL88QGtzlmq3wruof/MpStY+GqzvFp4wgTi9WWr3bKh+oZ7uDaNkbjVLRU0VFVP12du+m5k8pWKjopvTQ29ifaaHm/7//l2lDVu3JiiCwsmca5qaqWKkLJ16Kpyq7q+1Mx5UzGqrG6gRMVQ8zg8+76hcFz4tU6r8jCWo/+/WGaaRZzXDHFySEukENcMcEV49u4HN6uA9tU8pWD5FdNK4q5rhjp1DB3HufKeW7hXsY5W41z53mumOgeCKQx043rs4sYmsk+xePIewXyfx28nuBqhMOCe0Wz7H2CVozvstzNHr6bonHk0og9W9Y7CdvgwK8B51A7MdVwVt+MuyW38yDTZ//JFPB/0U+z248gs/CorZEgIZVvGIglvFu0XVK39Ien6hrmLMck3cwoqwZIyaTtgromXNPKJsj2+EZ9Q3ZcORjk2rjtejpnXg2Qrdsup3vmB1IGSHdYwI3143IP5AQjTHPza4A9zNAPmJeP5hi+X/8Ip/hRG8HvEx7jLnsa8vuG0fkXRgznqA9KDRmghvnlQeaMMMLf2i6ju8yZznp4jvQNiyF+JgMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApX8AsY1kyxPCxkcAAAAASUVORK5CYII=" alt="">
+    <h1 id="ad">Satisfied Customers Are Our Best Ads</h1>
+<img class="tick" src="https://cdn.pixabay.com/photo/2014/04/03/10/29/arrow-310633_1280.png" alt="">
     </div>
-    
+<div id="review">
 
 </div>
 
+<!-- img div -->
+
+<div class="image-container">
+  <img src="./sand.avif" alt="Your Image">
+  <div class="overlay">
+    <h2 id="alert">Set your price alert now</h2>
+    <p id="ai">Get alerts when we find the ticket prices that matches your budget.Download these apps</p>
+    <!-- <input type="text" placeholder="Name">
+    <input type="email" placeholder="Email"> -->
+    <div>
+      <button><img src="" alt=""></button>
+      <button><img src="" alt=""></button>
+    </div>
+  </div>
+</div>
+    
+
+    
 </body>
 </html>
-<script type="module">
+<script>
 
 
-
-var popbtn = document.getElementById("popbtn");
-// var piku = document.getElementById("piku");
-var pop = document.getElementById("pop");
-var closebtn = document.getElementById("close");
-var loginform = document.getElementById("loginform");
-var signupform = document.getElementById("signupform");
-var titleoform = document.getElementById("titleoform");
-var loginlink = document.getElementById("loginlink");
-var signuplink = document.getElementById("signuplink");
-var log=document.getElementById("logout");
-
-
-// Show content when btn clicked
-popbtn.addEventListener("click", () => {
-  pop.style.display = "block";
-});
-
-closebtn.addEventListener("click", () => {
-  pop.style.display = "none";
-});
-
-window.addEventListener("click", (event) => {
-  if (event.target === pop) {
-    pop.style.display = "none";
+const arr = [
+  {
+    name: "Alice Johnson",
+    occupation: "Travel Blogger",
+    review: "I had an amazing experience at this beautiful destination. The breathtaking scenery, friendly locals, and delicious cuisine made my trip unforgettable. .",
+    rating: 5,
+    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOf5fUbq-0EhAXPHGt-Tla0xNhEZvYr3w2FljIi5Lw83368pF6RCHv0HnFpHdWBfqjv-w&usqp=CAU"
+  },
+  {
+    name: "Michael Smith",
+    occupation: "Photographer",
+    review: "As a photographer, I was blown away by the stunning landscapes this place has to offer. Every corner is a perfect shot waiting to happen. ",
+    rating: 4.5,
+    image:"data:image/jpeg;base64,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"
+  },
+  {
+    name: "Emily Brown",
+    occupation: "Adventurer",
+    review: "This destination exceeded all my expectations. From thrilling outdoor activities like hiking and kayaking to cozy accommodations nestled in nature. ",
+    rating: 4,
+    image:"data:image/jpeg;base64,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"
+  },
+  {
+    name: "David Martinez",
+    occupation: "Food Critic",
+    review: "The local food scene is a culinary delight. I indulged in the most exquisite dishes, and each meal was a flavorful journey through the region's rich gastronomy. ",
+    rating: 4.8,
+    image:"https://img.freepik.com/premium-vector/avatar-portrait-young-caucasian-boy-man-round-frame-vector-cartoon-flat-illustration_551425-19.jpg"
+  },
+  {
+    name: "Sophia Williams",
+    occupation: "Historian",
+    review: "As a historian, I was captivated by the rich heritage and historical landmarks of this destination. The well-preserved architecture.",
+    rating: 4.7,
+    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgKMojVO_pcqiktlxnjAvsJgKyYP2UPgqx69wqF_-FjTZw1T_mB7MdZun4GYMl6XU656s&usqp=CAU"
+  },
+  {
+    name: "Oliver Davis",
+    occupation: "Nature Lover",
+    review: "Nature enthusiasts will find their paradise here. The lush forests, serene lakes, and diverse wildlife create a haven for relaxation and exploration. ",
+    rating: 4.9,
+    image:"https://previews.123rf.com/images/artinspiring/artinspiring1811/artinspiring181100743/127434465-portrait-of-young-man-beautiful-handsome-boy-avatar-guy-smiling-male-character-isolated-vector.jpg"
   }
-});
+];
 
-loginlink.addEventListener("click", () => {
-  loginform.style.display = "block";
-  signupform.style.display = "none";
-  titleoform.innerText = "Login";
-});
+// You can access the elements of the array like this:
+// console.log(tourismReviews[4].name); // Output: Sophia Williams
+// console.log(tourismReviews[5].rating); // Output: 4.9
 
-signuplink.addEventListener("click", () => {
-  loginform.style.display = "none";
-  signupform.style.display = "block";
-  titleoform.innerText = "SIGN UP";
-});
+  var review=document.getElementById("review");
+  arr.forEach(function(element){
+    var main=document.createElement("div");
+    main.setAttribute("id","m");
 
+    var one=document.createElement("div");
+    one.setAttribute("id","O");
 
+    var a=document.createElement("div");
+    a.setAttribute("id","a");
+    var img=document.createElement("img");
+    img.src=element.image;
+    console.log
+    a.append(img);
 
+    var b=document.createElement("div");
+    b.setAttribute("id","b");
+    var h3=document.createElement("h3");
+    h3.textContent=element.name;
+    var p=document.createElement("p");
+    p.textContent=element.occupation;
 
-// storing pasrt
-    
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
-    
-    const firebaseConfig = {
-      apiKey: "AIzaSyBHHxqdFZiyBTugOrwa5IYiIGiWzoiFws8",
-      authDomain: "myalcazar-54aa9.firebaseapp.com",
-      projectId: "myalcazar-54aa9",
-      storageBucket: "myalcazar-54aa9.appspot.com",
-      messagingSenderId: "902327114641",
-      appId: "1:902327114641:web:6ba16ea9f45fdc432ed830"
-    };
-  
+    b.append(h3,p);
 
-    
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth();
-    document.getElementById("sbtn").addEventListener("click",function(){
-
-      event.preventDefault();
-           var email=document.getElementById("email").value;
-             var password=document.getElementById("password").value;
-             var userName=document.getElementById("name").value;
+    var c=document.createElement("div");
+    c.setAttribute("id","c");
+    var img1=document.createElement("img");
+    var rate=document.createElement("h5");
+    rate.textContent=element.rating;
+    img1.src="data:image/jpeg;base64,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";
+c.append(img1,rate);
+    one.append(a,b,c);
 
 
-             createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    console.log(user);
-    alert("You have successfully created your account");
-    loginform.style.display = "block";
-  signupform.style.display = "none";
-  titleoform.innerText = "Login";
 
-    // ...
+
+    var two=document.createElement("div");
+    two.setAttribute("id","t");
+    var re=document.createElement("p");
+    re.textContent=element.review;
+    two.append(re);
+    main.append(one,two);
+    review.append(main);
   })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  });
-    })
 
-    // import { getAuth, d } from "firebase/auth";
-
-// const auth = getAuth();
-
-document.getElementById("lbtn").addEventListener("click",function(){
-
-event.preventDefault();
-
-var email=document.getElementById("user").value;
-             var password=document.getElementById("pass").value;
-signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    alert("login successfull");
-  popbtn.style.display = "none";
-pop.style.display = "none";
-  log.style.display="block";
-
-
-
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorMessage);
-  });
-
-});
-
-log.addEventListener("click",function(){
-  event.preventDefault();
-
-
-  signOut(auth).then(() => {
-  alert("Sign-out successful") ;
-  popbtn.style.display = "block";
-  log.style.display="none";
-
-
-}).catch((error) => {
-  // An error happened.
-  console.log(error);
-  
-
-
-});
-
-})
-
-  </script>
+</script>
