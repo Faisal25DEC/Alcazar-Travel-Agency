@@ -8,6 +8,7 @@ body {
   background-color: #ffffff;
   background-attachment: fixed;
   background-size: cover;
+
 }
 
 #yes {
@@ -73,7 +74,7 @@ p {
   background-color: ;
 }
 
-.b {
+.b,.cancel{
   color: white;
   background-color: rgb(7, 166, 214);
   border-radius: 6px;
@@ -135,16 +136,4 @@ p {
   font-size: 20px;
 }
 
-/* CSS to position modal on the right without transition */
-.modal.modal-right .modal-dialog {
-  position: fixed;
-  margin: 0%;
-  top: 0;
-  right: 0; /* Position the modal on the right side */
-  transform: translateX(100%); /* Initially hide the modal off-screen */
-}
-
-.modal.modal-right.show .modal-dialog {
-  transform: translateX(0); /* Show the modal by translating it back to 0 */
-}
 
