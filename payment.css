@@ -129,3 +129,72 @@ padding-left: 250px;
   margin-left: 200px;
 }
 
+
+ /* Responsive styles */
+ @media (max-width: 768px) {
+  .app_conatiner {
+      padding: 40px;
+  
+  }
+
+  .middle-box h1 {
+      font-size: 24px;
+     
+  }
+
+
+
+  .card-num-field,
+  .name-field {
+      width: 30%;
+  }
+
+  .card-details {
+      margin-top: 20px;
+  }
+}
+
+
+ /* Base styles */
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .app_conatiner {
+      padding: 10px;
+  }
+  .middle-box {
+      text-align: center;
+  }
+  .bottom-box {
+      text-align: center;
+  
+      
+  }
+  .card-details {
+      margin-top: 20px;
+  }
+}
+
+/* Adjustments for even smaller screens */
+@media (max-width: 480px) {
+  h1 {
+      font-size: 44px;
+  }
+  .payment-option-btn {
+      display: block;
+      margin: 10px auto;
+      width: 100%;
+
+  }
+  .card-num-field,
+  .name-field {
+      width: 100%;
+  }
+}
+
+
