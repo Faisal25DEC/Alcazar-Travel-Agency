@@ -1,121 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Page</title>
-    <link rel="stylesheet" href="./payment.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Payment Page</title>
+<link rel="stylesheet" href="payment.css">
 </head>
 <body>
-  <section class="bod">
-    <div class="app_conatiner">
-        <div class="top-box"> 
-          <!-- <button id="rzp-button1" class="btn btn-outline-dark btn-lg"><i class="fas fa-money-bill"></i> Own Checkout</button> -->
-        </div>
-        <div class="middle-box">
-            <h1>1599 <span>$</span> </h1>
-            <p>Pay To Alcazar Travelling Agency</p>
-        </div>
+<div class="container">
+  <div class="payment-form">
+    <h2 class="form-title">Secure Payment</h2>
+    <form id="payment-form">
+      <div class="input-group">
+        <label for="cardNumber">UserName</label>
+        <input type="text" id="cardNumber" class="input-field" placeholder="UserName" required>
+      </div>
+      <div class="input-group">
+        <label for="expiry">Billing Address</label>
+        <input type="text" id="expiry" class="input-field" placeholder="Address" required>
+      </div>
+      <div class="input-group">
+        <label for="cvv">Second line for Billing Address</label>
+        <input type="number" id="cvv" class="input-field" placeholder="Address" required>
+      </div>
+      <div class="input-group">
+        <label for="name">Cardholder Name</label>
+        <input type="text" id="name" class="input-field" placeholder="John Doe" required>
+      </div>
+      <div class="input-group">
+        <label for="amount">Total Amount</label>
+        <input type="number" id="amount" class="input-field" placeholder="000.00" required>
+      </div>
+      <div class="btn-container">
+        <button id="rzp-button1" class="btn btn-outline-dark btn-lg"><i class="fas fa-money-bill"></i> Pay Now</button>
+        <!-- <button class="btn" type="submit">Pay Now</button> -->
+      </div>
+    </form>
+  </div>
+</div>
+<div>
+</div>
+</div>
 
-        <div class="bottom-box">
-            <button type="submit" class="payment-option-btn">Pay with Paypal</button>
-            <button type="submit" class="payment-option-btn">Pay using Netbanking</button>
-            <div class="card-details">
-                <p>Pay using credit or debit card</p>
-                <div class="card-num-field-group">
-                    <label >Card Number</label>
-                    <input type="text" class="card-num-field" placeholder="xxxx-xxxx-xxxx-xxxx">
-                </div>
-                <div class="name-field-group">
-                    <label>Card Holder Name</label>
-                    <input type="text" class="name-field" placeholder="Full Name">
-                </div>
-                <div>
-                  <button id="rzp-button1" class="btn btn-outline-dark btn-lg"><i class="fas fa-money-bill"></i> Pay Now</button>
-                </div>
-            </div>
-            
-        </div>
-    </div>
+</div>
+</div>
 
-  </section>
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-  <script>
-    var options = {
-      "key": "rzp_test_rhCjqxNcV7bjq3", // Enter the Key ID generated from the Dashboard
-      "amount": "1000",
-      "currency": "INR",
-      "description": "Acme Corp",
-      "image": "https://s3.amazonaws.com/rzp-mobile/images/rzp.jpg",
-      "prefill":
-      {
-        "email": "gaurav.kumar@example.com",
-        "contact": +919900000000,
-      },
-      config: {
-        display: {
-          blocks: {
-            utib: { //name for Axis block
-              name: "Pay using Axis Bank",
-              instruments: [
-                {
-                  method: "card",
-                  issuers: ["UTIB"]
-                },
-                {
-                  method: "netbanking",
-                  banks: ["UTIB"]
-                },
-              ]
-            },
-            other: { //  name for other block
-              name: "Other Payment modes",
-              instruments: [
-                {
-                  method: "card",
-                  issuers: ["ICIC"]
-                },
-                {
-                  method: 'netbanking',
-                }
-              ]
-            }
-          },
-          hide: [
-            {
-            method: "upi"
-            }
-          ],
-          sequence: ["block.utib", "block.other"],
-          preferences: {
-            show_default_blocks: false // Should Checkout show its default blocks?
-          }
-        }
-      },
-      "handler": function (response) {
-    // Handle the successful payment here
-    // You can use the response to perform necessary actions or validations
-
-    // Redirect to the payment success page
-    window.location.href = "paysucc.html";
+</section>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+"key": "rzp_test_rhCjqxNcV7bjq3", // Enter the Key ID generated from the Dashboard
+"amount": "1000",
+"currency": "INR",
+"description": "Acme Corp",
+"image": "https://s3.amazonaws.com/rzp-mobile/images/rzp.jpg",
+"prefill":
+{
+"email": "gaurav.kumar@example.com",
+"contact": +919900000000,
 },
-      "modal": {
-        "ondismiss": function () {
-          if (confirm("Are you sure, you want to close the form?")) {
-            txt = "You pressed OK!";
-            console.log("Checkout form closed by the user");
-          } else {
-            txt = "You pressed Cancel!";
-            console.log("Complete the Payment")
-          }
-        }
-      }
-    };
-    var rzp1 = new Razorpay(options);
-    document.getElementById('rzp-button1').onclick = function (e) {
-      rzp1.open();
-      e.preventDefault();
-    }
-  </script>
+config: {
+display: {
+blocks: {
+utib: { //name for Axis block
+name: "Pay using Axis Bank",
+instruments: [
+{
+  method: "card",
+  issuers: ["UTIB"]
+},
+{
+  method: "netbanking",
+  banks: ["UTIB"]
+},
+]
+},
+other: { //  name for other block
+name: "Other Payment modes",
+instruments: [
+{
+  method: "card",
+  issuers: ["ICIC"]
+},
+{
+  method: 'netbanking',
+}
+]
+}
+},
+hide: [
+{
+method: "upi"
+}
+],
+sequence: ["block.utib", "block.other"],
+preferences: {
+show_default_blocks: false // Should Checkout show its default blocks?
+}
+}
+},
+"handler": function (response) {
+// Handle the successful payment here
+// You can use the response to perform necessary actions or validations
+
+// Redirect to the payment success page
+window.location.href = "paysucc.html";
+},
+"modal": {
+"ondismiss": function () {
+if (confirm("Are you sure, you want to close the form?")) {
+txt = "You pressed OK!";
+console.log("Checkout form closed by the user");
+} else {
+txt = "You pressed Cancel!";
+console.log("Complete the Payment")
+}
+}
+}
+};
+var rzp1 = new Razorpay(options);
+document.getElementById('rzp-button1').onclick = function (e) {
+rzp1.open();
+e.preventDefault();
+}
+</script>
 </body>
 </html>
