@@ -54,6 +54,7 @@
   > .product-details-left-images {
   display: flex;
   gap: 1rem;
+  justify-content: center;
 }
 .product-details-wrapper
   > .product-details-left
@@ -78,6 +79,7 @@
   height: 60vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  place-items: center;
   gap: 0.5rem 1rem;
 }
 .product-details-wrapper
@@ -200,19 +202,23 @@
   font-weight: bold;
 }
 .other-details-wrapper {
+  position: relative;
   display: flex;
   gap: 1rem;
   align-items: center;
 }
 .other-details-wrapper > .left {
+  position: relative;
   width: 64%;
+  min-height: 25rem;
+  object-fit: cover;
 }
 .other-details-wrapper > .right {
   width: 30%;
 }
 .other-details-wrapper > .right iframe {
   display: block;
-  height: 25rem;
+  min-height: 25rem;
   width: 100%;
   /* margin-right: 20%; */
   border-radius: 10px;
@@ -222,12 +228,13 @@
   max-width: 80%;
   width: 100%;
   margin-left: 5%;
+  min-height: 13rem;
 }
 .tabs {
   position: relative;
   margin: 2rem 0;
 
-  height: 13rem;
+  min-height: 13rem;
 }
 .tabs::before,
 .tabs::after {
@@ -260,7 +267,7 @@
   transition: top 0.25s;
 }
 .tab-content {
-  height: 10rem;
+  min-height: 10rem;
   position: absolute;
   z-index: 1;
   top: 2.25rem;
@@ -308,6 +315,11 @@
 .description-container {
   width: 90%;
   margin: auto;
+  text-align: left;
+  min-height: 7rem;
+}
+.description-container > * {
+  text-align: justify;
 }
 .explore-text-button {
   display: flex;
@@ -324,4 +336,43 @@
   border-radius: 24px;
   font-size: 17px;
   font-weight: 700;
+  cursor: pointer;
+}
+@media screen and (max-width: 855px) {
+  .product-details-wrapper {
+    flex-direction: column;
+  }
+  .product-details-wrapper > .product-details-left {
+    width: 100%;
+  }
+  .product-details-wrapper > .product-details-right {
+    width: 98%;
+  }
+  .other-details-wrapper {
+    flex-direction: column;
+  }
+  .other-details-wrapper > .left {
+    width: 98%;
+    height: auto;
+  }
+  .other-details-wrapper > .left > .tabs {
+    height: 70%;
+  }
+  .other-details-wrapper > .right {
+    width: 98%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .product-details-wrapper
+    > .product-details-left
+    > .product-details-left-images
+    > .product-details-left-images-right {
+    display: none;
+  }
+  .product-details-wrapper
+    > .product-details-left
+    > .product-details-left-images
+    > .product-details-left-images-left {
+    width: 100%;
+  }
 }

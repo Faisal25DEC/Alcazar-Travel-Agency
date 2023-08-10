@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../styles/product.css" />
+    <link rel="stylesheet" href="../styles/navbar_2.css" />
   </head>
   <body>
-    <nav id="navbar">
-      <div class="nav-left">
-        <img src="" alt="" />
-      </div>
-    </nav>
+    <nav id="navbar"></nav>
     <!-- ------------------------------------ BANNER---------------------------------- -->
     <header>
       <div id="banner">
@@ -85,5 +82,10 @@
       </div>
     </section>
   </body>
+  <script type="module">
+    import navbar_2 from "../components/navbar_2.js";
+    let header = document.querySelector("#navbar");
+    header.innerHTML = navbar_2();
+  </script>
   <script src="../scripts/product.js"></script>
 </html>

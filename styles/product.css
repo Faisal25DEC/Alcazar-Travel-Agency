@@ -12,6 +12,7 @@ body {
   margin: 5px;
 }
 #banner {
+  margin-top: 1%;
   position: relative;
   min-height: 70vh;
   display: flex;

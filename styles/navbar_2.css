@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Open+Sans:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "Nunito";
+}
+nav {
+  color: rgb(88, 88, 88);
+  font-weight: 700;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+nav > .nav-logo {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+nav > .nav-logo > img {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 6%;
+}
+nav > .nav-logo > p {
+  font-size: 20px;
+}
+nav > .nav-search {
+  width: 30%;
+  position: relative;
+}
+.search-suggestions {
+  position: absolute;
+  left: 3rem;
+  width: 95%;
+  margin: auto;
+}
+nav > .nav-search > .input-search {
+  width: 100%;
+  margin-left: 10%;
+  display: flex;
+  align-items: center;
+  border: solid 1px grey;
+  border-radius: 25px;
+  overflow: hidden;
+  padding: 1px 15px;
+}
+nav > .nav-search input {
+  display: block;
+  height: 2rem;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+nav > .nav-search > div {
+  font-size: inherit;
+}
+nav > .nav-right {
+  display: flex;
+  gap: 1.5rem;
+  width: 50%;
+  align-items: center;
+  justify-content: flex-end;
+}
+.nav-login-signup {
+  display: flex;
+  gap: 1rem;
+  margin-right: 2%;
+}
+.nav-login-signup > #nav-login {
+  border: solid 1px rgb(0, 119, 255);
+  font-weight: 700;
+  font-size: 17px;
+  color: rgb(0, 119, 255);
+  background-color: white;
+  width: 6rem;
+  height: 2.5rem;
+  border-radius: 10px;
+}
+.nav-login-signup > #nav-signup {
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  font-size: 17px;
+  color: white;
+  background-color: rgb(0, 119, 255);
+  width: 6rem;
+  height: 2.5rem;
+}
+nav > .nav-right > *:hover {
+  cursor: pointer;
+  color: rgb(20, 134, 255);
+  transition: all 0.4 ease-in-out;
+  font-weight: bold;
+}
+nav {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: 100%;
+  margin: auto;
+  padding: 10px 4px;
+}
