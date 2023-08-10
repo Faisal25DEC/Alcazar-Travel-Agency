@@ -8,10 +8,9 @@ const paginationT = document.querySelector(".pagination");
 console.log(searchQuery);
 
 // selecting required element
-async function showQueryResults(inputValue, statesData) {
+function showQueryResults(inputValue, statesData, touristDestinations) {
   console.log(inputValue);
-  let res = await fetch(`${baseUrl}/touristDestinations`);
-  let touristDestinations = await res.json();
+
   let touristDestinationsFilter = touristDestinations.filter((element) => {
     let newRegExp = new RegExp(`^${inputValue}`, "gi");
     return element.name.match(newRegExp);
@@ -19,9 +18,7 @@ async function showQueryResults(inputValue, statesData) {
   console.log(touristDestinationsFilter);
   displayTouristDestinations(touristDestinationsFilter, statesData);
 }
-async function showStateResults(inputValue, statesData) {
-  let res = await fetch(`${baseUrl}/touristDestinations`);
-  let touristDestinations = await res.json();
+function showStateResults(inputValue, statesData, touristDestinations) {
   console.log(touristDestinations);
   paginationT.style.display = "none";
   let touristDestinationsState = statesData.filter((el) => {
@@ -208,7 +205,11 @@ var getStateName = function (title, statesData) {
   }
 };
 
-var displayTouristDestinations = function (touristDestinations, statesData) {
+var displayTouristDestinations = function (
+  touristDestinations,
+  statesData,
+  allTouristDestinations
+) {
   productsBody.innerHTML = null;
   touristDestinations.forEach((touristDestination) => {
     let {
@@ -359,7 +360,7 @@ var displayTouristDestinations = function (touristDestinations, statesData) {
     if (inputValue == "") {
       getTouristDestinations(1);
     } else {
-      debouncedFunc(inputValue, statesData);
+      debouncedFunc(inputValue, statesData, allTouristDestinations);
     }
   });
   let debouncedFuncState = debounce(showStateResults, 2000);
@@ -369,12 +370,17 @@ var displayTouristDestinations = function (touristDestinations, statesData) {
       getTouristDestinations(1);
       paginationT.style.display = "block";
     } else {
-      debouncedFuncState(inputValue, statesData);
+      debouncedFuncState(inputValue, statesData, allTouristDestinations);
     }
   });
 };
 
 var getTouristDestinations = async function (pageNumber) {
+  let allTouristDestinationApiResponse = await fetch(
+    `${baseUrl}/touristDestinations`
+  );
+  let allTouristDestinations = await allTouristDestinationApiResponse.json();
+
   let stateApiResponse = await fetch(`${baseUrl}/state`);
   let statesData = await stateApiResponse.json();
   let apiResponse = await fetch(
@@ -385,7 +391,11 @@ var getTouristDestinations = async function (pageNumber) {
   console.log(statesData);
 
   console.log(touristDestinations.length / 9);
-  displayTouristDestinations(touristDestinations, statesData);
+  displayTouristDestinations(
+    touristDestinations,
+    statesData,
+    allTouristDestinations
+  );
   createPagination(8, pageNumber);
 };
 
