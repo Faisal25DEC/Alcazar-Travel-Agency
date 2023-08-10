@@ -199,5 +199,19 @@ if(book.length==0){
 
   
   // Close the modal
+  const currentDate = new Date();
+
+const sortedArray = arrayOfObjects.sort((a, b) => {
+  const dateA = new Date(a.date);
+  const dateB = new Date(b.date);
+  console.log(dateA)
+
+  const timeDifferenceA = Math.abs(currentDate - dateA);
+  const timeDifferenceB = Math.abs(currentDate - dateB);
+
+  return timeDifferenceA - timeDifferenceB;
+});
+
+console.log(sortedArray);
 
   
