@@ -343,6 +343,8 @@ var displayTouristDestinations = function (touristDestinations, statesData) {
     productsBody.append(productCard);
     button.addEventListener("click", () => {
       touristDestination["duration"] = durationV;
+      touristDestination["state"] = stateName.textContent;
+      window.location.assign("../pages/productDetails.html");
       localStorage.setItem(
         "touristDestinationDetails",
 
@@ -351,7 +353,7 @@ var displayTouristDestinations = function (touristDestinations, statesData) {
     });
   });
 
-  let debouncedFunc = debounce(showQueryResults, 3000);
+  let debouncedFunc = debounce(showQueryResults, 2000);
   searchQuery.addEventListener("keyup", (event) => {
     let inputValue = event.target.value;
     if (inputValue == "") {
@@ -360,14 +362,14 @@ var displayTouristDestinations = function (touristDestinations, statesData) {
       debouncedFunc(inputValue, statesData);
     }
   });
-  debouncedFunc = debounce(showStateResults, 3000);
+  let debouncedFuncState = debounce(showStateResults, 2000);
   stateSearch.addEventListener("keyup", (event) => {
     let inputValue = event.target.value;
     if (inputValue == "") {
       getTouristDestinations(1);
       paginationT.style.display = "block";
     } else {
-      debouncedFunc(inputValue, statesData);
+      debouncedFuncState(inputValue, statesData);
     }
   });
 };

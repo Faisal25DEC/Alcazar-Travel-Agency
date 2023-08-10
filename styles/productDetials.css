@@ -101,13 +101,24 @@
   justify-content: space-between;
   align-items: center;
 }
-.product-details-right > .price {
+.product-details-right > .name-and-reviews > * {
+  font-size: 17px;
+  color: rgb(82, 82, 82);
+  font-weight: bold;
+}
+.product-details-right > .price-container {
   margin-top: 3%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.product-details-right > .price-container > .was-price-container > p {
+  text-align: right;
+  color: grey;
+  font-weight: 700;
+}
 .product-details-right > .trip-code-and-valid {
+  margin-top: 3%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -297,4 +308,20 @@
 .description-container {
   width: 90%;
   margin: auto;
+}
+.explore-text-button {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.explore-text-button > button {
+  border: none;
+  width: 9rem;
+  height: 3rem;
+  background-color: rgb(0, 98, 255);
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 17px;
+  font-weight: 700;
 }

@@ -4,10 +4,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link rel="stylesheet" href="../styles/swiper-bundle.min.css">
+        <!-- CSS -->
+        <link rel="stylesheet" href="../styles/swiper.css">
         <link rel="stylesheet" href="../styles/productDetials.css">
+      
+
     </head>
     <body>
-        <h1 class='place-name'>Golden Temple</h1>
+        <a href="product.html">Explore Places</a>
+        <h1 id='place-name'>Golden Temple</h1>
         <div class="product-details-wrapper">
             <div class="product-details-left">
                 <div class="product-details-left-top">
@@ -18,7 +24,7 @@
                     <div class="place">
                         <img src="../Product-images/location.png" alt>
                         <p><span class='place'>Golden Temple,</span class ='state'>
-                                <span>Punjab</span></p>
+                                <span class = 'state'>Punjab</span></p>
                         </div>
 
                     </div>
@@ -53,13 +59,13 @@
                         <p class='ratings'>4.72</p>
                     </div>
 
-                    <div class="price">
+                    <div class="price-container">
                         <div class="curr-price">
                             <p class="from">From</p>
                             <h3 class="price">Rs. 72829</h3>
                         </div>
-
-                        <p class="was-price">Rs. 87284</p>
+                        <div class="was-price-container"> <p>Was</p><p class="was-price">Rs. 87284</p></div>
+                        
                     </div>
                     <div class="trip-code-and-valid">
                         <p class="trip-code">Trip Code: <span>AGBNH</span></p>
@@ -87,6 +93,7 @@
                     </div>
                 </div>
             </div>
+        </div>
             <div class="other-details-wrapper">
                 <div class="left">
                     <div class="wrapper">
@@ -101,7 +108,7 @@
                                         <img
                                             src="../Product-images/calendar.png"
                                             alt>
-                                        <div class="card-content">
+                                        <div class="tab-card-content">
                                             <p class="card-content-title">Travel
                                                 Style: 1-to-FourSomething</p>
                                             <p class="card-content-desc">Great
@@ -112,7 +119,7 @@
                                     <div class="card-2">
                                         <img src="../Product-images/note.png"
                                             alt>
-                                        <div class="card-content">
+                                        <div class="tab-card-content">
                                             <p class="card-content-title">Service
                                                 Level: Premium</p>
                                             <p class="card-content-desc">Simple
@@ -123,7 +130,7 @@
                                         <img
                                             src="../Product-images/security-check.png"
                                             alt>
-                                        <div class="card-content">
+                                        <div class="tab-card-content">
                                             <p class="card-content-title">Physical
                                                 Rating 2: Light</p>
                                             <p class="card-content-desc">Great
@@ -134,7 +141,7 @@
                                     <div class="card-4">
                                         <img src="../Product-images/group.png"
                                             alt>
-                                        <div class="card-content">
+                                        <div class="tab-card-content">
                                             <p class="card-content-title">Trip
                                                 Type: Small Group</p>
                                             <p class="card-content-desc">Come
@@ -191,6 +198,34 @@
                         <style>#embed-ded-map-canvas img{max-width:none!important;background:none!important;font-size: inherit;font-weight:inherit;}</style></div>
                 </div>
             </div>
+            <div class="slide-container-wrapper">
+                <div class="explore-text-button">
+
+                    <h1 class="explore">Explore More From <span class = 'explore-state'>Rajastan...</span></h1>
+                    <button class="explore-button">Explore</button>
+                </div>
+               
+            <div class="slide-container swiper">
+                <div class="swiper-button-prev swiper-navBtn"></div>
+                <div class="slide-content">
+                    <div class="card-wrapper swiper-wrapper">
+                        
+                  
+                  
+                    </div>
+                    
+                </div>
+                <div class="swiper-button-next swiper-navBtn"></div>
+               
+              
+                
+                
+            </div>
+            <div class="swiper-pagination"></div></div>
         </body>
+        <script src="../scripts/swiper-bundle.min.js"></script>
+        <script src = '../scripts/swiper.js'></script>
         <script src='../scripts/productDetails.js'></script>
+      
+       
     </html>
