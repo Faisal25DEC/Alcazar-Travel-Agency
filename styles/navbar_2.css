@@ -8,6 +8,7 @@ nav {
   display: flex;
   gap: 1rem;
   align-items: center;
+  z-index: 12;
 }
 nav > .nav-logo {
   display: flex;
@@ -28,9 +29,27 @@ nav > .nav-search {
 }
 .search-suggestions {
   position: absolute;
-  left: 3rem;
-  width: 95%;
+  left: 4rem;
+  width: 100%;
   margin: auto;
+  z-index: 12;
+  background-color: white;
+  display: none;
+  max-height: 30rem;
+  overflow: auto;
+  border-radius: 2px;
+}
+.search-suggestions > .search-suggestion {
+  display: flex;
+  border-bottom: solid 1px rgb(172, 171, 171);
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  align-items: center;
+  gap: 1rem;
+}
+.search-suggestions > .search-suggestion img {
+  width: 3rem;
+  height: 3rem;
 }
 nav > .nav-search > .input-search {
   width: 100%;

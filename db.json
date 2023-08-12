@@ -16,14 +16,12 @@
   "profile": {
     "name": "typicode"
   },
-
-  "users":[
+  "users": [
     {
-
-     }
-   ],
-
-
+      "displayName": "Faisal",
+      "bookings": "[]"
+    }
+  ],
   "state": [
     {
       "id": "1",
@@ -35,9 +33,9 @@
       "time": "Andaman has a moderate temperature all through the year within the range of 23°C to 31°C. It has a tropical climate. There are no severe climate conditions except for tropical storms and rains in late summers and monsoons.Summers (March to May) are warm but pleasant with sea breeze and have humidity level about 80%. It is suitable for all kinds of tourist activities.",
       "food": "The cuisine Of Andaman is like the island itself-tropical, exotic and refreshing. The sea that is all around has a defining effect on the island's culture, livelihood and cuisine. There is little here, in which you will not find traces of the sea. The food here, hence, is dominated by seafood preparations and you don't want to miss the fish delicacies here. Other than seafood too, the staple diet is essentially non-vegetarian.However, as the island is becoming an increasingly popular tourist spot, the resorts and other eating places will give you options of Indian, Chinese and a few more cuisines.Also, the fruits here are popular and refreshing. You can find Mangoes, Bananas, Pineapples, Guava and more. One can also sip in the truly refreshing and tropical coconut water here.",
       "img": [
-        "https://bit.ly/35d0J79",
+        "https://curlytales.com/wp-content/uploads/2021/04/VQ7EUZ2-1.jpg",
         "https://images.thrillophilia.com/image/upload/s--QOn_Mi_R--/c_fill,f_auto,fl_strip_profile,h_775,q_auto,w_1600/v1/images/photos/000/021/355/original/1538650912_shutterstock_1093195946.jpg.jpg?1538650912",
-        "https://www.keyshotels.com/blog/wp-content/uploads/2017/08/port-blair-sea-fish.jpg",
+        "https://www.sushanttravels.com/blog/2019/11/1574417730.jpg",
         "https://dynamic.tourtravelworld.com/package-images/photo-big/dir_17/486726/202664.jpg",
         "https://bit.ly/2XhHw19",
         "https://bit.ly/2qTdWTu"
@@ -1114,7 +1112,9 @@
       "price": "785.6",
       "ratings": "3.3",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Andaman & Nicobar",
+      "duration": 4
     },
     {
       "name": "CELLULAR JAIL,PORT BLAIR",
@@ -1125,7 +1125,9 @@
       "price": "676.9",
       "ratings": "1.6",
       "recommended": true,
-      "trending": true
+      "trending": true,
+      "state": "Andaman & Nicobar",
+      "duration": 7
     },
     {
       "name": "CORBYN'S COVE,PORT BLAIR",
@@ -1136,18 +1138,22 @@
       "price": "439.3",
       "ratings": "3.7",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Andaman & Nicobar",
+      "duration": 5
     },
     {
       "name": "SAMUDRIKA NAVAL MARINE MUSEUM,PORT BLAIR",
       "info": "This museum is a perfect blend of historical and modern Andaman. A massive blue whale, in its skeletal form, of course, greets you as you enter the museum. There is also an aquarium with fish of all shapes and sizes, from a parrotfish to the rare and venomous species of stonefish and corals.",
-      "images": "https://andamantripadvisor.in/files/social/social_b18e537c1984e883f43807737a639be4.jpg",
+      "images": "https://www.seawatersports.com/img/newimage/places/samudrika-marine-museum-.jpg",
       "location": "https://www.google.co.in/maps/place/Samudrika+Marine+Museum/@11.6718057,92.7263692,15z/data=!4m2!3m1!1s0x0:0xd7352994a1c32fb8?sa=X&ved=2ahUKEwi64_yEu_PlAhWMILcAHYtnBf0Q_BIwC3oECBAQCA",
       "id": 4,
       "price": "893.9",
       "ratings": "2.8",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Andaman & Nicobar",
+      "duration": 5
     },
     {
       "name": "HAVELOCK ISLAND(SWARAJ DWEEP)",
@@ -1158,7 +1164,9 @@
       "price": "513.3",
       "ratings": "3.2",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Andaman & Nicobar",
+      "duration": 6
     },
     {
       "name": "GOLDEN TEMPLE",
@@ -1169,7 +1177,9 @@
       "price": "81.7",
       "ratings": "2.8",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Punjab",
+      "duration": 4
     },
     {
       "name": "WAGAH BORDER",
@@ -1180,7 +1190,9 @@
       "price": "172.8",
       "ratings": "4.7",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Punjab",
+      "duration": 3
     },
     {
       "name": "JALLIANWALA BAGH",
@@ -1191,7 +1203,9 @@
       "price": "458.0",
       "ratings": "1.6",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Punjab",
+      "duration": 4
     },
     {
       "name": "BHAKRA NANGAL DAM",
@@ -1202,7 +1216,9 @@
       "price": "582.6",
       "ratings": "4.5",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Punjab",
+      "duration": 6
     },
     {
       "name": "SUKHNA LAKE",
@@ -1213,7 +1229,9 @@
       "price": "572.6",
       "ratings": "2.7",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Punjab",
+      "duration": 6
     },
     {
       "name": "SHAHPUR KANDI FORT ",
@@ -1224,7 +1242,9 @@
       "price": "141.1",
       "ratings": "3.0",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Punjab",
+      "duration": 3
     },
     {
       "name": "Jaipur",
@@ -1235,7 +1255,9 @@
       "price": "323.1",
       "ratings": "2.3",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Rajasthan",
+      "duration": 6
     },
     {
       "name": "Amber Palace",
@@ -1246,7 +1268,9 @@
       "price": "964.0",
       "ratings": "3.0",
       "recommended": true,
-      "trending": true
+      "trending": true,
+      "state": "Rajasthan",
+      "duration": 7
     },
     {
       "name": "Jantar Mantar",
@@ -1257,7 +1281,9 @@
       "price": "347.6",
       "ratings": "4.2",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Rajasthan",
+      "duration": 5
     },
     {
       "name": "Hawa Mahal",
@@ -1268,7 +1294,9 @@
       "price": "360.2",
       "ratings": "4.5",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Rajasthan",
+      "duration": 4
     },
     {
       "name": "Albert Hall Museum(Central  Museum)",
@@ -1279,7 +1307,9 @@
       "price": "586.1",
       "ratings": "3.0",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Rajasthan",
+      "duration": 6
     },
     {
       "name": "Jal Mahal",
@@ -1290,7 +1320,9 @@
       "price": "138.7",
       "ratings": "2.7",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Rajasthan",
+      "duration": 6
     },
     {
       "name": "Chittorgarh Fort",
@@ -1301,7 +1333,9 @@
       "price": "554.1",
       "ratings": "1.1",
       "recommended": false,
-      "trending": true
+      "trending": true,
+      "state": "Rajasthan",
+      "duration": 5
     },
     {
       "name": "The Ajmer Sharif Dargah",
@@ -1312,7 +1346,9 @@
       "price": "607.3",
       "ratings": "5.0",
       "recommended": true,
-      "trending": true
+      "trending": true,
+      "state": "Rajasthan",
+      "duration": 4
     },
     {
       "name": "Jaisalmer fort",
@@ -1323,7 +1359,9 @@
       "price": "974.1",
       "ratings": "4.8",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Rajasthan",
+      "duration": 6
     },
     {
       "name": "Munnar",
@@ -1334,7 +1372,9 @@
       "price": "862.5",
       "ratings": "1.1",
       "recommended": false,
-      "trending": true
+      "trending": true,
+      "state": "Kerala",
+      "duration": 3
     },
     {
       "name": "Alleppey",
@@ -1345,7 +1385,9 @@
       "price": "885.7",
       "ratings": "3.4",
       "recommended": false,
-      "trending": true
+      "trending": true,
+      "state": "Kerala",
+      "duration": 5
     },
     {
       "name": "Wayanad",
@@ -1356,7 +1398,9 @@
       "price": "706.2",
       "ratings": "1.0",
       "recommended": false,
-      "trending": true
+      "trending": true,
+      "state": "Kerala",
+      "duration": 4
     },
     {
       "name": "Kochi",
@@ -1367,7 +1411,9 @@
       "price": "734.0",
       "ratings": "3.6",
       "recommended": false,
-      "trending": true
+      "trending": true,
+      "state": "Kerala",
+      "duration": 5
     },
     {
       "name": "Thekkady",
@@ -1378,7 +1424,9 @@
       "price": "41.8",
       "ratings": "2.0",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Kerala",
+      "duration": 3
     },
     {
       "name": "Varkala",
@@ -1389,7 +1437,9 @@
       "price": "964.7",
       "ratings": "2.6",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Kerala",
+      "duration": 6
     },
     {
       "name": "Poovar",
@@ -1400,7 +1450,9 @@
       "price": "267.2",
       "ratings": "4.0",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Kerala",
+      "duration": 7
     },
     {
       "name": "Kovalam",
@@ -1411,7 +1463,9 @@
       "price": "378.0",
       "ratings": "4.1",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Kerala",
+      "duration": 7
     },
     {
       "name": "Sabarimala",
@@ -1422,7 +1476,9 @@
       "price": "925.1",
       "ratings": "2.6",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Kerala",
+      "duration": 4
     },
     {
       "name": "Kumarakom",
@@ -1433,7 +1489,9 @@
       "price": "881.7",
       "ratings": "3.3",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Kerala",
+      "duration": 3
     },
     {
       "name": "Kollam",
@@ -1444,7 +1502,9 @@
       "price": "205.3",
       "ratings": "3.1",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Kerala",
+      "duration": 3
     },
     {
       "name": "Trivandrum",
@@ -1455,7 +1515,9 @@
       "price": "979.8",
       "ratings": "1.5",
       "recommended": false,
-      "trending": true
+      "trending": true,
+      "state": "Kerala",
+      "duration": 6
     },
     {
       "name": "Mumbai",
@@ -1466,7 +1528,9 @@
       "price": "345.1",
       "ratings": "2.5",
       "recommended": true,
-      "trending": true
+      "trending": true,
+      "state": "Maharashtra",
+      "duration": 7
     },
     {
       "name": "Ajanta And Ellora Caves",
@@ -1477,7 +1541,9 @@
       "price": "134.8",
       "ratings": "2.6",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Maharashtra",
+      "duration": 7
     },
     {
       "name": "Panchgani",
@@ -1488,7 +1554,9 @@
       "price": "888.6",
       "ratings": "1.1",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Maharashtra",
+      "duration": 7
     },
     {
       "name": "Mahabaleshwar",
@@ -1499,7 +1567,9 @@
       "price": "963.3",
       "ratings": "2.3",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Maharashtra",
+      "duration": 4
     },
     {
       "name": "Lonavala",
@@ -1510,7 +1580,9 @@
       "price": "296.4",
       "ratings": "4.2",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Maharashtra",
+      "duration": 4
     },
     {
       "name": "Alibag",
@@ -1521,7 +1593,9 @@
       "price": "61.9",
       "ratings": "1.7",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Maharashtra",
+      "duration": 7
     },
     {
       "name": "Shirdi",
@@ -1532,7 +1606,9 @@
       "price": "773.5",
       "ratings": "4.6",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Maharashtra",
+      "duration": 4
     },
     {
       "name": "Nashik",
@@ -1543,7 +1619,9 @@
       "price": "936.4",
       "ratings": "1.0",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Maharashtra",
+      "duration": 5
     },
     {
       "name": "Pune",
@@ -1554,7 +1632,9 @@
       "price": "111.2",
       "ratings": "2.6",
       "recommended": false,
-      "trending": true
+      "trending": true,
+      "state": "Maharashtra",
+      "duration": 6
     },
     {
       "name": "Kashid",
@@ -1565,7 +1645,9 @@
       "price": "429.5",
       "ratings": "2.6",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Maharashtra",
+      "duration": 5
     },
     {
       "name": "Aurangabad",
@@ -1576,7 +1658,9 @@
       "price": "481.0",
       "ratings": "1.2",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Maharashtra",
+      "duration": 3
     },
     {
       "name": "Kolhapur",
@@ -1587,7 +1671,9 @@
       "price": "132.5",
       "ratings": "2.5",
       "recommended": false,
-      "trending": true
+      "trending": true,
+      "state": "Maharashtra",
+      "duration": 5
     },
     {
       "name": "Rishikesh",
@@ -1598,7 +1684,9 @@
       "price": "405.9",
       "ratings": "3.4",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Uttarakhand",
+      "duration": 6
     },
     {
       "name": "Nainital",
@@ -1609,7 +1697,9 @@
       "price": "628.4",
       "ratings": "2.0",
       "recommended": false,
-      "trending": true
+      "trending": true,
+      "state": "Uttarakhand",
+      "duration": 7
     },
     {
       "name": "Mussorie",
@@ -1620,7 +1710,9 @@
       "price": "872.5",
       "ratings": "1.4",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Uttarakhand",
+      "duration": 7
     },
     {
       "name": "Badrinath",
@@ -1631,7 +1723,9 @@
       "price": "953.8",
       "ratings": "3.6",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Uttarakhand",
+      "duration": 4
     },
     {
       "name": "Haridwar",
@@ -1642,7 +1736,9 @@
       "price": "190.4",
       "ratings": "1.9",
       "recommended": false,
-      "trending": true
+      "trending": true,
+      "state": "Uttarakhand",
+      "duration": 7
     },
     {
       "name": "Jim Corbett National Park",
@@ -1653,7 +1749,9 @@
       "price": "251.7",
       "ratings": "2.1",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Uttarakhand",
+      "duration": 5
     },
     {
       "name": "Kedarnath",
@@ -1664,7 +1762,9 @@
       "price": "526.3",
       "ratings": "1.2",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Uttarakhand",
+      "duration": 6
     },
     {
       "name": "Auli",
@@ -1675,7 +1775,9 @@
       "price": "667.7",
       "ratings": "4.2",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Uttarakhand",
+      "duration": 7
     },
     {
       "name": "Dehradun",
@@ -1686,7 +1788,9 @@
       "price": "256.7",
       "ratings": "2.9",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Uttarakhand",
+      "duration": 3
     },
     {
       "name": "Almora",
@@ -1697,7 +1801,9 @@
       "price": "693.2",
       "ratings": "1.3",
       "recommended": true,
-      "trending": true
+      "trending": true,
+      "state": "Uttarakhand",
+      "duration": 6
     },
     {
       "name": "Dhanaulti",
@@ -1708,7 +1814,9 @@
       "price": "61.2",
       "ratings": "2.2",
       "recommended": true,
-      "trending": true
+      "trending": true,
+      "state": "Uttarakhand",
+      "duration": 6
     },
     {
       "name": "Ranikhet",
@@ -1719,7 +1827,9 @@
       "price": "421.3",
       "ratings": "2.2",
       "recommended": false,
-      "trending": true
+      "trending": true,
+      "state": "Uttarakhand",
+      "duration": 3
     },
     {
       "name": "Lansdowne",
@@ -1730,7 +1840,9 @@
       "price": "21.3",
       "ratings": "2.9",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Uttarakhand",
+      "duration": 3
     },
     {
       "name": "Bhimtal",
@@ -1741,7 +1853,9 @@
       "price": "313.2",
       "ratings": "4.1",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Uttarakhand",
+      "duration": 3
     },
     {
       "name": "Joshimath",
@@ -1752,7 +1866,9 @@
       "price": "482.6",
       "ratings": "1.2",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Uttarakhand",
+      "duration": 3
     },
     {
       "name": "Mukteshwar",
@@ -1763,7 +1879,9 @@
       "price": "520.8",
       "ratings": "4.0",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Uttarakhand",
+      "duration": 4
     },
     {
       "name": "Rudra Prayag",
@@ -1774,7 +1892,9 @@
       "price": "590.3",
       "ratings": "3.5",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Uttarakhand",
+      "duration": 4
     },
     {
       "name": "Uttarkashi",
@@ -1785,7 +1905,9 @@
       "price": "445.9",
       "ratings": "2.8",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Uttarakhand",
+      "duration": 6
     },
     {
       "name": "DevPrayag",
@@ -1796,7 +1918,9 @@
       "price": "789.4",
       "ratings": "4.7",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Uttarakhand",
+      "duration": 5
     },
     {
       "name": "Manali",
@@ -1807,7 +1931,9 @@
       "price": "148.2",
       "ratings": "2.6",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Himachal Pradesh",
+      "duration": 6
     },
     {
       "name": "Shimla",
@@ -1818,7 +1944,9 @@
       "price": "785.6",
       "ratings": "2.1",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Himachal Pradesh",
+      "duration": 7
     },
     {
       "name": "Mcleodganj",
@@ -1829,7 +1957,9 @@
       "price": "787.9",
       "ratings": "2.7",
       "recommended": true,
-      "trending": true
+      "trending": true,
+      "state": "Himachal Pradesh",
+      "duration": 6
     },
     {
       "name": "Dalhousie",
@@ -1840,7 +1970,9 @@
       "price": "925.3",
       "ratings": "3.2",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Himachal Pradesh",
+      "duration": 3
     },
     {
       "name": "Spiti Valley",
@@ -1851,7 +1983,9 @@
       "price": "458.0",
       "ratings": "1.2",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Himachal Pradesh",
+      "duration": 5
     },
     {
       "name": "Kasol",
@@ -1862,7 +1996,9 @@
       "price": "345.5",
       "ratings": "1.4",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Himachal Pradesh",
+      "duration": 7
     },
     {
       "name": "Dharamshala",
@@ -1873,7 +2009,9 @@
       "price": "947.8",
       "ratings": "3.5",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Himachal Pradesh",
+      "duration": 3
     },
     {
       "name": "Tirthan Valley",
@@ -1884,7 +2022,9 @@
       "price": "20.8",
       "ratings": "2.2",
       "recommended": false,
-      "trending": true
+      "trending": true,
+      "state": "Himachal Pradesh",
+      "duration": 4
     },
     {
       "name": "Kasauli",
@@ -1895,7 +2035,9 @@
       "price": "458.2",
       "ratings": "3.0",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Himachal Pradesh",
+      "duration": 7
     },
     {
       "name": "Bir Billing",
@@ -1906,7 +2048,9 @@
       "price": "649.4",
       "ratings": "5.0",
       "recommended": true,
-      "trending": false
+      "trending": false,
+      "state": "Himachal Pradesh",
+      "duration": 3
     },
     {
       "name": "Kinnaur",
@@ -1917,7 +2061,9 @@
       "price": "319.9",
       "ratings": "1.2",
       "recommended": false,
-      "trending": false
+      "trending": false,
+      "state": "Himachal Pradesh",
+      "duration": 6
     },
     {
       "name": "Kufri",
@@ -1928,7 +2074,9 @@
       "price": "453.2",
       "ratings": "4.9",
       "recommended": false,
-      "trending": true
+      "trending": true,
+      "state": "Himachal Pradesh",
+      "duration": 3
     }
   ]
 }

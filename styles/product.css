@@ -11,6 +11,9 @@
 body {
   margin: 5px;
 }
+#navbar {
+  z-index: 12;
+}
 #banner {
   margin-top: 1%;
   position: relative;

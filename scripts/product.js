@@ -1,3 +1,5 @@
+// Your code here, this will run after the entire HTML is loaded
+
 const baseUrl = `http://localhost:3000`;
 const unsplashApiKey = `GyO4Y3ccun7RvAO8u4mPM8e-KNFfw3jC38X9Q-UnHsI`;
 const unsplashApiUrl = `https://api.unsplash.com/search/photos/?client_id=${unsplashApiKey}`;
@@ -222,6 +224,8 @@ var displayTouristDestinations = function (
       ratings,
       recommended,
       trending,
+      duration,
+      state,
     } = touristDestination;
 
     let productCard = document.createElement("div");
@@ -260,11 +264,11 @@ var displayTouristDestinations = function (
     let timeIcon = document.createElement("img");
     timeIcon.src = "../Product-images/time.png";
 
-    let duration = document.createElement("p");
+    let durationT = document.createElement("p");
     let durationV = Math.floor(Math.random() * 5) + 3;
-    duration.textContent = `${durationV} days`;
+    durationT.textContent = `${duration} days`;
 
-    timeDiv.append(timeIcon, duration);
+    timeDiv.append(timeIcon, durationT);
 
     let saveDiv = document.createElement("div");
     saveDiv.classList.add("save");
@@ -283,19 +287,19 @@ var displayTouristDestinations = function (
     let title = document.createElement("h3");
     title.textContent = name;
 
-    let state = document.createElement("div");
-    state.classList.add("state");
+    let stateT = document.createElement("div");
+    stateT.classList.add("state");
 
     let stateIcon = document.createElement("img");
     stateIcon.src = "../Product-images/location.png";
 
     let stateName = document.createElement("p");
 
-    stateName.textContent = getStateName(name, statesData);
+    stateName.textContent = state;
 
-    state.append(stateIcon, stateName);
+    stateT.append(stateIcon, stateName);
 
-    productCardBodyTitle.append(title, state);
+    productCardBodyTitle.append(title, stateT);
 
     let productCardBodyTitleLine = document.createElement("hr");
     productCardBodyTitleLine.classList.add("product-card-body-title-line");
@@ -374,7 +378,10 @@ var displayTouristDestinations = function (
     }
   });
 };
-const searchBarInput = document.querySelector(".input-search>#search");
+
+const searchBarInput = document.querySelector("#navbar .input-search>#search");
+console.log(searchBarInput);
+
 var getTouristDestinations = async function (pageNumber) {
   let allTouristDestinationApiResponse = await fetch(
     `${baseUrl}/touristDestinations`
@@ -397,6 +404,52 @@ var getTouristDestinations = async function (pageNumber) {
     allTouristDestinations
   );
   createPagination(8, pageNumber);
+
+  searchBarInput.addEventListener("input", () => {
+    const searchSuggestions = document.querySelector(".search-suggestions");
+    searchSuggestions.innerHTML = "";
+    let inputValue = event.target.value;
+    if (inputValue == "") {
+      searchSuggestions.style.display = "none";
+      return;
+    } else {
+      searchSuggestions.style.display = "block";
+      let newRegExp = new RegExp(inputValue, "gi");
+      let searchTouristDestinationsFilter = allTouristDestinations.filter(
+        (touristDestination) => {
+          return touristDestination.name.match(newRegExp);
+        }
+      );
+      console.log(searchTouristDestinationsFilter);
+
+      searchTouristDestinationsFilter.forEach((touristDestination) => {
+        let { images, name, state } = touristDestination;
+        let searchSuggestionContainer = document.createElement("div");
+        searchSuggestionContainer.classList.add("search-suggestion");
+
+        let searchSuggestionImage = document.createElement("img");
+        searchSuggestionImage.src = images;
+
+        let searchSuggestionText = document.createElement("div");
+
+        let searchSuggestionState = document.createElement("p");
+        searchSuggestionState.textContent = state;
+
+        let searchSuggestionTitle = document.createElement("p");
+        searchSuggestionTitle.textContent = name;
+        searchSuggestionText.append(
+          searchSuggestionTitle,
+          searchSuggestionState
+        );
+
+        searchSuggestionContainer.append(
+          searchSuggestionImage,
+          searchSuggestionText
+        );
+        searchSuggestions.append(searchSuggestionContainer);
+      });
+    }
+  });
 };
 
 getBannerImages();
