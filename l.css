@@ -82,3 +82,10 @@ label{
 #text button:active{
     transform: translateX(6px) translateY(6px);
 }
+
+.toogle{
+    margin-top: 40px;
+}
+#sbtn{
+    width:40%;
+}
