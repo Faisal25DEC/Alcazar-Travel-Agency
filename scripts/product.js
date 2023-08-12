@@ -374,7 +374,7 @@ var displayTouristDestinations = function (
     }
   });
 };
-
+const searchBarInput = document.querySelector(".input-search>#search");
 var getTouristDestinations = async function (pageNumber) {
   let allTouristDestinationApiResponse = await fetch(
     `${baseUrl}/touristDestinations`

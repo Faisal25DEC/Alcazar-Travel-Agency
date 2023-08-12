@@ -81,9 +81,12 @@ body {
 .search-bar {
   display: flex;
   align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 .search-bar > .search-query {
   display: flex;
+  flex-shrink: 1;
   align-items: center;
   gap: 0.7rem;
 }
@@ -100,12 +103,15 @@ body {
   font-size: 14px;
 }
 .search-bar > .search-query > .search-query-input input {
+  width: 70%;
+  display: block;
   outline: none;
   border: none;
 }
 .search-bar > .search-destination {
   display: flex;
   align-items: center;
+  flex-shrink: 1;
   gap: 0.7rem;
   padding: 10px 10px;
 }
@@ -122,6 +128,8 @@ body {
   font-size: 14px;
 }
 .search-bar > .search-destination > .search-destination-input input {
+  width: 70%;
+  display: block;
   outline: none;
   border: none;
 }
@@ -129,6 +137,7 @@ body {
 .search-bar > .search-country {
   display: flex;
   align-items: center;
+  flex-shrink: 1;
   gap: 0.7rem;
   padding: 10px 10px;
 }
@@ -145,6 +154,8 @@ body {
   font-size: 14px;
 }
 .search-bar > .search-country > .search-country-input input {
+  width: 70%;
+  display: block;
   outline: none;
   border: none;
 }
@@ -389,4 +400,35 @@ body {
 .pagination ul li:last-child:hover {
   color: #fff;
   background: var(--base-color);
+}
+@media screen and (max-width: 890px) {
+  #products-body {
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 2rem 3rem;
+    margin-top: 5%;
+  }
+  #banner-left {
+    display: none;
+  }
+  #banner-right {
+    width: 98%;
+  }
+  .search-bar {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 490px) {
+  #products-body {
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    gap: 2rem 3rem;
+    margin-top: 5%;
+  }
 }

@@ -6,7 +6,7 @@ function navbar_2() {
     </div>
     <div class="nav-search">
       <div class="input-search">
-        <input type="text" placeholder="Search for Places" />
+        <input id = 'search' type="text" placeholder="Search for Places" />
         <div>
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
