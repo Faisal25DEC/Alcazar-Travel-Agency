@@ -1,5 +1,13 @@
-// Your code here, this will run after the entire HTML is loaded
-
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+// import { getDatabase , ref, set} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
+import { signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 const baseUrl = `http://localhost:3000`;
 const unsplashApiKey = `GyO4Y3ccun7RvAO8u4mPM8e-KNFfw3jC38X9Q-UnHsI`;
 const unsplashApiUrl = `https://api.unsplash.com/search/photos/?client_id=${unsplashApiKey}`;
@@ -8,6 +16,195 @@ const searchQuery = document.querySelector("#query");
 const stateSearch = document.querySelector("#state");
 const paginationT = document.querySelector(".pagination");
 console.log(searchQuery);
+
+// -----------------------------------Authentication Object -------------------------------------
+
+let authenticationObject = null;
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBHHxqdFZiyBTugOrwa5IYiIGiWzoiFws8",
+  authDomain: "myalcazar-54aa9.firebaseapp.com",
+  projectId: "myalcazar-54aa9",
+  storageBucket: "myalcazar-54aa9.appspot.com",
+  messagingSenderId: "902327114641",
+  appId: "1:902327114641:web:6ba16ea9f45fdc432ed830",
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    // User is logged in, retrieve user-specific data from Realtime Database
+    const uid = user.uid;
+    console.log(user);
+    const name = user.displayName;
+
+    const email = user.email;
+    authenticationObject = {
+      email: email,
+      name: name,
+    };
+
+    var newname = document.createElement("p");
+    newname.setAttribute("id", "user-name");
+    newname.textContent = name;
+    // console.log(email);
+    // console.log(name);
+    // // Assume "users" is the node where user data is stored
+    // console.log(uid);
+    var logout = document.createElement("button");
+    logout.setAttribute("id", "nav-logout");
+    logout.textContent = "Log Out";
+    var loginSignUpContainer = document.querySelector(
+      ".nav-login-signup-container>.nav-login-signup"
+    );
+    var login = document.querySelector(
+      ".nav-login-signup-container>.nav-login-signup>#nav-login"
+    );
+    var signup = document.querySelector(
+      ".nav-login-signup-container>.nav-login-signup>#nav-signup"
+    );
+    var dropdown = document.querySelector(
+      " .nav-login-signup-container>.dropdown"
+    );
+    dropdown.classList.remove("active");
+    login.style.display = "none";
+    signup.style.display = "none";
+
+    loginSignUpContainer.append(newname, logout);
+    document.getElementById("nav-logout").addEventListener("click", () => {
+      signOut(auth)
+        .then((user) => {
+          // Sign-out successful.
+          let logout = document.querySelector("#nav-logout");
+          loginSignUpContainer.removeChild(logout);
+          let userName = document.querySelector("#user-name");
+          loginSignUpContainer.removeChild(userName);
+
+          login.style.display = "block";
+          signup.style.display = "block";
+          dropdown.classList.remove("active");
+          authenticationObject = null;
+        })
+        .catch((error) => {
+          // An error happened.
+          console.log(error);
+        });
+    });
+  } else {
+    // User is not logged in, redirect to login page
+    console.log("user not signed in");
+    authenticationObject = null;
+  }
+});
+
+let googleLogin = document.getElementById("login-google");
+const provider = new GoogleAuthProvider();
+console.log(googleLogin);
+googleLogin.addEventListener("click", function () {
+  console.log("clicked");
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      console.log(user);
+
+      // IdP data available using getAdditionalUserInfo(result)
+      // ...
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.customData.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      console.log(errorMessage);
+      // ...
+    });
+});
+
+const element = document.querySelector(".pagination ul");
+
+function createPagination(totalPages, page) {
+  const paginationContainer = document.createElement("ul");
+  paginationContainer.classList.add("pagination");
+
+  let liTag = "";
+  let beforePage = page - 1;
+  let afterPage = page + 1;
+
+  if (beforePage < 0) beforePage = 0;
+
+  if (page > 1) {
+    liTag += `<li class="btn prev" data-page="${
+      page - 1
+    }"><span><i class="fas fa-angle-left"></i> Prev</span></li>`;
+  }
+
+  if (page > 2) {
+    liTag += `<li class="first numb" data-page="1"><span>1</span></li>`;
+    if (page > 3) {
+      liTag += `<li class="dots"><span>...</span></li>`;
+    }
+  }
+
+  if (page == totalPages) {
+    beforePage = beforePage - 2;
+  } else if (page == totalPages - 1) {
+    beforePage = beforePage - 1;
+  }
+
+  if (page == 1) {
+    afterPage = afterPage + 2;
+  } else if (page == 2) {
+    afterPage = afterPage + 1;
+  }
+
+  for (var plength = beforePage; plength <= afterPage; plength++) {
+    if (plength > totalPages) {
+      continue;
+    }
+    if (plength == 0) {
+      plength = plength + 1;
+    }
+    const activeClass = plength === page ? "active" : "";
+    liTag += `<li class="numb ${activeClass}" data-page="${plength}"><span>${plength}</span></li>`;
+  }
+
+  if (page < totalPages - 1) {
+    if (page < totalPages - 2) {
+      liTag += `<li class="dots"><span>...</span></li>`;
+    }
+    liTag += `<li class="last numb" data-page="${totalPages}"><span>${totalPages}</span></li>`;
+  }
+
+  if (page < totalPages) {
+    liTag += `<li class="btn next" data-page="${
+      page + 1
+    }"><span>Next <i class="fas fa-angle-right"></i></span></li>`;
+  }
+
+  paginationContainer.innerHTML = liTag;
+  paginationContainer
+    .querySelectorAll(".numb, .prev, .next")
+    .forEach((button) => {
+      button.addEventListener("click", function () {
+        const pageNumber = parseInt(button.dataset.page);
+        if (!isNaN(pageNumber)) {
+          createPagination(totalPages, pageNumber);
+          getTouristDestinations(pageNumber);
+        }
+      });
+    });
+
+  element.innerHTML = ""; // Clear existing content
+  element.appendChild(paginationContainer);
+}
 
 // selecting required element
 function showQueryResults(inputValue, statesData, touristDestinations) {
@@ -20,6 +217,7 @@ function showQueryResults(inputValue, statesData, touristDestinations) {
   console.log(touristDestinationsFilter);
   displayTouristDestinations(touristDestinationsFilter, statesData);
 }
+
 function showStateResults(inputValue, statesData, touristDestinations) {
   console.log(touristDestinations);
   paginationT.style.display = "none";
@@ -51,88 +249,10 @@ let debounce = function (func, delay) {
   };
 };
 
-const element = document.querySelector(".pagination ul");
 let totalPages = 13;
 let page = 1;
 
 //calling function with passing parameters and adding inside element which is ul tag
-
-function createPagination(totalPages, page) {
-  let liTag = "";
-  let active;
-  let beforePage = page - 1;
-  let afterPage = page + 1;
-  if (beforePage < 0) beforePage = 0;
-  if (page > 1) {
-    //show the next button if the page value is greater than 1
-    liTag += `<li class="btn prev" onclick="createPagination(totalPages, ${
-      page - 1
-    });getTouristDestinations(${
-      page - 1
-    })"><span><i class="fas fa-angle-left"></i> Prev</span></li>`;
-  }
-
-  if (page > 2) {
-    //if page value is less than 2 then add 1 after the previous button
-    liTag += `<li class="first numb" onclick="createPagination(totalPages, 1); getTouristDestinations(1)"><span>1</span></li>`;
-    if (page > 3) {
-      //if page value is greater than 3 then add this (...) after the first li or page
-      liTag += `<li class="dots"><span>...</span></li>`;
-    }
-  }
-
-  // how many pages or li show before the current li
-  if (page == totalPages) {
-    beforePage = beforePage - 2;
-  } else if (page == totalPages - 1) {
-    beforePage = beforePage - 1;
-  }
-  // how many pages or li show after the current li
-  if (page == 1) {
-    afterPage = afterPage + 2;
-  } else if (page == 2) {
-    afterPage = afterPage + 1;
-  }
-
-  for (var plength = beforePage; plength <= afterPage; plength++) {
-    if (plength > totalPages) {
-      //if plength is greater than totalPage length then continue
-      continue;
-    }
-    if (plength == 0) {
-      //if plength is 0 than add +1 in plength value
-      plength = plength + 1;
-    }
-    if (page == plength) {
-      //if page is equal to plength than assign active string in the active variable
-      active = "active";
-    } else {
-      //else leave empty to the active variable
-      active = "";
-    }
-    liTag += `<li class="numb ${active}" onclick="createPagination(totalPages, ${plength}); getTouristDestinations(${plength})"><span>${plength}</span></li>`;
-  }
-
-  if (page < totalPages - 1) {
-    //if page value is less than totalPage value by -1 then show the last li or page
-    if (page < totalPages - 2) {
-      //if page value is less than totalPage value by -2 then add this (...) before the last li or page
-      liTag += `<li class="dots"><span>...</span></li>`;
-    }
-    liTag += `<li class="last numb" onclick="createPagination(totalPages, ${totalPages}); getTouristDestinations(${totalPages})"><span>${totalPages}</span></li>`;
-  }
-
-  if (page < totalPages) {
-    //show the next button if the page value is less than totalPage(20)
-    liTag += `<li class="btn next" onclick="createPagination(totalPages, ${
-      page + 1
-    });getTouristDestinations(${
-      page + 1
-    })"><span>Next <i class="fas fa-angle-right"></i></span></li>`;
-  }
-  element.innerHTML = liTag; //add li tag inside ul tag
-  return liTag; //reurn the li tag
-}
 
 function changeImageWithAnimation(imageElement, src) {
   // Increment the index to get the next image source
@@ -277,6 +397,20 @@ var displayTouristDestinations = function (
     saveIcon.src = "../Product-images/save.png";
 
     saveDiv.append(saveIcon);
+
+    saveDiv.addEventListener("click", () => {
+      console.log("what");
+      if (authenticationObject) {
+        if (saveIcon.getAttribute("src") == "../Product-images/save.png") {
+          console.log("what");
+          saveIcon.src = "../Product-images/saved.png";
+        } else {
+          saveIcon.src = "../Product-images/save.png";
+        }
+      } else {
+        alert("Please Sign In to save");
+      }
+    });
 
     productCardBodyTop.append(timeDiv, saveDiv);
 
@@ -446,6 +580,13 @@ var getTouristDestinations = async function (pageNumber) {
           searchSuggestionImage,
           searchSuggestionText
         );
+        searchSuggestionContainer.addEventListener("click", () => {
+          localStorage.setItem(
+            "touristDestinationDetails",
+            JSON.stringify(touristDestination)
+          );
+          window.location.assign("../pages/productDetails.html");
+        });
         searchSuggestions.append(searchSuggestionContainer);
       });
     }

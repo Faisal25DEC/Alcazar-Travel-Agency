@@ -7,12 +7,13 @@
         <link rel="stylesheet" href="../styles/swiper-bundle.min.css">
         <!-- CSS -->
         <link rel="stylesheet" href="../styles/swiper.css">
+        <link rel="stylesheet" href="../styles/navbar_2.css">
         <link rel="stylesheet" href="../styles/productDetials.css">
       
 
     </head>
     <body>
-        <a href="product.html">Explore Places</a>
+        <nav id="navbar"></nav>
         <h1 id='place-name'>Golden Temple</h1>
         <div class="product-details-wrapper">
             <div class="product-details-left">
@@ -222,14 +223,27 @@
                 
             </div>
             <div class="swiper-pagination"></div></div>
-            <script>
+
+
+
+            <script type="module">
+                import navbar_2 from "../components/navbar_2.js";
+                let header = document.querySelector("#navbar");
+                header.innerHTML = navbar_2();
+                let login = document.querySelector("#nav-login");
+                login.addEventListener("click", () => {
+                  let dropdown = document.querySelector(".dropdown");
+                  dropdown.classList.toggle("active");
+                });
+              </script>
+            <script defer>
                 window.dispatchEvent(new Event('resize'));
             </script>
-            <script src="../scripts/swiper-bundle.min.js"></script>
-            <script src = '../scripts/swiper.js'></script>
+            <script src="../scripts/swiper-bundle.min.js" defer></script>
+            <script src = '../scripts/swiper.js' defer></script>
            
            
-            <script src='../scripts/productDetails.js'></script>
+            <script type = 'module' src='../scripts/productDetails.js' defer></script>
         </body>
 
        

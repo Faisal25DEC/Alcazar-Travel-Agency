@@ -2,6 +2,17 @@
 * {
   font-family: "Nunito";
 }
+:root {
+  --base-color: rgb(41, 164, 226);
+  --base-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+p {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
 nav {
   color: rgb(88, 88, 88);
   font-weight: 700;
@@ -9,6 +20,7 @@ nav {
   gap: 1rem;
   align-items: center;
   z-index: 12;
+  width: 99%;
 }
 nav > .nav-logo {
   display: flex;
@@ -20,8 +32,9 @@ nav > .nav-logo > img {
   height: 35px;
   margin-bottom: 6%;
 }
-nav > .nav-logo > p {
+nav > .nav-logo > a {
   font-size: 20px;
+  margin-bottom: 0;
 }
 nav > .nav-search {
   width: 30%;
@@ -82,8 +95,9 @@ nav > .nav-right {
   display: flex;
   gap: 1rem;
   margin-right: 2%;
+  justify-content: flex-end;
 }
-.nav-login-signup > #nav-login {
+.nav-login-signup #nav-login {
   border: solid 1px rgb(0, 119, 255);
   font-weight: 700;
   font-size: 17px;
@@ -111,7 +125,66 @@ nav > .nav-right > *:hover {
 }
 nav {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  width: 100%;
+  width: 99.8%;
   margin: auto;
   padding: 10px 4px;
+}
+.nav-login {
+  width: 7rem;
+  background-color: rgb(30, 116, 255);
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 10px;
+}
+.btn-danger {
+  border: none;
+}
+.nav-login:hover {
+  color: rgb(30, 116, 255);
+  background-color: white;
+  border: solid 1px rgb(30, 116, 255);
+}
+
+.nav-login-signup-container {
+  position: relative;
+}
+.nav-login-signup-container p {
+  text-align: center;
+  text-decoration: none;
+}
+.dropdown {
+  padding: 10px;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  color: rgb(2, 27, 54);
+  z-index: 14;
+  display: none;
+  margin-top: 1px;
+}
+.nav-login-signup-container > .active {
+  display: block;
+}
+.dropdown > p {
+  margin-top: 1rem;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  cursor: pointer;
+}
+.dropdown > p > i {
+  color: black;
+}
+.dropdown {
+  box-shadow: var(--base-box-shadow);
+  border-radius: 3px;
+}
+.nav-login-signup #nav-logout {
+  border: solid 1px rgb(0, 119, 255);
+  font-weight: 700;
+  font-size: 17px;
+  color: rgb(0, 119, 255);
+  background-color: white;
+  width: 6rem;
+  height: 2.5rem;
+  border-radius: 10px;
 }

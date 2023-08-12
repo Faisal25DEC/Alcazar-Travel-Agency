@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- Include only the Tailwind CSS stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="../styles/product.css" />
     <link rel="stylesheet" href="../styles/navbar_2.css" />
   </head>
@@ -82,10 +90,19 @@
       </div>
     </section>
   </body>
+
   <script type="module">
     import navbar_2 from "../components/navbar_2.js";
     let header = document.querySelector("#navbar");
     header.innerHTML = navbar_2();
+    let login = document.querySelector("#nav-login");
+    login.addEventListener("click", () => {
+      let dropdown = document.querySelector(".dropdown");
+      dropdown.classList.toggle("active");
+    });
   </script>
-  <script src="../scripts/product.js" defer></script>
+
+  <script defer></script>
+
+  <script type="module" src="../scripts/product.js" defer></script>
 </html>

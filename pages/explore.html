@@ -10,9 +10,11 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../styles/navbar_2.css" />
     <link rel="stylesheet" href="../styles/explore.css" />
   </head>
   <body>
+    <nav id="navbar"></nav>
     <a href="productDetails.html">Go Back</a>
     <div
       id="carouselExampleIndicators"
@@ -100,5 +102,17 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"
   ></script>
-  <script src="../scripts/explore.js"></script>
+
+  <script type="module">
+    import navbar_2 from "../components/navbar_2.js";
+    let header = document.querySelector("#navbar");
+    header.innerHTML = navbar_2();
+    let login = document.querySelector("#nav-login");
+    login.addEventListener("click", () => {
+      let dropdown = document.querySelector(".dropdown");
+      dropdown.classList.toggle("active");
+    });
+  </script>
+
+  <script type="module" src="../scripts/explore.js" defer></script>
 </html>

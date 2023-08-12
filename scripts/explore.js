@@ -1,3 +1,8 @@
+import firebaseAuth from "../components/firebaseAuth.js";
+import { authenticationObject } from "../components/firebaseAuth.js";
+
+firebaseAuth();
+
 const baseUrl = `http://localhost:3000`;
 var placeDetails = JSON.parse(
   localStorage.getItem("touristDestinationDetails")
@@ -75,6 +80,12 @@ var getStateDetails = async function () {
   let { state } = placeDetails;
   let apiResponse = await fetch(`${baseUrl}/state`);
   let data = await apiResponse.json();
+
+  let allTouristDestinationApiResponse = await fetch(
+    `${baseUrl}/touristDestinations`
+  );
+  let allTouristDestinations = await allTouristDestinationApiResponse.json();
+
   console.log(data);
   let idx = data.findIndex((element) => element.name == state);
   displayStateImages(data[idx]);
@@ -93,6 +104,63 @@ var getStateDetails = async function () {
         displayStateTouristDestinations(data[idx].tourist);
       }
     });
+  });
+
+  const searchBarInput = document.querySelector(
+    "#navbar .input-search>#search"
+  );
+
+  searchBarInput.addEventListener("input", () => {
+    const searchSuggestions = document.querySelector(".search-suggestions");
+    searchSuggestions.innerHTML = "";
+    let inputValue = event.target.value;
+    if (inputValue == "") {
+      searchSuggestions.style.display = "none";
+      return;
+    } else {
+      searchSuggestions.style.display = "block";
+      let newRegExp = new RegExp(inputValue, "gi");
+      let searchTouristDestinationsFilter = allTouristDestinations.filter(
+        (touristDestination) => {
+          return touristDestination.name.match(newRegExp);
+        }
+      );
+      console.log(searchTouristDestinationsFilter);
+
+      searchTouristDestinationsFilter.forEach((touristDestination) => {
+        let { images, name, state } = touristDestination;
+        let searchSuggestionContainer = document.createElement("div");
+        searchSuggestionContainer.classList.add("search-suggestion");
+
+        let searchSuggestionImage = document.createElement("img");
+        searchSuggestionImage.src = images;
+
+        let searchSuggestionText = document.createElement("div");
+
+        let searchSuggestionState = document.createElement("p");
+        searchSuggestionState.textContent = state;
+
+        let searchSuggestionTitle = document.createElement("p");
+        searchSuggestionTitle.textContent = name;
+        searchSuggestionText.append(
+          searchSuggestionTitle,
+          searchSuggestionState
+        );
+
+        searchSuggestionContainer.append(
+          searchSuggestionImage,
+          searchSuggestionText
+        );
+        searchSuggestionContainer.addEventListener("click", () => {
+          localStorage.setItem(
+            "touristDestinationDetails",
+            JSON.stringify(touristDestination)
+          );
+          window.location.assign("../pages/productDetails.html");
+        });
+        searchSuggestions.append(searchSuggestionContainer);
+      });
+    }
   });
 };
 getStateDetails();

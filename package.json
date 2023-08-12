@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Faisal25DEC/Alcazar-Travel-Agency#readme",
   "dependencies": {
-    "json-server": "^0.17.3"
+    "json-server": "^0.17.3",
+    "tailwindcss": "^3.3.3"
   }
 }
