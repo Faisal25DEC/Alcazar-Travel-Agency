@@ -119,7 +119,7 @@
   //   ref,
   //   set,
   // } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
-
+  const baseUrl = `http://localhost:3000`;
   const firebaseConfig = {
     apiKey: "AIzaSyBHHxqdFZiyBTugOrwa5IYiIGiWzoiFws8",
     authDomain: "myalcazar-54aa9.firebaseapp.com",
@@ -153,6 +153,14 @@
             alert("Account succesfully made");
             loginform.style.display = "block";
             signupform.style.display = "none";
+            const obj = {
+              displayName: userName,
+              email: email,
+              bookings: [],
+              wishlist: [],
+            };
+            console.log(obj);
+            postUser(obj);
             // ...
           })
           .catch((error) => {
@@ -202,6 +210,22 @@
         // The signed-in user info.
         const user = result.user;
         console.log(user);
+        fetch(`${baseUrl}/users`)
+          .then((res) => res.json())
+          .then((usersArray) => {
+            let idx = usersArray.findIndex((obj) => obj.email == user.email);
+            const userObject = {
+              displayName: user.displayName,
+              email: user.email,
+              bookings: [],
+              wishlist: [],
+            };
+            if (idx == -1) {
+              postUser(userObject);
+              console.log(userObject);
+            }
+          });
+
         window.location.assign("./home.html");
         // IdP data available using getAdditionalUserInfo(result)
         // ...
@@ -218,4 +242,14 @@
         // ...
       });
   });
+
+  async function postUser(obj) {
+    let apiRes = fetch(`${baseUrl}/users`, {
+      method: "POST",
+      body: JSON.stringify(obj),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }
 </script>

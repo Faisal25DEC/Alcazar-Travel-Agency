@@ -103,6 +103,16 @@
     document.querySelector("#nav-signup").addEventListener("click", () => {
       window.location.assign("./mainlogin.html");
     });
+    const screenWidth = window.innerWidth;
+    if (screenWidth < 950) {
+      document.querySelector("nav>label").addEventListener("click", () => {
+        console.log("label");
+        document.querySelector(".nav-right-container").classList.toggle("left");
+      });
+    }
+    if (screenWidth < 500) {
+      document.querySelector(".nav-logo>p").textContent = "";
+    }
   </script>
 
   <script defer></script>

@@ -9,7 +9,8 @@ import {
 // import { getDatabase , ref, set} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
 import { signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 
-let authenticationObject = null;
+let authenticationObject = { isLoggedIn: false };
+const baseUrl = `http://localhost:3000`;
 function firebaseAuth() {
   const firebaseConfig = {
     apiKey: "AIzaSyBHHxqdFZiyBTugOrwa5IYiIGiWzoiFws8",
@@ -30,10 +31,10 @@ function firebaseAuth() {
       const name = user.displayName;
 
       const email = user.email;
-      authenticationObject = {
-        email: email,
-        name: name,
-      };
+      authenticationObject["isLoggedIn"] = true;
+      authenticationObject["email"] = email;
+      authenticationObject["displayName"] = name;
+      console.log(authenticationObject);
 
       var newname = document.createElement("p");
       newname.setAttribute("id", "user-name");
@@ -74,7 +75,9 @@ function firebaseAuth() {
             login.style.display = "block";
             signup.style.display = "block";
             dropdown.classList.remove("active");
-            authenticationObject = null;
+            authenticationObject.isLoggedIn = false;
+            delete authenticationObject.email;
+            delete authenticationObject.displayName;
           })
           .catch((error) => {
             // An error happened.
@@ -84,7 +87,9 @@ function firebaseAuth() {
     } else {
       // User is not logged in, redirect to login page
       console.log("user not signed in");
-      authenticationObject = null;
+      authenticationObject.isLoggedIn = false;
+      delete authenticationObject.email;
+      delete authenticationObject.displayName;
     }
   });
 
@@ -101,7 +106,23 @@ function firebaseAuth() {
         // The signed-in user info.
         const user = result.user;
         console.log(user);
-
+        fetch(`${baseUrl}/users`)
+          .then((res) => res.json())
+          .then((usersArray) => {
+            let idx = usersArray.findIndex((obj) => obj.email == user.email);
+            console.log(idx);
+            const userObject = {
+              displayName: user.displayName,
+              email: user.email,
+              bookings: [],
+              wishlist: [],
+            };
+            if (idx == -1) {
+              postUser(userObject);
+              console.log(userObject);
+            }
+          })
+          .catch((err) => console.log(err));
         // IdP data available using getAdditionalUserInfo(result)
         // ...
       })
@@ -117,6 +138,16 @@ function firebaseAuth() {
         // ...
       });
   });
+
+  async function postUser(obj) {
+    let apiRes = fetch(`${baseUrl}/users`, {
+      method: "POST",
+      body: JSON.stringify(obj),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }
 }
 export default firebaseAuth;
 export { authenticationObject };

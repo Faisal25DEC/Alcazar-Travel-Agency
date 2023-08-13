@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="../styles/swiper-bundle.min.css">
         <!-- CSS -->
         <link rel="stylesheet" href="../styles/swiper.css">
@@ -13,6 +14,11 @@
 
     </head>
     <body>
+        <div id="login-alert-container">
+            <div id="login-alert">
+                <p>User Not Logged In</p>
+            </div>
+        </div>
         <nav id="navbar"></nav>
         <h1 id='place-name'>Golden Temple</h1>
         <div class="product-details-wrapper">
@@ -238,6 +244,16 @@
                 document.querySelector("#nav-signup").addEventListener("click", () => {
       window.location.assign("./mainlogin.html");
     });
+    const screenWidth = window.innerWidth;
+    if (screenWidth < 950) {
+      document.querySelector("nav>label").addEventListener("click", () => {
+        console.log("label");
+        document.querySelector(".nav-right-container").classList.toggle("left");
+      });
+    }
+    if (screenWidth < 500) {
+      document.querySelector(".nav-logo>p").textContent = "";
+    }
               </script>
             <script defer>
                 window.dispatchEvent(new Event('resize'));

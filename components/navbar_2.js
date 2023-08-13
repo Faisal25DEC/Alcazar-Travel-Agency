@@ -13,6 +13,7 @@ function navbar_2() {
   </div>
   <div class="search-suggestions"></div>
 </div>
+<div class = 'nav-right-container'>
 <div class="nav-right">
   <a href = './home.html'>Home</a>
   <a href = './product.html'>Explore Places</a>
@@ -30,6 +31,11 @@ function navbar_2() {
     <a id = 'login-google'><i class="fa-brands fa-google"></i>Login With Google</a>
   </div>
 </div>
+</div>
+<input type="checkbox" id="check" />
+<label for="check" class="checkbtn">
+  <i class="fas fa-bars"></i>
+</label>
  `;
 }
 export default navbar_2;

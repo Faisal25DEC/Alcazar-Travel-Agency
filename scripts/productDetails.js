@@ -6,12 +6,15 @@ firebaseAuth();
 const countElement = document.getElementById("count");
 const addButton = document.getElementById("add-button");
 const reduceButton = document.getElementById("reduce-button");
+const loginAlert = document.getElementById("login-alert-container");
+const loginAlertText = document.querySelector("#login-alert>p");
 const placeDetails = JSON.parse(
   localStorage.getItem("touristDestinationDetails")
 );
 const baseUrl = `http://localhost:3000`;
 const unsplashApiKey = `GyO4Y3ccun7RvAO8u4mPM8e-KNFfw3jC38X9Q-UnHsI`;
 const unsplashApiUrl = `https://api.unsplash.com/search/photos/?client_id=${unsplashApiKey}`;
+
 let count = 0;
 
 // Function to update the count display
@@ -123,6 +126,23 @@ let displayProductDetailsStats = function () {
 let displayProductDetails = function (placeImages) {
   displayProductDetailsImages(placeImages);
   displayProductDetailsStats();
+  document.querySelector(".book-now").addEventListener("click", () => {
+    if (authenticationObject.isLoggedIn) {
+      if (!count) {
+        loginAlert.style.display = "block";
+        loginAlertText.textContent = "Add Guests!!!";
+        setTimeout(() => {
+          loginAlert.style.display = "none";
+        }, 2500);
+      }
+    } else {
+      loginAlert.style.display = "block";
+      loginAlertText.textContent = "User Not Logged In!!";
+      setTimeout(() => {
+        loginAlert.style.display = "none";
+      }, 2500);
+    }
+  });
 };
 
 let getPlaceImages = async function () {

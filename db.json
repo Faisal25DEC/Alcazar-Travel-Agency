@@ -18,8 +18,35 @@
   },
   "users": [
     {
+      "id": "1",
       "displayName": "Faisal",
-      "bookings": "[]"
+      "email": "faisal@gmail.com",
+      "bookings": "[]",
+      "wishlist": "[]"
+    },
+    {
+      "id": "Q5eQz1f"
+    },
+    {
+      "displayName": "a6",
+      "email": "a6@gmail.com",
+      "bookings": [],
+      "wishlist": [],
+      "id": "IlIcIfv"
+    },
+    {
+      "displayName": "Muhammad Faisal",
+      "email": "faisalmd25121999@gmail.com",
+      "bookings": [],
+      "wishlist": [],
+      "id": "rtz5qIT"
+    },
+    {
+      "displayName": "Mohd. Faisal 085",
+      "email": "mohdfaisal2363@gmail.com",
+      "bookings": [],
+      "wishlist": [],
+      "id": "5csCd4p"
     }
   ],
   "state": [

@@ -436,4 +436,21 @@ body {
     gap: 2rem 3rem;
     margin-top: 5%;
   }
+  .search-bar {
+    width: 50%;
+    flex-direction: column;
+    left: -2%;
+  }
+  .search-bar > div > div:nth-child(2) {
+    width: 90%;
+  }
+  .search-bar > div > div:nth-child(1) {
+    width: 10%;
+  }
+  .search-bar * {
+    width: 100%;
+  }
+  .banner-right-images > .image-1 {
+    display: none;
+  }
 }

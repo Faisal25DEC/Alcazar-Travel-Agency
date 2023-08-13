@@ -85,10 +85,16 @@ nav > .nav-search input {
 nav > .nav-search > div {
   font-size: inherit;
 }
-nav > .nav-right {
+nav > .nav-right-container {
+  display: flex;
+  width: 60%;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+nav .nav-right-container > .nav-right {
   display: flex;
   gap: 1.5rem;
-  width: 50%;
+
   align-items: center;
   justify-content: flex-end;
 }
@@ -118,7 +124,7 @@ nav > .nav-right {
   width: 6rem;
   height: 2.5rem;
 }
-nav > .nav-right > *:hover {
+nav .nav-right-container > .nav-right > *:hover {
   cursor: pointer;
   color: rgb(20, 134, 255);
   transition: all 0.4 ease-in-out;
@@ -190,4 +196,62 @@ nav {
   width: 6rem;
   height: 2.5rem;
   border-radius: 10px;
+}
+.checkbtn {
+  font-size: 20px;
+  display: none;
+}
+#check {
+  display: none;
+}
+@media (max-width: 952px) {
+  nav {
+    position: fixed;
+    background-color: white;
+    z-index: 99;
+    gap: 0.2rem;
+  }
+  .checkbtn {
+    display: block;
+    margin-left: auto;
+    margin-right: 3%;
+  }
+  nav > .nav-search {
+    width: 70%;
+  }
+  nav > .nav-search > .input-search {
+    margin-left: 0;
+  }
+  nav > .nav-right-container {
+    position: fixed;
+    width: 70%;
+    height: 90vh;
+    background: #ffffff;
+    top: 9%;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+    z-index: 99;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 99;
+    font-size: 21px;
+    gap: 1.5rem;
+  }
+  nav > .nav-right-container > .nav-right {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  nav > .left {
+    left: 0;
+  }
+  .nav-login-signup {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .dropdown {
+    left: 50%;
+    top: 50%;
+  }
 }
