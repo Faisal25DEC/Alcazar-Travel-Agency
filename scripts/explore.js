@@ -4,9 +4,9 @@ import { authenticationObject } from "../components/firebaseAuth.js";
 firebaseAuth();
 
 const baseUrl = `http://localhost:3000`;
-var placeDetails = JSON.parse(
-  localStorage.getItem("touristDestinationDetails")
-);
+var placeDetails =
+  JSON.parse(localStorage.getItem("stateName")) ||
+  JSON.parse(localStorage.getItem("touristDestinationDetails"));
 
 function displayStateImages(stateData) {
   let { img } = stateData;

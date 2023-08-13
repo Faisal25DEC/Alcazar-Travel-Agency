@@ -1,3 +1,5 @@
+import firebaseAuth from "../components/firebaseAuth.js";
+import { authenticationObject } from "../components/firebaseAuth.js";
 // var bookings = [
 //     {
 //         name: "NEIL ISLAND",
@@ -83,7 +85,7 @@
 // import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 // import { getDatabase , ref, set} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
 // import { signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
-      
+
 // async function fetchUsers(email,name){
 // try{
 //   var response=await fetch(`${BaseUrl} /users?email=${email}`);
@@ -113,14 +115,14 @@
 //       const uid = user.uid;
 //       console.log(user);
 //       const name = user.displayName;
-    
+
 //       const email = user.email;
 //       fetchUsers(email,name);
 //       var newname=document.getElementById("newname");
 //       newname.textContent=name;
 //       console.log(email);
 //       console.log(name);
-    
+
 //       console.log(uid);
 //       var logout=document.createElement("button");
 //       logout.setAttribute("id","logout");
@@ -140,7 +142,7 @@
 //   });
 
 //     }
-    
+
 //     else {
 //       // User is not logged in, redirect to login page
 //       window.location.href = "mainlogin.html";
@@ -169,13 +171,15 @@
 //         bookedTill:n
 //     }]
 //     },
- 
 
 //   ];
 //   console.log(users)
-  
+const baseUrl = "http://localhost:3000";
+
+firebaseAuth();
+console.log(authenticationObject);
 document.querySelector("#btnradio1").addEventListener("click", function () {
-  var book = JSON.parse(localStorage.getItem("bookings"));
+  var book = JSON.parse(localStorage.getItem("bookings")) || [];
   if (book.length == 0) {
     document.querySelector(
       "#content"
@@ -282,13 +286,74 @@ function review(rev) {
   }
   return rev;
 }
-var book = JSON.parse(localStorage.getItem("bookings"));
+var book = JSON.parse(localStorage.getItem("bookings")) || [];
 if (book.length == 0) {
   document.querySelector(
     "#content"
   ).innerHTML = `<h2>No Current Bookings Available<h2/>`;
 } else updateDisplay(book);
 
+const searchBarInput = document.querySelector("#navbar .input-search>#search");
+console.log(searchBarInput);
+let detour = async function () {
+  let allTouristDestinationApiResponse = await fetch(
+    `${baseUrl}/touristDestinations`
+  );
+  let allTouristDestinations = await allTouristDestinationApiResponse.json();
+  searchBarInput.addEventListener("input", () => {
+    const searchSuggestions = document.querySelector(".search-suggestions");
+    searchSuggestions.innerHTML = "";
+    let inputValue = event.target.value;
+    if (inputValue == "") {
+      searchSuggestions.style.display = "none";
+      return;
+    } else {
+      searchSuggestions.style.display = "block";
+      let newRegExp = new RegExp(inputValue, "gi");
+      let searchTouristDestinationsFilter = allTouristDestinations.filter(
+        (touristDestination) => {
+          return touristDestination.name.match(newRegExp);
+        }
+      );
+      console.log(searchTouristDestinationsFilter);
+
+      searchTouristDestinationsFilter.forEach((touristDestination) => {
+        let { images, name, state } = touristDestination;
+        let searchSuggestionContainer = document.createElement("div");
+        searchSuggestionContainer.classList.add("search-suggestion");
+
+        let searchSuggestionImage = document.createElement("img");
+        searchSuggestionImage.src = images;
+
+        let searchSuggestionText = document.createElement("div");
+
+        let searchSuggestionState = document.createElement("p");
+        searchSuggestionState.textContent = state;
+
+        let searchSuggestionTitle = document.createElement("p");
+        searchSuggestionTitle.textContent = name;
+        searchSuggestionText.append(
+          searchSuggestionTitle,
+          searchSuggestionState
+        );
+
+        searchSuggestionContainer.append(
+          searchSuggestionImage,
+          searchSuggestionText
+        );
+        searchSuggestionContainer.addEventListener("click", () => {
+          localStorage.setItem(
+            "touristDestinationDetails",
+            JSON.stringify(touristDestination)
+          );
+          window.location.assign("../pages/productDetails.html");
+        });
+        searchSuggestions.append(searchSuggestionContainer);
+      });
+    }
+  });
+};
+detour();
 //console.log(Date.now())
 
 // Open the modal
@@ -304,7 +369,7 @@ if (book.length == 0) {
 
 //   console.log(formattedDate);
 
-    // console.log(formattedDate);
-    // const upcomingEvents = array.filter(element => element.date >= bookedTill);
+// console.log(formattedDate);
+// const upcomingEvents = array.filter(element => element.date >= bookedTill);
 
-    // console.log(upcomingEvents);
+// console.log(upcomingEvents);

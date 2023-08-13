@@ -14,8 +14,9 @@ function navbar_2() {
   <div class="search-suggestions"></div>
 </div>
 <div class="nav-right">
-  <a>Home</a>
+  <a href = './home.html'>Home</a>
   <a href = './product.html'>Explore Places</a>
+  <a href = './bookings.html'>My Bookings</a>
 </div>
 <div class="nav-login-signup-container">
   <div class="nav-login-signup">
@@ -25,8 +26,8 @@ function navbar_2() {
   
   </div>
   <div class="dropdown">
-    <p id = 'login-email'><i class="fa-regular fa-envelope"></i>Login With Email</p>
-    <p id = 'login-google'><i class="fa-brands fa-google"></i>Login With Google</p>
+    <a href = './mainlogin.html' id = 'login-email'><i class="fa-regular fa-envelope"></i>Login With Email</a>
+    <a id = 'login-google'><i class="fa-brands fa-google"></i>Login With Google</a>
   </div>
 </div>
  `;

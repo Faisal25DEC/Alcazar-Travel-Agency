@@ -11,6 +11,7 @@ p {
   margin: 0;
 }
 a {
+  display: block;
   text-decoration: none;
 }
 nav {
@@ -164,12 +165,14 @@ nav {
 .nav-login-signup-container > .active {
   display: block;
 }
-.dropdown > p {
+.dropdown > a {
   margin-top: 1rem;
   display: flex;
   gap: 2px;
   align-items: center;
   cursor: pointer;
+  color: black;
+  text-decoration: none;
 }
 .dropdown > p > i {
   color: black;

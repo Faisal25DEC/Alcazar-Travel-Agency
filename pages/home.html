@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage</title>
-    <link rel="stylesheet" href="./home.css" />
+    <link rel="stylesheet" href="../styles/home.css" />
   </head>
 
   <body>
@@ -18,14 +18,14 @@
           <h3>Alcazar</h3>
         </div>
         <div id="second">
+          <a href="./product.html">Explore Places</a>
           <a href="">Guide</a>
-          <a href="">My bookings</a>
-          <a href="">Saved</a>
+          <a href="./bookings.html">My bookings</a>
+          <a href="./whislist.html">Saved</a>
         </div>
         <div id="third">
           <a href="./mainlogin.html"><h3 id="newname">Login/Signup</h3></a>
           <!-- <h3 id="logout" style="display:none;">Logout</h3> -->
-          
         </div>
       </div>
 
@@ -61,9 +61,7 @@
           />
         </div>
       </div>
-      <div id="uhi" style="display:none;">
-       
-      </div>
+      <div id="uhi" style="display: none"></div>
     </div>
 
     <!-- general -->
@@ -145,7 +143,7 @@
     <!-- img div -->
 
     <div class="image-container">
-      <img src="./sand.avif" alt="Your Image" />
+      <img src="..Product-images/sand.avif" alt="Your Image" />
       <div class="overlay">
         <h2 id="alert">Set your price alert now</h2>
         <p id="ai">
@@ -221,66 +219,62 @@
   </body>
 </html>
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
-// import { getDatabase , ref, set} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
-import { signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
-        
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+  import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    GoogleAuthProvider,
+  } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+  // import { getDatabase , ref, set} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
+  import { signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 
+  const firebaseConfig = {
+    apiKey: "AIzaSyBHHxqdFZiyBTugOrwa5IYiIGiWzoiFws8",
+    authDomain: "myalcazar-54aa9.firebaseapp.com",
+    projectId: "myalcazar-54aa9",
+    storageBucket: "myalcazar-54aa9.appspot.com",
+    messagingSenderId: "902327114641",
+    appId: "1:902327114641:web:6ba16ea9f45fdc432ed830",
+  };
 
-const firebaseConfig = {
-          apiKey: "AIzaSyBHHxqdFZiyBTugOrwa5IYiIGiWzoiFws8",
-          authDomain: "myalcazar-54aa9.firebaseapp.com",
-          projectId: "myalcazar-54aa9",
-          storageBucket: "myalcazar-54aa9.appspot.com",
-          messagingSenderId: "902327114641",
-          appId: "1:902327114641:web:6ba16ea9f45fdc432ed830"
-        };
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth();
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      // User is logged in, retrieve user-specific data from Realtime Database
+      const uid = user.uid;
+      console.log(user);
+      const name = user.displayName;
 
-        const app = initializeApp(firebaseConfig);
-const auth=getAuth();
-        auth.onAuthStateChanged((user) => {
-      if (user) {
-        // User is logged in, retrieve user-specific data from Realtime Database
-        const uid = user.uid;
-        console.log(user);
-        const name = user.displayName;
-      
-        const email = user.email;
-        var newname=document.getElementById("newname");
-        newname.textContent=name;
-        // console.log(email);
-        // console.log(name);
-        // // Assume "users" is the node where user data is stored
-        // console.log(uid);
-        var logout=document.createElement("button");
-        logout.setAttribute("id","logout");
-        logout.textContent="Log Out";
-         var newdiv=document.getElementById("third");
-         newdiv.append(logout);
-         document.getElementById("logout").addEventListener("click", () => {
-    signOut(auth)
-      .then((user) => {
-        // Sign-out successful.
-        console.log(user);
-      })
-      .catch((error) => {
-        // An error happened.
-        console.log(error);
-      });
-  });
-
-      }
-      
-      else {
-        // User is not logged in, redirect to login page
-        window.location.href = "mainlogin.html";
-      }
-
-    });
-
-
-
+      const email = user.email;
+      var newname = document.getElementById("newname");
+      newname.textContent = name;
+      // console.log(email);
+      // console.log(name);
+      // // Assume "users" is the node where user data is stored
+      // console.log(uid);
+      var logout = document.createElement("button");
+      logout.setAttribute("id", "logout");
+      logout.textContent = "Log Out";
+      var newdiv = document.getElementById("third");
+      newdiv.append(logout);
+      document.getElementById("logout").addEventListener("click", () => {
+        signOut(auth)
+          .then((user) => {
+            // Sign-out successful.
+            console.log(user);
+          })
+          .catch((error) => {
+            // An error happened.
+            console.log(error);
+          });
+      });
+    } else {
+      // User is not logged in, redirect to login page
+    }
+  });
 
   const arr = [
     {
@@ -339,7 +333,6 @@ const auth=getAuth();
     },
   ];
 
-
   // You can access the elements of the array like this:
   // console.log(tourismReviews[4].name); // Output: Sophia Williams
   // console.log(tourismReviews[5].rating); // Output: 4.9
@@ -387,83 +380,72 @@ const auth=getAuth();
     review.append(main);
   });
   document.getElementById("in").addEventListener("keyup", function () {
-    
     var u = document.getElementById("uhi");
-    if(event.target.value==""){
-      u.style.display="none";
+    if (event.target.value == "") {
+      u.style.display = "none";
+    } else {
+      u.innerHTML = "";
+
+      u.style.display = "block";
+      var val = event.target.value;
+      var states_of_india = [
+        "Andhra Pradesh",
+        "Arunachal Pradesh",
+        "Assam",
+        "Bihar",
+        "Chhattisgarh",
+        "Goa",
+        "Gujarat",
+        "Haryana",
+        "Himachal Pradesh",
+        "Jharkhand",
+        "Karnataka",
+        "Kerala",
+        "Madhya Pradesh",
+        "Maharashtra",
+        "Manipur",
+        "Meghalaya",
+        "Mizoram",
+        "Nagaland",
+        "Odisha",
+        "Punjab",
+        "Rajasthan",
+        "Sikkim",
+        "Tamil Nadu",
+        "Telangana",
+        "Tripura",
+        "Uttar Pradesh",
+        "Uttarakhand",
+        "West Bengal",
+        "Andaman & Nicobar",
+        "Chandigarh",
+        "Dadra and Nagar Haveli and Daman and Diu",
+        "Lakshadweep",
+        "Delhi",
+        "Ladakh",
+        "Puducherry",
+        "Lakshadweep",
+      ];
+
+      var arr2 = states_of_india.filter(function (element) {
+        let newRegExp = new RegExp(`^${val}`, "gi");
+        return element.match(newRegExp);
+      });
+      arr2.forEach((element) => {
+        var p1 = document.createElement("p");
+
+        p1.textContent = element;
+
+        u.append(p1);
+
+        p1.addEventListener("click", function () {
+          localStorage.setItem(
+            "stateName",
+            JSON.stringify({ state: p1.textContent })
+          );
+          window.location.assign("./explore.html");
+        });
+      });
     }
-    else{
-    u.innerHTML="";
-    
-    u.style.display = "block";
-    var val=event.target.value;
-     var states_of_india = [
-    "Andhra Pradesh",
-    "Arunachal Pradesh",
-    "Assam",
-    "Bihar",
-    "Chhattisgarh",
-    "Goa",
-    "Gujarat",
-    "Haryana",
-    "Himachal Pradesh",
-    "Jharkhand",
-    "Karnataka",
-    "Kerala",
-    "Madhya Pradesh",
-    "Maharashtra",
-    "Manipur",
-    "Meghalaya",
-    "Mizoram",
-    "Nagaland",
-    "Odisha",
-    "Punjab",
-    "Rajasthan",
-    "Sikkim",
-    "Tamil Nadu",
-    "Telangana",
-    "Tripura",
-    "Uttar Pradesh",
-    "Uttarakhand",
-    "West Bengal",
-    "Andaman and Nicobar Islands",
-    "Chandigarh",
-    "Dadra and Nagar Haveli and Daman and Diu",
-    "Lakshadweep",
-    "Delhi",
-    "Ladakh",
-    "Puducherry",
-    "Lakshadweep"
-];
-
- var arr2=states_of_india.filter(function(element){
-
-  let newRegExp = new RegExp(`^${val}`, "gi");
-    return element.match(newRegExp);
-    
-});
-arr2.forEach(element => {
-  var p1=document.createElement("p");
-
-  p1.textContent=element;
-  
-   u.append(p1);
-
-   p1.addEventListener("click",function(){
-
-localStorage.setItem("stateName",p1.textContent);
-window.location.assign("./explore.html");
-
-   })
-});
-     
-    }
-      
-
-
-
-
   });
-
-
 </script>
