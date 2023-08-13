@@ -74,7 +74,7 @@ p {
   background-color: ;
 }
 
-.b,.cancel{
+.b , .cancel{
   color: white;
   background-color: rgb(7, 166, 214);
   border-radius: 6px;

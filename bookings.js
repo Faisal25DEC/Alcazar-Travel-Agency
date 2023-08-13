@@ -106,7 +106,7 @@
 //       };
 
 //       const app = initializeApp(firebaseConfig);
-// const auth=getAuth();
+//       const auth=getAuth();
 //       auth.onAuthStateChanged((user) => {
 //     if (user) {
 //       // User is logged in, retrieve user-specific data from Realtime Database
