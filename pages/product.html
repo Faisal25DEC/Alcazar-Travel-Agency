@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Include only the Tailwind CSS stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../styles/product.css" />
+    <link rel="stylesheet" href="../styles/navbar_2.css" />
+  </head>
+  <body>
+    <nav id="navbar"></nav>
+    <!-- ------------------------------------ BANNER---------------------------------- -->
+    <header>
+      <div id="banner">
+        <div id="banner-left">
+          <div class="banner-left-title">
+            <h1>
+              <span>Adventure </span>
+              & Experience Travel
+            </h1>
+          </div>
+        </div>
+        <div id="banner-right">
+          <div class="banner-right-images">
+            <div class="image-1">
+              <img
+                src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?crop=entropy&cs=srgb&fm=jpg&ixid=M3w0ODUyMjV8MHwxfHNlYXJjaHwyfHx0cmF2ZWx8ZW58MHx8fHwxNjkxMzgzMzc3fDA&ixlib=rb-4.0.3&q=85"
+                alt=""
+              />
+            </div>
+            <div class="image-2">
+              <img
+                src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?crop=entropy&cs=srgb&fm=jpg&ixid=M3w0ODUyMjV8MHwxfHNlYXJjaHwyfHx0cmF2ZWx8ZW58MHx8fHwxNjkxMzgzMzc3fDA&ixlib=rb-4.0.3&q=85"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="search-bar">
+          <div class="search-query">
+            <div class="search-query-logo">
+              <img src="../Product-images/search.png" alt="" />
+            </div>
+            <div class="search-query-input">
+              <label for="search">Search</label>
+              <input type="text" id="query" placeholder="Search" />
+            </div>
+          </div>
+          <div class="search-destination">
+            <div class="search-destination-logo">
+              <img src="../Product-images/location.png" alt="" />
+            </div>
+            <div class="search-destination-input">
+              <label for="search">States</label>
+              <input type="text" id="state" placeholder="States" />
+            </div>
+          </div>
+          <div class="search-country">
+            <div class="search-country-logo">
+              <img src="../Product-images/globe.png" alt="" />
+            </div>
+            <div class="search-country-input">
+              <label for="search">Country</label>
+              <input type="text" id="country" placeholder="Country" />
+            </div>
+          </div>
+          <div class="search-btn">
+            <button>Search</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div id="products-body"></div>
+    </section>
+
+    <section id="pagination-cotainer">
+      <div class="pagination">
+        <ul>
+          <!--pages or li are comes from javascript -->
+        </ul>
+      </div>
+    </section>
+  </body>
+
+  <script type="module">
+    import navbar_2 from "../components/navbar_2.js";
+    let header = document.querySelector("#navbar");
+    header.innerHTML = navbar_2();
+    let login = document.querySelector("#nav-login");
+    login.addEventListener("click", () => {
+      let dropdown = document.querySelector(".dropdown");
+      dropdown.classList.toggle("active");
+    });
+  </script>
+
+  <script defer></script>
+
+  <script type="module" src="../scripts/product.js" defer></script>
+</html>
