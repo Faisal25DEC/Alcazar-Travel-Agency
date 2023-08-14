@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+body {
+  width: 100%;
+}
+header {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  text-align: right;
+  margin-right: -20rem;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  font-size: 18px;
+}
+header .home-link {
+  text-decoration: none;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.home-link:hover {
+  color: rgb(12, 134, 255);
+}
+#container {
+  display: flex;
+  width: 80%;
+  height: 100vh;
+  gap: 30px;
+  /* margin-left: 7%; */
+  /* margin-top: 1%; */
+  justify-content: center;
+}
+
+#pic {
+  width: 60%;
+}
+#text {
+  width: 50%;
+  margin-top: 2%;
+}
+#pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio */
+}
+#text h3 {
+  text-align: center;
+  margin-top: 0;
+  color: rgb(48, 48, 136);
+  font-size: 30px;
+}
+#text p {
+  text-align: center;
+  color: rgb(89, 88, 88);
+}
+#text img {
+  width: 30%;
+  /* place-items: center; */
+  margin-left: 35%;
+}
+* {
+  font-family: "Nunito";
+  margin: 0;
+}
+/* #loginform,#signupform{
+    margin-left: 22%;
+} */
+input {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  width: 50%;
+  margin-left: 25%;
+  height: 40px;
+  border: 0px;
+  background-color: rgb(245, 241, 236);
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+label {
+  margin-left: 25%;
+  font-size: 20px;
+  /* color: rgb(164, 227, 252) */
+  color: rgb(48, 48, 136);
+}
+#text button {
+  background-color: rgb(174, 224, 245);
+  margin-left: 40%;
+  width: 20%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border: 0px;
+  height: 36px;
+  border-radius: 10px;
+  color: white;
+  /* font-size: 28px; */
+  font-size: 90%;
+}
+#text button:active {
+  transform: translateX(6px) translateY(6px);
+}
+
+.toogle {
+  margin-top: 40px;
+}
+#sbtn {
+  width: 40%;
+}
+
+#gimg {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin-left: 0;
+  margin-bottom: 15%;
+}
+#gimg p {
+  /* width:100%; */
+  text-align: end;
+}
+#gimg img {
+  width: 90%;
+  height: 25px;
+}
+#signuplink,
+#loginlink {
+  text-decoration: underline;
+  color: rgb(129, 30, 30);
+  font-weight: bold;
+}
+select {
+  margin-top: 10px;
+  width: 50%;
+  margin-left: 80px;
+  height: 35px;
+  margin-bottom: 15px;
+  /* background-color: antiquewhite; */
+  background-color: rgb(245, 241, 236);
+}
+
+@media (max-width: 480px) {
+  #pic {
+    display: none;
+  }
+  #up img {
+    width: 60%;
+    margin-left: 90px;
+  }
+  #text {
+    width: 100vh;
+    margin-left: 3%;
+    /* border:2px solid black; */
+    padding-left: 2px;
+    margin-right: 0;
+  }
+  #up > h3 {
+    margin-left: 80px;
+  }
+  #up p {
+    margin-left: 40px;
+  }
+  #signupform {
+    margin: auto;
+    margin-top: 20px;
+  }
+  #signupform label {
+    margin-left: 30px;
+  }
+  #signupform input {
+    margin-left: 30px;
+    width: 90%;
+  }
+  select {
+    margin-top: 10px;
+    width: 90%;
+    margin-left: 30px;
+    height: 35px;
+    margin-bottom: 15px;
+    /* background-color: antiquewhite; */
+    background-color: rgb(245, 241, 236);
+  }
+  #loginform {
+    margin-top: 20px;
+  }
+  #loginform label {
+    margin-left: 30px;
+  }
+  #loginform input {
+    margin-left: 30px;
+    width: 90%;
+  }
+  #gimg {
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+}

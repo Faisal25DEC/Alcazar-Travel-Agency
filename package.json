@@ -1,0 +1,24 @@
+{
+  "name": "alcazar-travel-agency",
+  "version": "1.0.0",
+  "description": "A Dynamic Website built on HTML, CSS and JS that lets you book travel destinations.em space (8195 in UTF-8)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Faisal25DEC/Alcazar-Travel-Agency.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Faisal25DEC/Alcazar-Travel-Agency/issues"
+  },
+  "homepage": "https://github.com/Faisal25DEC/Alcazar-Travel-Agency#readme",
+  "dependencies": {
+    "json-server": "^0.17.3",
+    "tailwindcss": "^3.3.3"
+  }
+}
