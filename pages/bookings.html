@@ -97,6 +97,16 @@
     document.querySelector("#nav-signup").addEventListener("click", () => {
       window.location.assign("./mainlogin.html");
     });
+    const screenWidth = window.innerWidth;
+    if (screenWidth < 950) {
+    }
+    if (screenWidth < 500) {
+      document.querySelector(".nav-logo>p").textContent = "";
+    }
+    document.querySelector("nav>label>i").addEventListener("click", () => {
+      console.log("label");
+      document.querySelector(".nav-right-container").classList.toggle("left");
+    });
   </script>
   
   <script type = 'module' src="../scripts/bookings.js" defer></script>

@@ -38,15 +38,136 @@
       "displayName": "Muhammad Faisal",
       "email": "faisalmd25121999@gmail.com",
       "bookings": [],
-      "wishlist": [],
+      "wishlist": [
+        {
+          "name": "Amber Palace",
+          "info": "Amber (pronounced Amer) is at a distance of about 11 kilometres from Jaipur. Now a UNESCO World Heritage Site, it was the bastion of the Kachwahas of Amber, until the capital was moved to the plains, to what is today Jaipur. The palace, located in craggy hills, is a beautiful melange of Hindu and Mughal styles. Raja Man Singh I began construction in 1592 and the palace, which was built as a strong, safe haven against attacking enemies, was completed by Mirja Raja Jai Singh.",
+          "images": "https://images.thrillophilia.com/image/upload/s--UGQa1Iny--/c_fill,f_auto,fl_strip_profile,h_600,q_auto,w_975/v1/images/photos/000/110/813/original/1492513727_amber_fort_4.jpg.jpg?1492513727",
+          "location": "https://www.google.co.in/maps/place/Amber+Palace/@26.9854865,75.8513454,15z/data=!4m5!3m4!1s0x0:0x6221df6747147e2b!8m2!3d26.9854865!4d75.8513454",
+          "id": 13,
+          "price": "964.0",
+          "ratings": "3.0",
+          "recommended": true,
+          "trending": true,
+          "state": "Rajasthan",
+          "duration": 7
+        },
+        {
+          "name": "Jantar Mantar",
+          "info": "Now a UNESCO World Heritage Site, Jantar Mantar in Jaipur is considered to be the largest of the five astronomical observatories built by Maharaja Sawai Jai Singh II, the founder of Jaipur. It contains sixteen geometric devices, designed to measure time, track celestial bodies and observe the orbits of the planets around the sun.",
+          "images": "https://lh3.googleusercontent.com/p/AF1QipOdEzdNCjlZQ_bgd2a82b81OOB0OwF7cR2coU2h=s1360-w1360-h1020",
+          "location": "https://www.google.co.in/maps/place/Amber+Palace/@26.9854865,75.8513454,15z/data=!4m2!3m1!1s0x0:0x6221df6747147e2b?sa=X&ved=2ahUKEwjnp4SljfjlAhVy7XMBHZF7CYwQ_BIwH3oECCkQCA",
+          "id": 14,
+          "price": "347.6",
+          "ratings": "4.2",
+          "recommended": false,
+          "trending": false,
+          "state": "Rajasthan",
+          "duration": 5
+        },
+        {
+          "name": "NEIL ISLAND",
+          "info": "Neil Island is one of India’s Andaman Islands, in the Bay of Bengal. Bharatpur Beach has coral reefs teeming with tropical fish. Laxmanpur Beach is known for its sunset views. Howrah Bridge is a natural rock formation accessible at low tide. Near the island’s wharf is Neil Kendra village, with a curving, sandy bay dotted with boats. Off the southeast coast, the tiny Sir Hugh Rose Island is a sanctuary for turtles.",
+          "images": "https://uploads-ssl.webflow.com/5b56319971ac8c7475a9d877/5c4f5622a29a8f65c7f25f3e_IMG_7728%20Neil%20Island%20(21).jpg",
+          "location": "https://www.google.co.in/maps/place/Neill+Island,+Andaman+and+Nicobar+Islands+744104/data=!4m2!3m1!1s0x3088d9a13824c715:0xddd01ec98b4eb529?sa=X&ved=2ahUKEwjTjPqquvPlAhU56nMBHbmRBCAQ8gEwJXoECBAQBA",
+          "id": 1,
+          "price": "785.6",
+          "ratings": "3.3",
+          "recommended": false,
+          "trending": false,
+          "state": "Andaman & Nicobar",
+          "duration": 4
+        }
+      ],
       "id": "rtz5qIT"
     },
     {
       "displayName": "Mohd. Faisal 085",
       "email": "mohdfaisal2363@gmail.com",
       "bookings": [],
-      "wishlist": [],
+      "wishlist": [
+        {
+          "name": "NEIL ISLAND",
+          "info": "Neil Island is one of India’s Andaman Islands, in the Bay of Bengal. Bharatpur Beach has coral reefs teeming with tropical fish. Laxmanpur Beach is known for its sunset views. Howrah Bridge is a natural rock formation accessible at low tide. Near the island’s wharf is Neil Kendra village, with a curving, sandy bay dotted with boats. Off the southeast coast, the tiny Sir Hugh Rose Island is a sanctuary for turtles.",
+          "images": "https://uploads-ssl.webflow.com/5b56319971ac8c7475a9d877/5c4f5622a29a8f65c7f25f3e_IMG_7728%20Neil%20Island%20(21).jpg",
+          "location": "https://www.google.co.in/maps/place/Neill+Island,+Andaman+and+Nicobar+Islands+744104/data=!4m2!3m1!1s0x3088d9a13824c715:0xddd01ec98b4eb529?sa=X&ved=2ahUKEwjTjPqquvPlAhU56nMBHbmRBCAQ8gEwJXoECBAQBA",
+          "id": 1,
+          "price": "785.6",
+          "ratings": "3.3",
+          "recommended": false,
+          "trending": false,
+          "state": "Andaman & Nicobar",
+          "duration": 4
+        },
+        {
+          "name": "CELLULAR JAIL,PORT BLAIR",
+          "info": "It has been an important historical part of Port Blair. Notable freedom fighters such as Veer Savarkar, Yogendra Shukla, Batukeshwar Dutt, and Babarao Savarkar were some of the inmates here. Don’t miss the light and sound show(Monday, Wednesday and Friday) when you visit Cellular jail. ",
+          "images": "https://www.holidify.com/images/cmsuploads/compressed/3616_20190213160612jpg",
+          "location": "https://www.google.co.in/maps/place/Cellular+Jail+National+Monument/@11.6738247,92.7479768,15z/data=!4m2!3m1!1s0x0:0x616a8c6623fdba3f?sa=X&ved=2ahUKEwihqtPEuvPlAhU4IbcAHThdBsAQ_BIwJnoECA4QCA",
+          "id": 2,
+          "price": "676.9",
+          "ratings": "1.6",
+          "recommended": true,
+          "trending": true,
+          "state": "Andaman & Nicobar",
+          "duration": 7
+        }
+      ],
       "id": "5csCd4p"
+    },
+    {
+      "displayName": "Faizan khan",
+      "email": "faizaljohnson25dec@gmail.com",
+      "bookings": [],
+      "wishlist": [],
+      "id": "m_GIPiY"
+    },
+    {
+      "displayName": "blitz chess",
+      "email": "chessblitz473@gmail.com",
+      "bookings": [],
+      "wishlist": [
+        {
+          "name": "Tirthan Valley",
+          "info": "The land of untouched and mystifying beauty, Tirthan Valley is a destination with a plethora of delights. Lying nearly 3 km from the entrance of Great Himalayan National Park, this place is abundant in adventurous activities and a paradise for nature lovers. 'The great Himalayas with snow covered tops looking over the Tirthan River, this valley is best known for its trout fishing and for surprisingly high influx of foreigners. Magical ambience and lush green paths leading to nearby tiny and quaint hamlets accompanied by amazing weather throughout the year, Tirthan valley is great for those holiday makers who seek adventure as well as peace.",
+          "images": "https://www.holidify.com/images/bgImages/TIRTHAN-VALLEY.jpg",
+          "location": "https://www.google.co.in/maps/place/Tirthan+Valley/@31.6376776,77.3418905,17z/data=!3m1!4b1!4m5!3m4!1s0x3905add9fd04eb17:0xa5d8ce3f5d2f42df!8m2!3d31.6376776!4d77.3440792",
+          "id": 71,
+          "price": "20.8",
+          "ratings": "2.2",
+          "recommended": false,
+          "trending": true,
+          "state": "Himachal Pradesh",
+          "duration": 4
+        },
+        {
+          "name": "Kasauli",
+          "info": "Located on the way from Chandigarh to Shimla, Kasauli is a hilly cantonment town which makes for an ideal peaceful holiday location, away from the rush.Kasauli is a small town in the south-west part of Himachal and is on the relatively lower edges of Himalayas. Nestled amidst beautiful woody forests of pine and cedar trees, Kasauli owes its mystical and serene ambience to the lavish Victorian buildings built by the Britishers who resided here years back. These structures speak volumes of the glorious past of this hill station. A lot of endangered species of fauna are also found in the dense forests in this region. Kasauli is not about particular attractions or activities, but about the serene environment and enchanting calmness that it provides. If you want to just find a good getaway from the hectic life of your city, Kasauli provides the ideal environment to soothe your nerves.",
+          "images": "https://www.holidify.com/images/cmsuploads/compressed/iuubub_20181011181109.jpg",
+          "location": "https://www.google.co.in/maps/place/Kasauli,+Himachal+Pradesh/@30.8995898,76.9503449,14z/data=!3m1!4b1!4m5!3m4!1s0x390f88e0ddfe0b27:0x2cf1b6ec9befd181!8m2!3d30.90129!4d76.9648753",
+          "id": 72,
+          "price": "458.2",
+          "ratings": "3.0",
+          "recommended": true,
+          "trending": false,
+          "state": "Himachal Pradesh",
+          "duration": 7
+        },
+        {
+          "name": "CELLULAR JAIL,PORT BLAIR",
+          "info": "It has been an important historical part of Port Blair. Notable freedom fighters such as Veer Savarkar, Yogendra Shukla, Batukeshwar Dutt, and Babarao Savarkar were some of the inmates here. Don’t miss the light and sound show(Monday, Wednesday and Friday) when you visit Cellular jail. ",
+          "images": "https://www.holidify.com/images/cmsuploads/compressed/3616_20190213160612jpg",
+          "location": "https://www.google.co.in/maps/place/Cellular+Jail+National+Monument/@11.6738247,92.7479768,15z/data=!4m2!3m1!1s0x0:0x616a8c6623fdba3f?sa=X&ved=2ahUKEwihqtPEuvPlAhU4IbcAHThdBsAQ_BIwJnoECA4QCA",
+          "id": 2,
+          "price": "676.9",
+          "ratings": "1.6",
+          "recommended": true,
+          "trending": true,
+          "state": "Andaman & Nicobar",
+          "duration": 7
+        }
+      ],
+      "id": "3a8ugSy"
     }
   ],
   "state": [

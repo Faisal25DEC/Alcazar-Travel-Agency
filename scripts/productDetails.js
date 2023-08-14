@@ -128,6 +128,7 @@ let displayProductDetails = function (placeImages) {
   displayProductDetailsStats();
   document.querySelector(".book-now").addEventListener("click", () => {
     if (authenticationObject.isLoggedIn) {
+      console.log(authenticationObject.email);
       if (!count) {
         loginAlert.style.display = "block";
         loginAlertText.textContent = "Add Guests!!!";

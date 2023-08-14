@@ -10,7 +10,8 @@ const paginationT = document.querySelector(".pagination");
 console.log(searchQuery);
 
 // -----------------------------------Authentication Object -------------------------------------
-firebaseAuth();
+
+console.log(authenticationObject);
 const element = document.querySelector(".pagination ul");
 
 function createPagination(totalPages, page) {
@@ -210,10 +211,15 @@ var getStateName = function (title, statesData) {
   }
 };
 
+var configureSaveIcon = function (saveDiv, touristDestination, usersData) {
+  console.log(usersData);
+};
+
 var displayTouristDestinations = function (
   touristDestinations,
   statesData,
-  allTouristDestinations
+  allTouristDestinations,
+  usersData
 ) {
   productsBody.innerHTML = null;
   touristDestinations.forEach((touristDestination) => {
@@ -277,18 +283,37 @@ var displayTouristDestinations = function (
     saveDiv.classList.add("save");
 
     let saveIcon = document.createElement("img");
-    saveIcon.src = "../Product-images/save.png";
 
     saveDiv.append(saveIcon);
-
+    console.log(authenticationObject.isLoggedIn);
+    let userObj = {};
+    if (authenticationObject.isLoggedIn) {
+      let userIdx = usersData.findIndex(
+        (user) => user.email == authenticationObject.email
+      );
+      userObj = usersData[userIdx];
+      console.log(userObj);
+      let savedIdx = userObj.wishlist.findIndex(
+        (saved) => saved.name == touristDestination.name
+      );
+      if (savedIdx != -1) {
+        saveIcon.src = "../Product-images/saved.png"; // Set the saved icon
+      } else {
+        saveIcon.src = "../Product-images/save.png"; // Set the unsaved icon
+      }
+    } else {
+      saveIcon.src = "../Product-images/save.png";
+    }
     saveDiv.addEventListener("click", () => {
       console.log("what");
       if (authenticationObject.isLoggedIn) {
         if (saveIcon.getAttribute("src") == "../Product-images/save.png") {
           console.log("what");
           saveIcon.src = "../Product-images/saved.png";
+          userObj.wishlist.push(touristDestination);
+          updateUser(userObj, userObj.id);
         } else {
-          saveIcon.src = "../Product-images/save.png";
+          alert("already saved");
         }
       } else {
         alert("Please Sign In to save");
@@ -400,79 +425,98 @@ const searchBarInput = document.querySelector("#navbar .input-search>#search");
 console.log(searchBarInput);
 
 var getTouristDestinations = async function (pageNumber) {
-  let allTouristDestinationApiResponse = await fetch(
-    `${baseUrl}/touristDestinations`
-  );
-  let allTouristDestinations = await allTouristDestinationApiResponse.json();
+  try {
+    await firebaseAuth();
+    let allTouristDestinationApiResponse = await fetch(
+      `${baseUrl}/touristDestinations`
+    );
+    let allTouristDestinations = await allTouristDestinationApiResponse.json();
 
-  let stateApiResponse = await fetch(`${baseUrl}/state`);
-  let statesData = await stateApiResponse.json();
-  let apiResponse = await fetch(
-    `${baseUrl}/touristDestinations?_page=${pageNumber}&_limit=9`
-  );
-  let touristDestinations = await apiResponse.json();
-  console.log(touristDestinations);
-  console.log(statesData);
+    let stateApiResponse = await fetch(`${baseUrl}/state`);
+    let statesData = await stateApiResponse.json();
+    let apiResponse = await fetch(
+      `${baseUrl}/touristDestinations?_page=${pageNumber}&_limit=9`
+    );
+    let touristDestinations = await apiResponse.json();
 
-  console.log(touristDestinations.length / 9);
-  displayTouristDestinations(
-    touristDestinations,
-    statesData,
-    allTouristDestinations
-  );
-  createPagination(8, pageNumber);
+    let usersDataApiResponse = await fetch(`${baseUrl}/users`);
+    let usersData = await usersDataApiResponse.json();
+    console.log(touristDestinations);
+    console.log(statesData);
+    console.log(usersData);
+    console.log(touristDestinations.length / 9);
+    displayTouristDestinations(
+      touristDestinations,
+      statesData,
+      allTouristDestinations,
+      usersData
+    );
+    createPagination(8, pageNumber);
 
-  searchBarInput.addEventListener("input", () => {
-    const searchSuggestions = document.querySelector(".search-suggestions");
-    searchSuggestions.innerHTML = "";
-    let inputValue = event.target.value;
-    if (inputValue == "") {
-      searchSuggestions.style.display = "none";
-      return;
-    } else {
-      searchSuggestions.style.display = "block";
-      let newRegExp = new RegExp(inputValue, "gi");
-      let searchTouristDestinationsFilter = allTouristDestinations.filter(
-        (touristDestination) => {
-          return touristDestination.name.match(newRegExp);
-        }
-      );
-      console.log(searchTouristDestinationsFilter);
-
-      searchTouristDestinationsFilter.forEach((touristDestination) => {
-        let { images, name, state } = touristDestination;
-        let searchSuggestionContainer = document.createElement("div");
-        searchSuggestionContainer.classList.add("search-suggestion");
-
-        let searchSuggestionImage = document.createElement("img");
-        searchSuggestionImage.src = images;
-
-        let searchSuggestionText = document.createElement("div");
-
-        let searchSuggestionState = document.createElement("p");
-        searchSuggestionState.textContent = state;
-
-        let searchSuggestionTitle = document.createElement("p");
-        searchSuggestionTitle.textContent = name;
-        searchSuggestionText.append(
-          searchSuggestionTitle,
-          searchSuggestionState
+    searchBarInput.addEventListener("input", () => {
+      const searchSuggestions = document.querySelector(".search-suggestions");
+      searchSuggestions.innerHTML = "";
+      let inputValue = event.target.value;
+      if (inputValue == "") {
+        searchSuggestions.style.display = "none";
+        return;
+      } else {
+        searchSuggestions.style.display = "block";
+        let newRegExp = new RegExp(inputValue, "gi");
+        let searchTouristDestinationsFilter = allTouristDestinations.filter(
+          (touristDestination) => {
+            return touristDestination.name.match(newRegExp);
+          }
         );
+        console.log(searchTouristDestinationsFilter);
 
-        searchSuggestionContainer.append(
-          searchSuggestionImage,
-          searchSuggestionText
-        );
-        searchSuggestionContainer.addEventListener("click", () => {
-          localStorage.setItem(
-            "touristDestinationDetails",
-            JSON.stringify(touristDestination)
+        searchTouristDestinationsFilter.forEach((touristDestination) => {
+          let { images, name, state } = touristDestination;
+          let searchSuggestionContainer = document.createElement("div");
+          searchSuggestionContainer.classList.add("search-suggestion");
+
+          let searchSuggestionImage = document.createElement("img");
+          searchSuggestionImage.src = images;
+
+          let searchSuggestionText = document.createElement("div");
+
+          let searchSuggestionState = document.createElement("p");
+          searchSuggestionState.textContent = state;
+
+          let searchSuggestionTitle = document.createElement("p");
+          searchSuggestionTitle.textContent = name;
+          searchSuggestionText.append(
+            searchSuggestionTitle,
+            searchSuggestionState
           );
-          window.location.assign("../pages/productDetails.html");
+
+          searchSuggestionContainer.append(
+            searchSuggestionImage,
+            searchSuggestionText
+          );
+          searchSuggestionContainer.addEventListener("click", () => {
+            localStorage.setItem(
+              "touristDestinationDetails",
+              JSON.stringify(touristDestination)
+            );
+            window.location.assign("../pages/productDetails.html");
+          });
+          searchSuggestions.append(searchSuggestionContainer);
         });
-        searchSuggestions.append(searchSuggestionContainer);
-      });
-    }
+      }
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+let updateUser = async function (obj, id) {
+  let res = fetch(`${baseUrl}/users/${id}`, {
+    method: "PATCH",
+    body: JSON.stringify(obj),
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
 };
 
