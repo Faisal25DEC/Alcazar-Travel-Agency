@@ -77,6 +77,19 @@
           "trending": false,
           "state": "Andaman & Nicobar",
           "duration": 4
+        },
+        {
+          "name": "CELLULAR JAIL,PORT BLAIR",
+          "info": "It has been an important historical part of Port Blair. Notable freedom fighters such as Veer Savarkar, Yogendra Shukla, Batukeshwar Dutt, and Babarao Savarkar were some of the inmates here. Don’t miss the light and sound show(Monday, Wednesday and Friday) when you visit Cellular jail. ",
+          "images": "https://www.holidify.com/images/cmsuploads/compressed/3616_20190213160612jpg",
+          "location": "https://www.google.co.in/maps/place/Cellular+Jail+National+Monument/@11.6738247,92.7479768,15z/data=!4m2!3m1!1s0x0:0x616a8c6623fdba3f?sa=X&ved=2ahUKEwihqtPEuvPlAhU4IbcAHThdBsAQ_BIwJnoECA4QCA",
+          "id": 2,
+          "price": "676.9",
+          "ratings": "1.6",
+          "recommended": true,
+          "trending": true,
+          "state": "Andaman & Nicobar",
+          "duration": 7
         }
       ],
       "id": "rtz5qIT"

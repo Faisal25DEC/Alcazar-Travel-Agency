@@ -28,22 +28,29 @@ body {
   /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
   font-size: large;
   font-size: 20px;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 90%;
   margin-bottom: 2%;
   font-family: "Nunito";
 }
-
+#sidebar-btn {
+  display: none;
+}
 #first {
   display: flex;
-  gap: 6%;
+  gap: 1rem;
   width: 20%;
   /* border: 1px solid black; */
   color: white;
+  align-items: center;
 }
 #first > img {
-  width: 13%;
-  height: 85%;
+  width: 30px;
+  height: 30px;
+}
+#third-container {
+  display: flex;
+  align-items: center;
 }
 a {
   /* margin-right: 2%; */
@@ -61,6 +68,7 @@ a {
   /* border: 1px solid black; */
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 #popbtn {
   color: white;
@@ -87,6 +95,15 @@ a {
 /* pop */
 
 /* travel  */
+#third-container > #third > #logout {
+  border: none;
+  background-color: rgb(43, 43, 44);
+  width: 7.5rem;
+  height: 3rem;
+  color: white;
+  border-radius: 25px;
+  font-size: 16px;
+}
 #text {
   margin-top: 0%;
 }
@@ -397,12 +414,41 @@ footer {
 }
 
 /* respnsiveness */
-
-@media (max-width: 480px) {
-  #second {
-    display: none;
+@media (max-width: 880px) {
+  #navbar {
+    justify-content: space-between;
+  }
+  #third-container {
+    gap: 1rem;
+  }
+  #third > a {
+    width: 50%;
   }
 
+  #sidebar-btn {
+    display: block;
+  }
+  #second {
+    height: 100vh;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background-color: rgb(29, 114, 242);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    transition: all 0.5s;
+  }
+  #third {
+    align-items: center;
+    gap: 1rem;
+  }
+  #navbar .left {
+    left: 0;
+  }
+}
+@media (max-width: 480px) {
   #first {
     margin-left: -50px;
   }

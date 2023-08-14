@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="../styles/home.css" />
   </head>
 
@@ -11,10 +18,7 @@
     <div id="container">
       <div id="navbar">
         <div id="first">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrfnLq4YmL_IVClG1DT8jzGXqDh2pJa-vF6g&usqp=CAU"
-            alt=""
-          />
+          <img src="../Product-images/logo.png" alt="" />
           <h3>Alcazar</h3>
         </div>
         <div id="second">
@@ -23,9 +27,14 @@
           <a href="./bookings.html">My bookings</a>
           <a href="./whislist.html">Saved</a>
         </div>
-        <div id="third">
-          <a href="./mainlogin.html"><h3 id="newname">Login/Signup</h3></a>
-          <!-- <h3 id="logout" style="display:none;">Logout</h3> -->
+        <div id="third-container">
+          <div id="third">
+            <a href="./mainlogin.html"><h3 id="newname">Login/Signup</h3></a>
+            <!-- <h3 id="logout" style="display:none;">Logout</h3> -->
+          </div>
+          <label for="sidebar-btn" id="sidebar-btn">
+            <i class="fa-solid fa-bars"></i>
+          </label>
         </div>
       </div>
 
@@ -219,6 +228,13 @@
   </body>
 </html>
 <script type="module">
+  document
+    .querySelector("#navbar>#third-container>label>i")
+    .addEventListener("click", () => {
+      console.log("label");
+      document.querySelector("#second").classList.toggle("left");
+    });
+
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
   import {
     getAuth,
