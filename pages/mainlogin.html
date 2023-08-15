@@ -20,7 +20,7 @@
       </div>
       <div id="text">
         <header>
-          <a class="home-link" href="./index.html">
+          <a class="home-link" href="../index.html">
             <i class="fa-solid fa-house"></i>Home</a
           >
         </header>
@@ -187,7 +187,7 @@
         const user = userCredential.user;
 
         alert("login successfull");
-        window.location.assign("./index.html");
+        window.location.assign("../index.html");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -226,7 +226,7 @@
             }
           });
 
-        window.location.assign("./index.html");
+        window.location.assign("../index.html");
         // IdP data available using getAdditionalUserInfo(result)
         // ...
       })
