@@ -11,13 +11,29 @@ const loginAlertText = document.querySelector("#login-alert>p");
 const placeDetails = JSON.parse(
   localStorage.getItem("touristDestinationDetails")
 );
-const baseUrl = `https://alcazar-backend.onrender.com`;
+const baseUrl = `https://jittery-puce-spider.cyclic.cloud`;
 const unsplashApiKey = `GyO4Y3ccun7RvAO8u4mPM8e-KNFfw3jC38X9Q-UnHsI`;
 const unsplashApiUrl = `https://api.unsplash.com/search/photos/?client_id=${unsplashApiKey}`;
 
 let count = 0;
 
+function getCurrentDateInYYMMDD(currentDate) {
+  const year = currentDate.getFullYear().toString().slice(-2); // Get last 2 digits of the year
+  const month = (currentDate.getMonth() + 1).toString().padStart(2, "0"); // Months are zero-indexed
+  const day = currentDate.getDate().toString().padStart(2, "0");
+
+  const formattedDate = `${year}-${month}-${day}`;
+  return formattedDate;
+}
+
+function addDaysToDate(daysToAdd) {
+  const currentDate = new Date();
+  currentDate.setDate(currentDate.getDate() + daysToAdd);
+  return getCurrentDateInYYMMDD(currentDate);
+}
+
 // Function to update the count display
+
 function updateCount() {
   countElement.textContent = count;
 }
@@ -124,6 +140,7 @@ let displayProductDetailsStats = function () {
 };
 
 let displayProductDetails = function (placeImages) {
+  let { duration } = placeDetails;
   displayProductDetailsImages(placeImages);
   displayProductDetailsStats();
   document.querySelector(".book-now").addEventListener("click", () => {
@@ -135,6 +152,14 @@ let displayProductDetails = function (placeImages) {
         setTimeout(() => {
           loginAlert.style.display = "none";
         }, 2500);
+      } else {
+        let paymentObject = { ...placeDetails };
+        paymentObject["guests"] = count;
+        paymentObject["bookedTill"] = Date.now();
+        paymentObject["startDate"] = addDaysToDate(0);
+        paymentObject["endDate"] = addDaysToDate(duration);
+        localStorage.setItem("paymentObject", JSON.stringify(paymentObject));
+        window.location.assign("../pages/payment.html");
       }
     } else {
       loginAlert.style.display = "block";

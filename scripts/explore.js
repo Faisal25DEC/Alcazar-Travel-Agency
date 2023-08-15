@@ -3,7 +3,7 @@ import { authenticationObject } from "../components/firebaseAuth.js";
 
 firebaseAuth();
 
-const baseUrl = `https://alcazar-backend.onrender.com`;
+const baseUrl = `https://jittery-puce-spider.cyclic.cloud`;
 var placeDetails =
   JSON.parse(localStorage.getItem("stateName")) ||
   JSON.parse(localStorage.getItem("touristDestinationDetails"));

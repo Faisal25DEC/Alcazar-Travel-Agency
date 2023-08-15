@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Payment Page</title>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+crossorigin="anonymous"
+referrerpolicy="no-referrer"
+/>
+<link rel="stylesheet" href="../styles/navbar_2.css">
+<link rel="stylesheet" href="../styles/payment.css">
+</head>
+<body>
+    <nav id="navbar">NAVBAR</nav>
+<div class="container">
+ 
+  <div class="payment-form">
+    <h2 class="form-title">Details</h2>
+    <form id="payment-form">
+      <div class="input-group">
+   
+        <input type="text" id="name" class="input-field" placeholder="Enter your Name" required>
+      </div>
+      <div class="input-group">
+    
+        <input type="text" id="add1" class="input-field" placeholder="Street" required> <br> <br>
+
+        <div class="input-1"> 
+          <input type="text" id="street" placeholder="Hometown">
+          <input type="text" id="city" placeholder="City"></div>
+      </div>
+      <div class="input-group">
+        
+        <br>
+        <input type="text" id="state" class="input-field" placeholder="State" required>
+      </div>
+      <div class="input-group">
+        <br>
+        <select name="" id="select">
+          <option value="">select</option>
+          <option value="aadhar">Aadhar</option>
+          <option value="driving">Driving License</option>
+        </select>
+        <br>
+        <input type="text" id="name" class="input-field" placeholder="" required>
+      </div>
+      <div class="input-group">
+        <!-- <label for="amount">Total Amount</label><br> -->
+        <h2 id = 'payment-price'>Rs 10000</h2>
+      </div>
+      <div class="btn-container">
+        <button  id="rzp-button1" class="btn btn-outline-dark btn-lg"><i class="fas fa-money-bill"></i> Pay Now</button>
+        <!-- <button class="btn" type="submit">Pay Now</button> -->
+      </div>
+    </form>
+
+    <div id="details"></div>
+  </div>
+  
+  <div id="card-image">
+    <div><img id="girl" src="../Product-images/best.png" alt=""></div>
+  <!-- <img id="bgv" src="./bg1.png" alt=""> -->
+  
+
+</div>
+</div>
+
+</section>
+<script type="module">
+    import navbar_2 from "../components/navbar_2.js";
+    let header = document.querySelector("#navbar");
+    header.innerHTML = navbar_2();
+    let login = document.querySelector("#nav-login");
+    login.addEventListener("click", () => {
+      let dropdown = document.querySelector(".dropdown");
+      dropdown.classList.toggle("active");
+    });
+    document.querySelector("#nav-signup").addEventListener("click", () => {
+      window.location.assign("./mainlogin.html");
+    });
+    const screenWidth = window.innerWidth;
+    if (screenWidth < 950) {
+    }
+    if (screenWidth < 500) {
+      document.querySelector(".nav-logo>p").textContent = "";
+    }
+    document.querySelector("nav>label>i").addEventListener("click", () => {
+      console.log("label");
+      document.querySelector(".nav-right-container").classList.toggle("left");
+    });
+  </script>
+<script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
+<script type = 'module' src  = '../scripts/payment.js' defer>
+
+</script>
+<footer>
+  <div id="noo">
+
+    <div id="no">
+      <div id="alca">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrfnLq4YmL_IVClG1DT8jzGXqDh2pJa-vF6g&usqp=CAU" alt="">
+        <h2>Alcazar</h2>
+      </div>
+      <p>Covinience is our priority to satisfy our Customers
+        and we provide all the features you can use easily and quickyly.
+      </p>
+
+    </div>
+
+    <div id="yess">
+<div class="yes">
+  <h4>ABOUT</h4>
+  <p>How to book</p>
+  <p>Contact Us</p>
+  <p>Help Center</p>
+</div>
+
+<div class="yes">
+  <h4>Products</h4>
+  <p>destination</p>
+  <p>Flight</p>
+  <p>Loding</p>
+</div>
+
+<div class="yes">
+  <h4>Social</h4>
+  <p>Facebook</p>
+  <p>Twitter</p>
+  <p>Instagram</p>
+</div>
+    </div>
+  </div>
+<hr>
+  <div id="end" >
+    <p>Privacy Policy</p>
+    <p>Copyright 2022 Alcazar</p>
+  </div>
+</footer>
+</body>
+</html>

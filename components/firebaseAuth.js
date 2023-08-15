@@ -10,7 +10,7 @@ import {
 import { signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 
 let authenticationObject = {};
-const baseUrl = `https://alcazar-backend.onrender.com`;
+const baseUrl = `https://jittery-puce-spider.cyclic.cloud`;
 function firebaseAuth() {
   return new Promise((resolve, reject) => {
     const firebaseConfig = {

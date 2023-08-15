@@ -464,4 +464,8 @@
       });
     }
   });
+  let screenWidth = window.innerWidth;
+  if (screenWidth < 950) {
+    document.querySelector("#first>h3").textContent = "";
+  }
 </script>

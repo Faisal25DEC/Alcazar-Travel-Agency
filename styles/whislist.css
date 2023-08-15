@@ -10,7 +10,12 @@ body {
 
 * {
 }
-
+nav .nav-search {
+  display: none;
+}
+nav {
+  justify-content: space-between;
+}
 #wishlist-content {
   display: flex;
   flex-direction: column;
@@ -108,4 +113,24 @@ body {
 }
 .card-btn button.remove-btn {
   background-color: rgb(243, 38, 38);
+}
+@media screen and (max-width: 895px) {
+  .card1 {
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+  .card1 > .card-img {
+    width: 100%;
+  }
+  .card1 > .card-img > img {
+    width: 100%;
+    height: 14.5rem;
+  }
+  .card1 > .card-det {
+    width: 90%;
+  }
+  .card1 > .card-btn {
+    flex-direction: row;
+  }
 }

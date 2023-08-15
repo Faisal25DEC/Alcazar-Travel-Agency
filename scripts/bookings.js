@@ -1,6 +1,6 @@
 import firebaseAuth from "../components/firebaseAuth.js";
 import { authenticationObject } from "../components/firebaseAuth.js";
-const baseUrl = `https://alcazar-backend.onrender.com`;
+const baseUrl = `https://jittery-puce-spider.cyclic.cloud`;
 
 let userGlobalData = {};
 
@@ -13,7 +13,8 @@ document.querySelector("#btnradio1").addEventListener("click", function () {
     var currentBookings = userGlobalData.bookings.filter((res) => {
       return res.bookedTill >= Date.now();
     });
-    updateDisplay(currentBookings);
+
+    updateDisplay(currentBookings, "current");
   }
 });
 document.querySelector("#btnradio2").addEventListener("click", function () {
@@ -28,23 +29,36 @@ document.querySelector("#btnradio2").addEventListener("click", function () {
         "#content"
       ).innerHTML = `<h2>No Past Bookings <h2/>`;
     } else {
-      updateDisplay(pastBookings);
+      updateDisplay(pastBookings, "past");
+      var r = document.querySelectorAll(".cancel");
+      r.forEach(function (element) {
+        element.style.display = "none";
+      });
     }
   }
 });
 var main = document.querySelector("#content");
-function updateDisplay(arr) {
+function updateDisplay(arr, bookingsType) {
   main.innerHTML = "";
   arr.forEach((element, index) => {
     //console.log(element);
     var card = document.createElement("div");
     card.setAttribute("class", "cr");
+
+    let imageDiv = document.createElement("div");
+    imageDiv.classList.add("card-image");
+
     var img = document.createElement("img");
     img.setAttribute("src", element.images);
+
+    var cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+
+    imageDiv.appendChild(img);
     var name = document.createElement("h3");
     name.innerText = element.name;
-    var p = document.createElement("p");
-    p.innerText = `From: ${element.sdate} - ${element.edate}`;
+    var date = document.createElement("p");
+    date.innerText = `From: ${element.startDate} - ${element.endDate}`;
     var guest = document.createElement("p");
     guest.innerText = "Guests: " + element.guest;
     var bt_div = document.createElement("div");
@@ -66,7 +80,13 @@ function updateDisplay(arr) {
     rev.setAttribute("style", "display:none;");
     review(rev);
     var price = document.createElement("h4");
-    price.innerText = "Amount: Rs. " + element.price;
+    let priceString = element.price * 80 + "";
+    priceString = priceString.split("");
+    console.log(priceString);
+    priceString.splice(2, 0, ",");
+    priceString = priceString.join("");
+    console.log(priceString);
+    price.innerText = "Price Rs  " + priceString;
     cancel.addEventListener("click", function () {
       console.log("hio");
       arr.splice(index, 1);
@@ -87,12 +107,17 @@ function updateDisplay(arr) {
       title.innerText = element.name;
       var info = document.querySelector(".offcanvas-body");
       info.innerHTML = "";
-      info.innerText = `${element.info} \n \n Ratings:- ${element.ratings} \n Price: ${element.price} \n Guests: ---`;
+      info.innerText = `${element.info} \n `;
 
       const targetButton = document.getElementById("openModalBtn");
       console.log(targetButton);
     });
-    card.append(img, name, price, guest, p, bt_div, rev);
+
+    var bodyHr = document.createElement("hr");
+    bodyHr.classList.add("body-hr");
+
+    cardBody.append(name, price, guest, date);
+    card.append(imageDiv, cardBody, bodyHr, bt_div, rev);
     main.append(card);
   });
 }
@@ -213,6 +238,10 @@ let checkAuthentication = async function () {
 </div>`;
   }
 };
+
+document.querySelector(".get-started-button").addEventListener("click", () => {
+  window.location.assign("../pages/product.html");
+});
 
 checkAuthentication();
 detour();

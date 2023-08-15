@@ -53,12 +53,12 @@ import { authenticationObject } from "../components/firebaseAuth.js";
 //     guest: "4",
 //   },
 // ];
-const baseUrl = `https://alcazar-backend.onrender.com`;
+const baseUrl = `https://jittery-puce-spider.cyclic.cloud`;
 console.log(wishlist);
 var content = document.querySelector("#wishlist-content");
-function updateDisplay(userObject, index) {
+function updateDisplay(userObject) {
   content.innerHTML = "";
-  userObject.wishlist.forEach((element) => {
+  userObject.wishlist.forEach((element, index) => {
     var card = document.createElement("div");
     card.setAttribute("class", "card1");
     var card_img = document.createElement("div");
