@@ -2,25 +2,35 @@ import firebaseAuth from "../components/firebaseAuth.js";
 import { authenticationObject } from "../components/firebaseAuth.js";
 const baseUrl = `https://alcazar-backend.onrender.com`;
 
+let userGlobalData = {};
+
 document.querySelector("#btnradio1").addEventListener("click", function () {
-  var book = JSON.parse(localStorage.getItem("bookings")) || [];
-  if (book.length == 0) {
+  if (userGlobalData.bookings.length == 0) {
     document.querySelector(
       "#content"
     ).innerHTML = `<h2>No Current Bookings Available<h2/>`;
-  } else updateDisplay(book);
+  } else {
+    var currentBookings = userGlobalData.bookings.filter((res) => {
+      return res.bookedTill >= Date.now();
+    });
+    updateDisplay(currentBookings);
+  }
 });
 document.querySelector("#btnradio2").addEventListener("click", function () {
-  var closed = JSON.parse(localStorage.getItem("past"));
-  updateDisplay(closed);
-  var ratingsElements = document.querySelectorAll(".ratings");
-  ratingsElements.forEach(function (element) {
-    element.style.display = "block";
-  });
-  var r = document.querySelectorAll(".cancel");
-  r.forEach(function (element) {
-    element.style.display = "none";
-  });
+  if (userGlobalData.bookings.length == 0) {
+    document.querySelector("#content").innerHTML = `<h2>No Past Bookings <h2/>`;
+  } else {
+    var pastBookings = userGlobalData.bookings.filter((res) => {
+      return res.bookedTill < Date.now();
+    });
+    if (pastBookings.length == 0) {
+      document.querySelector(
+        "#content"
+      ).innerHTML = `<h2>No Past Bookings <h2/>`;
+    } else {
+      updateDisplay(pastBookings);
+    }
+  }
 });
 var main = document.querySelector("#content");
 function updateDisplay(arr) {
@@ -110,12 +120,6 @@ function review(rev) {
   }
   return rev;
 }
-var book = JSON.parse(localStorage.getItem("bookings")) || [];
-if (book.length == 0) {
-  document.querySelector(
-    "#content"
-  ).innerHTML = `<h2>No Current Bookings Available<h2/>`;
-} else updateDisplay(book);
 
 const searchBarInput = document.querySelector("#navbar .input-search>#search");
 console.log(searchBarInput);
@@ -186,8 +190,19 @@ let checkAuthentication = async function () {
     emptyContent.style.display = "none";
     let email = authenticationObject.email;
     let apiRes = await fetch(`${baseUrl}/users?email=${email}`);
-    let usersData = await apiRes.json();
-    console.log(usersData);
+    let userData = await apiRes.json();
+    console.log(userData);
+    userGlobalData = userData[0];
+    if (userGlobalData.bookings.length == 0) {
+      document.querySelector(
+        "#content"
+      ).innerHTML = `<h2>No Current Bookings Available<h2/>`;
+    } else {
+      var currentBookings = userGlobalData.bookings.filter((res) => {
+        return res.bookedTill >= Date.now();
+      });
+      updateDisplay(currentBookings);
+    }
   } else {
     emptyContent.style.display = "grid";
     emptyContent.innerHTML = ` <div class="empty-wishlist">
@@ -201,22 +216,3 @@ let checkAuthentication = async function () {
 
 checkAuthentication();
 detour();
-//console.log(Date.now())
-
-// Open the modal
-
-// Close the modal
-//   const currentDate = new Date();
-
-//   const year = currentDate.getFullYear();
-//   const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
-//   const day = String(currentDate.getDate()).padStart(2, '0');
-
-//   const formattedDate = `${year}-${month}-${day}`;
-
-//   console.log(formattedDate);
-
-// console.log(formattedDate);
-// const upcomingEvents = array.filter(element => element.date >= bookedTill);
-
-// console.log(upcomingEvents);
