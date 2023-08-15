@@ -1,6 +1,6 @@
 import firebaseAuth from "../components/firebaseAuth.js";
 import { authenticationObject } from "../components/firebaseAuth.js";
-const baseUrl = `http://localhost:3000`;
+const baseUrl = `https://alcazar-backend.onrender.com`;
 const unsplashApiKey = `GyO4Y3ccun7RvAO8u4mPM8e-KNFfw3jC38X9Q-UnHsI`;
 const unsplashApiUrl = `https://api.unsplash.com/search/photos/?client_id=${unsplashApiKey}`;
 const productsBody = document.querySelector("#products-body");
@@ -91,7 +91,13 @@ function createPagination(totalPages, page) {
 }
 
 // selecting required element
-function showQueryResults(inputValue, statesData, touristDestinations) {
+function showQueryResults(
+  inputValue,
+  statesData,
+  touristDestinations,
+  allTouristDestinations,
+  usersData
+) {
   console.log(inputValue);
 
   let touristDestinationsFilter = touristDestinations.filter((element) => {
@@ -99,10 +105,21 @@ function showQueryResults(inputValue, statesData, touristDestinations) {
     return element.name.match(newRegExp);
   });
   console.log(touristDestinationsFilter);
-  displayTouristDestinations(touristDestinationsFilter, statesData);
+  displayTouristDestinations(
+    touristDestinationsFilter,
+    statesData,
+    allTouristDestinations,
+    usersData
+  );
 }
 
-function showStateResults(inputValue, statesData, touristDestinations) {
+function showStateResults(
+  inputValue,
+  statesData,
+  touristDestinations,
+  allTouristDestinations,
+  usersData
+) {
   console.log(touristDestinations);
   paginationT.style.display = "none";
   let touristDestinationsState = statesData.filter((el) => {
@@ -123,7 +140,12 @@ function showStateResults(inputValue, statesData, touristDestinations) {
       }
     }
   );
-  displayTouristDestinations(touristDestinationsAfterFilter, statesData);
+  displayTouristDestinations(
+    touristDestinationsAfterFilter,
+    statesData,
+    allTouristDestinations,
+    usersData
+  );
 }
 let debounce = function (func, delay) {
   let id;
@@ -406,7 +428,13 @@ var displayTouristDestinations = function (
     if (inputValue == "") {
       getTouristDestinations(1);
     } else {
-      debouncedFunc(inputValue, statesData, allTouristDestinations);
+      debouncedFunc(
+        inputValue,
+        statesData,
+        allTouristDestinations,
+        allTouristDestinations,
+        usersData
+      );
     }
   });
   let debouncedFuncState = debounce(showStateResults, 2000);
@@ -416,7 +444,13 @@ var displayTouristDestinations = function (
       getTouristDestinations(1);
       paginationT.style.display = "block";
     } else {
-      debouncedFuncState(inputValue, statesData, allTouristDestinations);
+      debouncedFuncState(
+        inputValue,
+        statesData,
+        allTouristDestinations,
+        allTouristDestinations,
+        usersData
+      );
     }
   });
 };
@@ -451,7 +485,7 @@ var getTouristDestinations = async function (pageNumber) {
       allTouristDestinations,
       usersData
     );
-    createPagination(8, pageNumber);
+    createPagination(9, pageNumber);
 
     searchBarInput.addEventListener("input", () => {
       const searchSuggestions = document.querySelector(".search-suggestions");

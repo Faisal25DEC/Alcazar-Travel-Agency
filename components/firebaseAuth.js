@@ -10,7 +10,7 @@ import {
 import { signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 
 let authenticationObject = {};
-const baseUrl = `http://localhost:3000`;
+const baseUrl = `https://alcazar-backend.onrender.com`;
 function firebaseAuth() {
   return new Promise((resolve, reject) => {
     const firebaseConfig = {

@@ -8,15 +8,12 @@ body {
   background-color: #ffffff;
   background-attachment: fixed;
   background-size: cover;
-
 }
 
 #yes {
   width: 98%;
   margin: auto;
   padding: 1%;
-  
-
 }
 
 .checked {
@@ -28,11 +25,20 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   width: 80%;
-  margin:auto;
+  margin: auto;
   /* border: 1px solid black; */
   place-items: center;
 }
-
+#empty-content {
+  display: none;
+  width: 100%;
+  place-items: center;
+}
+.empty-wishlist {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
 .cr {
   width: 70%;
   border: 1px solid rgb(218, 174, 174);
@@ -40,7 +46,7 @@ body {
   border-radius: 15px;
 }
 
-.cr>img {
+.cr > img {
   width: 100%;
   height: 16rem;
   object-fit: cover;
@@ -71,17 +77,17 @@ p {
   margin-left: 3%;
   margin-right: 3%;
   color: aliceblue;
-  background-color: ;
+  background-color: black;
 }
 
-.b,.cancel{
+.b,
+.cancel {
   color: white;
   background-color: rgb(7, 166, 214);
   border-radius: 6px;
   margin-bottom: 2%;
   width: 50%;
   border: rgb(7, 166, 214);
-
 }
 
 .btn-outline-primary.custom-radio {
@@ -106,9 +112,8 @@ p {
   margin-top: 2%;
   margin-left: 30%;
   margin-right: 30%;
-
 }
-#explore img{
+#explore img {
   width: 100%;
   height: 25rem;
   margin-top: auto;
@@ -135,9 +140,8 @@ p {
   cursor: pointer;
   font-size: 20px;
 }
-#navbar{
-z-index: 12;
-
+#navbar {
+  z-index: 12;
 }
 
 /* Navbar  */

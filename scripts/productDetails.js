@@ -11,7 +11,7 @@ const loginAlertText = document.querySelector("#login-alert>p");
 const placeDetails = JSON.parse(
   localStorage.getItem("touristDestinationDetails")
 );
-const baseUrl = `http://localhost:3000`;
+const baseUrl = `https://alcazar-backend.onrender.com`;
 const unsplashApiKey = `GyO4Y3ccun7RvAO8u4mPM8e-KNFfw3jC38X9Q-UnHsI`;
 const unsplashApiUrl = `https://api.unsplash.com/search/photos/?client_id=${unsplashApiKey}`;
 

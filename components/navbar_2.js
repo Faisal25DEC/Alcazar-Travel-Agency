@@ -18,6 +18,7 @@ function navbar_2() {
   <a href = './home.html'>Home</a>
   <a href = './product.html'>Explore Places</a>
   <a href = './bookings.html'>My Bookings</a>
+  <a href = './whislist.html'> Saved</a>
 </div>
 <div class="nav-login-signup-container">
   <div class="nav-login-signup">

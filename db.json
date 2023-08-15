@@ -138,7 +138,72 @@
     {
       "displayName": "blitz chess",
       "email": "chessblitz473@gmail.com",
-      "bookings": [],
+      "bookings": [
+        {
+          "name": "Manali",
+          "info": "Nestled in between the snow-capped slopes of the Pir Panjal and the Dhauladhar ranges, Manali is one of the most popular hill stations in the country. With jaw-dropping views, lush green forests, sprawling meadows carpeted with flowers, gushing blue streams, a perpetual fairy-tale like mist lingering in the air, and a persistent fragrance of pines and freshness -  Manali has been blessed with extraordinary scenic beauty. From museums to temples, from quaint little hippie villages to bustling upscale streets, river adventures to trekking trails, Manali has every reason to be the tourist magnet it is, all year round.Clean roads, swaying eucalyptus trees, endearing little eateries, small kitschy local market places, and cafes which serve delicious local food at unbelievable prices, Old Manali is a serene, tranquil place, whose lingering silence is broken only by the twittering of the birds and the sound of the roaring waters of the Kullu river.",
+          "images": "https://www.holidify.com/images/bgImages/MANALI.jpg",
+          "location": "https://www.google.co.in/maps/place/Manali,+Himachal+Pradesh/@32.2394177,77.1696102,14z/data=!3m1!4b1!4m5!3m4!1s0x39048708163fd03f:0x8129a80ebe5076cd!8m2!3d32.2396325!4d77.1887145",
+          "id": 64,
+          "price": "148.2",
+          "ratings": "2.6",
+          "recommended": true,
+          "trending": false,
+          "state": "Himachal Pradesh",
+          "duration": 6,
+          "startDate": "2023-8-6",
+          "endDate": "2023-8-10",
+          "bookedTill": 1691625600000
+        },
+        {
+          "name": "Shimla",
+          "info": "Situated at a height of 2200m, Shimla is the capital and the largest city of Himachal Pradesh in India. Set amidst beautiful hills and mystical woods, Shimla has been a very popular hill-station among Indian families and honeymooners since the last 50 years.\n\nBritish loved this city so much that they made Shimla their summer capital in 1864 and used to rule the sub-continent from here whenever the temperature rose in the nearby plains. Shimla still retains its old world charm with beautiful colonial architecture, pedestrian-friendly Mall Road and beautiful churches.",
+          "images": "https://www.holidify.com/images/bgImages/SHIMLA.jpg",
+          "location": "https://www.google.co.in/maps/place/Shimla,+Himachal+Pradesh/@31.0782147,77.1240016,13z/data=!3m1!4b1!4m5!3m4!1s0x390578e3e35d6e67:0x1f7e7ff6ff9f54b7!8m2!3d31.1048145!4d77.1734033",
+          "id": 65,
+          "price": "785.6",
+          "ratings": "2.1",
+          "recommended": true,
+          "trending": false,
+          "state": "Himachal Pradesh",
+          "duration": 7,
+          "startDate": "2023-8-12",
+          "endDate": "2023-8-19",
+          "bookedTill": 1692403200000
+        },
+        {
+          "name": "Mcleodganj",
+          "info": "Mcleodganj is a hill station near Dharamshala, popular among trekkers. Its culture is a beautiful blend of Tibetan with some British influence.Also known as Little Lhasa and famous around the world for being home to the Tibetan spiritual leader Dalai Lama, Mcleod Ganj is a beautiful town situated near upper Dharamsala. Nestled amidst majestic hills and lush greenery, this town is culturally blessed by a prominent Tibetan influence owing to the major settlement of Tibetans here. Mcleodganj has one of the most mesmerising landscapes in the entire state of Himachal Pradesh and attracts a lot of tourists throughout the year. The towns of Dharamsala, Mcleodganj, Bhagsu Nag and Kangra are situated very close to each other and tourists must cover all these destinations while travelling here. Few of the most eminent and religiously significant monasteries in India are located here, including the Namgyal Monastery and Tsuglagkhang, where the spiritual leader Dalai Lama resides. Tourists must also visit the scenic Dal Lake and Triund, which are apt for quiet picnics.",
+          "images": "https://www.holidify.com/images/bgImages/MCLEODGANJ.jpg",
+          "location": "https://www.google.co.in/maps/place/McLeod+Ganj,+Dharamshala,+Himachal+Pradesh/@32.2450192,76.3068294,15z/data=!3m1!4b1!4m5!3m4!1s0x391b56d4e3d36d19:0xa3e8725f0584be76!8m2!3d32.2425758!4d76.3212781",
+          "id": 66,
+          "price": "787.9",
+          "ratings": "2.7",
+          "recommended": true,
+          "trending": true,
+          "state": "Himachal Pradesh",
+          "duration": 6,
+          "startDate": "2023-8-9",
+          "endDate": "2023-8-14",
+          "bookedTill": 1691971200000
+        },
+        {
+          "name": "Dalhousie",
+          "info": "The tiny tinsel town Dalhousie tucked away in the lap of Himachal Pradesh is a piece of paradise for all the travellers. It boasts of old world charm, mesmerising natural landscape, pine-clad valleys, flower bedecked meadows, fast flowing rivers, magnificent misty mountains and some of the most spectacular views in the world. The air smells of the Scottish and Victorian architecture and the ambience reminds you of the pristine British flavours.Dalhousie, one of the favourite among most tourists travelling to Himanchal Pradesh is famously known for its mesmerizing natural beauty and its old world charm. This hill station was one of the most favourite summer destinations of the ruling Britishers and this is truly reflected in the majestic Victorian style mansions in this region. Situated far from the buzzing cities in the country, this quaint town transports you to a pollution-free environment in the lap of nature. Dalhousie is known for its scenic beauty has a number mountains and river streams that tourists must visit. Among them the most famous are Panch Pulla, Satdhara Falls and the Daikund peak.",
+          "images": "https://www.holidify.com/images/bgImages/DALHOUSIE.jpg",
+          "location": "https://www.google.co.in/maps/place/Dalhousie,+Himachal+Pradesh/@32.5402904,75.9560874,14z/data=!3m1!4b1!4m5!3m4!1s0x391c9138637f1ae1:0xbac8f1954c198c20!8m2!3d32.5387385!4d75.9709978",
+          "id": 67,
+          "price": "925.3",
+          "ratings": "3.2",
+          "recommended": false,
+          "trending": false,
+          "state": "Himachal Pradesh",
+          "duration": 3,
+          "startDate": "2023-8-13",
+          "endDate": "2023-8-17",
+          "bookedTill": 1692230400000
+        }
+      ],
       "wishlist": [
         {
           "name": "Tirthan Valley",
