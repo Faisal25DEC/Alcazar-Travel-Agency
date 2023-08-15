@@ -27,8 +27,12 @@ nav {
   mix-blend-mode: multiply;
   filter: contrast(1);
 }
+#wishlist-content .empty-wishlist {
+  margin: auto;
+}
 #wishlist-content .empty-wishlist-text {
   color: rgb(35, 79, 254);
+  text-align: center;
   margin-top: 2rem;
 }
 .card1 {

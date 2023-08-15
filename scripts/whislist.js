@@ -55,6 +55,7 @@ import { authenticationObject } from "../components/firebaseAuth.js";
 // ];
 const baseUrl = `https://jittery-puce-spider.cyclic.cloud`;
 console.log(wishlist);
+
 var content = document.querySelector("#wishlist-content");
 function updateDisplay(userObject) {
   content.innerHTML = "";
@@ -137,7 +138,7 @@ let checkAuthentication = async function () {
         updateDisplay(usersData[idx]);
       });
   } else {
-    wishlist.innerHTML = ` <div class="empty-wishlist">
+    content.innerHTML = ` <div class="empty-wishlist">
                   <div class="empty-wishlist-image">
                   <img src="../Product-images/empty-wishlist.png" alt="" />
                 </div>
