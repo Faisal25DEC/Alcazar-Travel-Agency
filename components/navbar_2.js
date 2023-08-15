@@ -15,7 +15,7 @@ function navbar_2() {
 </div>
 <div class = 'nav-right-container'>
 <div class="nav-right">
-  <a href = './home.html'>Home</a>
+  <a href = '../index.html'>Home</a>
   <a href = './product.html'>Explore Places</a>
   <a href = './bookings.html'>My Bookings</a>
   <a href = './whislist.html'> Saved</a>
