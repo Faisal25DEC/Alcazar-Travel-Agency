@@ -3,51 +3,169 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Professional Payment Page</title>
-<link rel="stylesheet" href="payment.css">
+<title>Payment Page</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color:white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .container {
+    width: 100%;
+    max-width: 800px;
+    padding: 90px;
+    padding-top: 10px;
+    background-color:white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-row {
+    display: flex;
+    gap: 15px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #4a4747;
+    border-radius: 0.5px;
+    transition: border-color 0.3s ease-in-out;
+    width:420px;
+
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  select:focus {
+    border-color: #007bff;
+  }
+  #address{
+    width:850px;
+  }
+  #address2{
+    width:850px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  #state{
+    width:650px
+  }
+
+
+    .image-container {
+     
+     image-rendering: auto;
+   height: 600px;
+   width: 450px;
+    
+   /* Adjust the width as needed */
+     background-image: url('./img/Payments-1200x628.png'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+     ; /* Adjust the opacity as needed */
+    
+    }
+</style>
 </head>
 <body>
+  <div class="image-container">image</div> 
 <div class="container">
-  <div class="payment-form">
-    <h2 class="form-title">Secure Payment</h2>
-    <form id="payment-form">
-      <div class="input-group">
-        <label for="cardNumber">UserName</label>
-        <input type="text" id="cardNumber" class="input-field" placeholder="UserName" required>
+  
+  <h2>Payment Information</h2>
+  <form>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
       </div>
-      <div class="input-group">
-        <label for="expiry">Billing Address</label>
-        <input type="text" id="expiry" class="input-field" placeholder="Address" required>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
       </div>
-      <div class="input-group">
-        <label for="cvv">Second line for Billing Address</label>
-        <input type="number" id="cvv" class="input-field" placeholder="Address" required>
-      </div>
-      <div class="input-group">
-        <label for="name">Cardholder Name</label>
-        <input type="text" id="name" class="input-field" placeholder="John Doe" required>
-      </div>
-      <div class="input-group">
-        <label for="amount">Total Amount</label>
-        <input type="number" id="amount" class="input-field" placeholder="000.00" required>
-      </div>
-      <div class="btn-container">
-        <button id="rzp-button1" class="btn btn-outline-dark btn-lg"><i class="fas fa-money-bill"></i> Pay Now</button>
-        <!-- <button class="btn" type="submit">Pay Now</button> -->
-      </div>
-    </form>
-  </div>
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" required>
+    </div>
+    <div class="form-group">
+      <label for="address2">Address Line 2</label>
+      <input type="text" id="address2" name="address2">
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <select id="state" name="state" required>
+        <option value="">Select City</option>
+        <option value="CA">Kolkata</option>
+        <option value="NY">Delhi</option>
+        <option value="TX">Chennai</option>
+        <option value="CA">Raipur</option>
+        <option value="NY">Patna</option>
+        <option value="TX">Mumbai</option>
+        <!-- Add more options here -->
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="state">State</label>
+      <select id="state" name="state" required>
+        <option value="CA">Select State</option>
+        <option value="CA">SIKKIM</option>
+        <option value="NY">TAMILNADU</option>
+        <option value="TX">BIHAR</option>
+        <option value="CA">WEST BENGAL</option>
+        <option value="NY">DELHI</option>
+        <option value="TX">UP</option>
+        <option value="CA">California</option>
+        <option value="NY">New York</option>
+        <option value="TX">Texas</option>
+        <!-- Add more options here -->
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="zip">ZIP Code</label>
+      <input type="text" id="zip" name="zip" required placeholder="700002">
+    </div>
+    <button id="rzp-button1" class="btn btn-outline-dark btn-lg"><i class="fas fa-money-bill"></i> Pay Now</button>
+  </form>
 </div>
-<div>
+<div class="image-container">image</div> 
+</body>
 </div>
-</div>
-
-</div>
-</div>
-
 </section>
+<div class="pay-now-button">
+
+</div>
+</form>
+<div class="pay-now-button">
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
+// Your Razorpay script here
 var options = {
 "key": "rzp_test_rhCjqxNcV7bjq3", // Enter the Key ID generated from the Dashboard
 "amount": "1000",
@@ -66,12 +184,12 @@ utib: { //name for Axis block
 name: "Pay using Axis Bank",
 instruments: [
 {
-  method: "card",
-  issuers: ["UTIB"]
+method: "card",
+issuers: ["UTIB"]
 },
 {
-  method: "netbanking",
-  banks: ["UTIB"]
+method: "netbanking",
+banks: ["UTIB"]
 },
 ]
 },
@@ -79,11 +197,11 @@ other: { //  name for other block
 name: "Other Payment modes",
 instruments: [
 {
-  method: "card",
-  issuers: ["ICIC"]
+method: "card",
+issuers: ["ICIC"]
 },
 {
-  method: 'netbanking',
+method: 'netbanking',
 }
 ]
 }
@@ -124,48 +242,4 @@ rzp1.open();
 e.preventDefault();
 }
 </script>
-<footer>
-  <div id="noo">
-
-    <div id="no">
-      <div id="alca">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrfnLq4YmL_IVClG1DT8jzGXqDh2pJa-vF6g&usqp=CAU" alt="">
-        <h2>Alcazar</h2>
-      </div>
-      <p>Covinience is our priority to satisfy our Customers
-        and we provide all the features you can use easily and quickyly.
-      </p>
-
-    </div>
-
-    <div id="yess">
-<div class="yes">
-  <h4>ABOUT</h4>
-  <p>How to book</p>
-  <p>Contact Us</p>
-  <p>Help Center</p>
-</div>
-
-<div class="yes">
-  <h4>Products</h4>
-  <p>destination</p>
-  <p>Flight</p>
-  <p>Loding</p>
-</div>
-
-<div class="yes">
-  <h4>Social</h4>
-  <p>Facebook</p>
-  <p>Twitter</p>
-  <p>Instagram</p>
-</div>
-    </div>
-  </div>
-<hr>
-  <div id="end" >
-    <p>Privacy Policy</p>
-    <p>Copyright 2022 Alcazar</p>
-  </div>
-</footer>
-</body>
 </html>
