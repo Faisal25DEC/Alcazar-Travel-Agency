@@ -18,7 +18,7 @@ const unsplashApiUrl = `https://api.unsplash.com/search/photos/?client_id=${unsp
 let count = 0;
 
 function getCurrentDateInYYMMDD(currentDate) {
-  const year = currentDate.getFullYear().toString().slice(-2); // Get last 2 digits of the year
+  const year = currentDate.getFullYear().toString().slice(-4); // Get last 2 digits of the year
   const month = (currentDate.getMonth() + 1).toString().padStart(2, "0"); // Months are zero-indexed
   const day = currentDate.getDate().toString().padStart(2, "0");
 
@@ -155,9 +155,18 @@ let displayProductDetails = function (placeImages) {
       } else {
         let paymentObject = { ...placeDetails };
         paymentObject["guests"] = count;
-        paymentObject["bookedTill"] = Date.now();
+
         paymentObject["startDate"] = addDaysToDate(0);
-        paymentObject["endDate"] = addDaysToDate(duration);
+        // Create a new Date object for January 1, 2023
+        let bookedTillDate = addDaysToDate(duration);
+        const targetDate = new Date(bookedTillDate);
+
+        // Get the timestamp in milliseconds for the target date
+        const targetTimestamp = targetDate.getTime();
+
+        // This will output the timestamp for January 1, 2023
+        paymentObject["bookedTill"] = targetTimestamp;
+        paymentObject["endDate"] = bookedTillDate;
         localStorage.setItem("paymentObject", JSON.stringify(paymentObject));
         window.location.assign("../pages/payment.html");
       }

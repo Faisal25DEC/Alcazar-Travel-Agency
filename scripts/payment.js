@@ -1,7 +1,7 @@
 import firebaseAuth from "../components/firebaseAuth.js";
 import { authenticationObject } from "../components/firebaseAuth.js";
 
-const baseUrl = `https://jittery-puce-spider.cyclic.cloud/users`;
+const baseUrl = `https://jittery-puce-spider.cyclic.cloud`;
 const paymentButton = document.querySelector("#submit");
 const priceTag = document.querySelector("#payment-price");
 
@@ -11,7 +11,9 @@ let userGlobalData = {};
 
 var getUser = async function (email) {
   var apiRes = await fetch(`${baseUrl}/users?email=${email}`);
-  userGlobalData = await apiRes.json();
+  let userData = await apiRes.json();
+  userGlobalData = userData[0];
+  console.log(userGlobalData);
 };
 let { price, guests } = paymentObject;
 let totalPrice = Math.floor(price * guests * 80);
@@ -81,8 +83,9 @@ var options = {
     // Handle the successful payment here
     // You can use the response to perform necessary actions or validations
     // Redirect to the payment success page
-    userGlobalData.bookings.add(paymentObject);
+    userGlobalData.bookings.push(paymentObject);
     updateUser(userGlobalData, userGlobalData.id);
+    window.location.assign("../pages/bookings.html");
   },
   modal: {
     ondismiss: function () {
