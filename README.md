@@ -68,9 +68,7 @@ APIs
 
 
 
-## Thank you note
 
-Thank you all who is giving precious time to visit our little creative project which is made with lot of efforts.
 
 <h3>Team Members</h3>
 <ul>
@@ -94,3 +92,6 @@ Thank you all who is giving precious time to visit our little creative project w
 <img src="bookings.png" alt="" />
 <p>Saved Destinations</p>
 <img src="saved.png" alt="" />
+## Thank you note
+
+Thank you all who is giving precious time to visit our little creative project which is made with lot of efforts.
