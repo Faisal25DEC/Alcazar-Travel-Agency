@@ -134,10 +134,10 @@ function firebaseAuth() {
               if (idx == -1) {
                 postUser(userObject).then((res) => {
                   console.log(res);
-                  setTimeout(() => {
-                    window.location.reload();
-                  }, 2000);
                 });
+                setTimeout(() => {
+                  window.location.reload();
+                }, 2000);
                 console.log(userObject);
               }
             })
