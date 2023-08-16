@@ -156,7 +156,7 @@ function firebaseAuth() {
     });
 
     async function postUser(obj) {
-      let apiRes = fetch(`${baseUrl}/users`, {
+      let apiRes = await fetch(`${baseUrl}/users`, {
         method: "POST",
         body: JSON.stringify(obj),
         headers: {

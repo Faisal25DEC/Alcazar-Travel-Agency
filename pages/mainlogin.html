@@ -119,7 +119,7 @@
   //   ref,
   //   set,
   // } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
-  const baseUrl = `http://localhost:3000`;
+  const baseUrl = `https://jittery-puce-spider.cyclic.cloud`;
   const firebaseConfig = {
     apiKey: "AIzaSyBHHxqdFZiyBTugOrwa5IYiIGiWzoiFws8",
     authDomain: "myalcazar-54aa9.firebaseapp.com",
@@ -244,7 +244,7 @@
   });
 
   async function postUser(obj) {
-    let apiRes = fetch(`${baseUrl}/users`, {
+    let apiRes = await fetch(`${baseUrl}/users`, {
       method: "POST",
       body: JSON.stringify(obj),
       headers: {

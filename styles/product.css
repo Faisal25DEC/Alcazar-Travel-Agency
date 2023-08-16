@@ -211,6 +211,31 @@ body {
 section {
   position: relative;
 }
+#filter-and-sort-buttons {
+  width: 60%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 0;
+  gap: 0rem;
+}
+
+#filter-and-sort-buttons > button {
+  display: block;
+  width: 9rem;
+  height: 2.5rem;
+  border-radius: 25px;
+  border: solid 1px var(--base-color);
+  color: var(--base-color);
+  background-color: white;
+  font-size: 14px;
+  font-weight: 700;
+}
+.active-button {
+  background-color: var(--base-color);
+  color: white;
+  border: none;
+}
 #products-body {
   width: 85%;
   margin: auto;
@@ -218,7 +243,7 @@ section {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   gap: 2rem 3rem;
-  margin-top: 5%;
+  margin-top: 2%;
 }
 #product-body * {
   margin: 0;
