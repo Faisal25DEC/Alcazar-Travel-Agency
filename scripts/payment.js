@@ -85,7 +85,6 @@ var options = {
     // Redirect to the payment success page
     userGlobalData.bookings.push(paymentObject);
     updateUser(userGlobalData, userGlobalData.id);
-    window.location.assign("../pages/bookings.html");
   },
   modal: {
     ondismiss: function () {
@@ -106,13 +105,15 @@ document.getElementById("rzp-button1").onclick = function (e) {
 };
 
 let updateUser = async function (obj, id) {
-  let res = fetch(`${baseUrl}/users/${id}`, {
+  let res = await fetch(`${baseUrl}/users/${id}`, {
     method: "PATCH",
     body: JSON.stringify(obj),
     headers: {
       "Content-Type": "application/json",
     },
   });
+
+  window.location.assign("../pages/bookings.html");
 };
 var checkAuthentication = async function () {
   await firebaseAuth();

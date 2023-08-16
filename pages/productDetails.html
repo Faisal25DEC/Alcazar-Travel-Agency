@@ -103,6 +103,7 @@
         </div>
             <div class="other-details-wrapper">
                 <div class="left">
+                    <div class="wrapper-container">
                     <div class="wrapper">
                         <div class="tabs">
                             <div class="tab">
@@ -189,13 +190,15 @@
                         </div>
 
                     </div>
+                </div>
                     <div class="description-container"> <h1>Description</h1>
                         <p class="description">
                             Surrounded by lush green palms, this happens to be
                             one of the busier beaches in the Andamans. It’s
                             located right outside of Port Blair about 8 km. The
                             drive there itself is a scenic treat to the eyes
-                        </p></div>
+                        </p>
+                    </div>
 
                 </div>
                 <div class="right">
@@ -253,6 +256,9 @@
     document.querySelector("nav>label>i").addEventListener("click", () => {
       console.log("label");
       document.querySelector(".nav-right-container").classList.toggle("left");
+    });
+    document.querySelector(".nav-logo").addEventListener("click", () => {
+      window.location.assign("../index.html");
     });
               </script>
             <script defer>

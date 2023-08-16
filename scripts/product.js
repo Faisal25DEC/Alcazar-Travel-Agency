@@ -334,16 +334,30 @@ var displayTouristDestinations = function (
           saveIcon.src = "../Product-images/saved.png";
           userObj.wishlist.push(touristDestination);
           let saveAlert = document.querySelector(".added-to-saved");
+          saveAlert.style.backgroundColor = "rgb(7, 197, 4);";
+          saveAlert.textContent = "Destination Added";
           saveAlert.classList.add("show-alert");
           setTimeout(() => {
             saveAlert.classList.remove("show-alert");
           }, 2000);
           updateUser(userObj, userObj.id);
         } else {
-          alert("already saved");
+          let saveAlert = document.querySelector(".added-to-saved");
+          saveAlert.style.backgroundColor = "rgb(7, 197, 4);";
+          saveAlert.textContent = "Already Saved";
+          saveAlert.classList.add("show-alert");
+          setTimeout(() => {
+            saveAlert.classList.remove("show-alert");
+          }, 2000);
         }
       } else {
-        alert("Please Sign In to save");
+        let saveAlert = document.querySelector(".added-to-saved");
+        saveAlert.classList.add("show-alert");
+        saveAlert.style.backgroundColor = "red";
+        saveAlert.textContent = "User Signed out";
+        setTimeout(() => {
+          saveAlert.classList.remove("show-alert");
+        }, 2000);
       }
     });
 

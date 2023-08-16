@@ -62,3 +62,13 @@
   border: none;
   color: white;
 }
+@media screen and (max-width: 995px) {
+  #explore-card-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 650px) {
+  #explore-card-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
