@@ -105,15 +105,16 @@ document.getElementById("rzp-button1").onclick = function (e) {
 };
 
 let updateUser = async function (obj, id) {
-  let res = await fetch(`${baseUrl}/users/${id}`, {
+  let res = fetch(`${baseUrl}/users/${id}`, {
     method: "PATCH",
     body: JSON.stringify(obj),
     headers: {
       "Content-Type": "application/json",
     },
   });
-
-  window.location.assign("../pages/bookings.html");
+  setTimeout(() => {
+    window.location.assign("../pages/bookings.html");
+  }, 3000);
 };
 var checkAuthentication = async function () {
   await firebaseAuth();

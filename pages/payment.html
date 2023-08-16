@@ -92,6 +92,9 @@ referrerpolicy="no-referrer"
       console.log("label");
       document.querySelector(".nav-right-container").classList.toggle("left");
     });
+    document.querySelector(".nav-logo").addEventListener("click", () => {
+      window.location.assign("../index.html");
+    });
   </script>
 <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
 <script type = 'module' src  = '../scripts/payment.js' defer>

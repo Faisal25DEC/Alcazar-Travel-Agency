@@ -60,7 +60,7 @@ function updateDisplay(arr, bookingsType) {
     var date = document.createElement("p");
     date.innerText = `From: ${element.startDate} - ${element.endDate}`;
     var guest = document.createElement("p");
-    guest.innerText = "Guests: " + element.guest;
+    guest.innerText = "Guests: " + element.guests;
     var bt_div = document.createElement("div");
     bt_div.setAttribute("class", "bt-div");
     var details = document.createElement("button");
