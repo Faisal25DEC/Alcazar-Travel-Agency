@@ -480,7 +480,6 @@ console.log(searchBarInput);
 
 var getTouristDestinations = async function (pageNumber) {
   try {
-    await firebaseAuth();
     let allTouristDestinationApiResponse = await fetch(
       `${baseUrl}/touristDestinations`
     );
@@ -573,6 +572,9 @@ let updateUser = async function (obj, id) {
     },
   });
 };
-
+let checkAuthentication = async function () {
+  await firebaseAuth();
+  getTouristDestinations(1);
+};
 getBannerImages();
-getTouristDestinations(1);
+checkAuthentication();

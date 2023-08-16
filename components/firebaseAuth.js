@@ -132,12 +132,16 @@ function firebaseAuth() {
                 wishlist: [],
               };
               if (idx == -1) {
-                postUser(userObject);
+                postUser(userObject).then((res) => {
+                  console.log(res);
+                  setTimeout(() => {
+                    window.location.reload();
+                  }, 2000);
+                });
                 console.log(userObject);
               }
-              window.location.reload();
             })
-            .catch((err) => console.log(err));
+            .catch((err) => console.log("User Not fetched"));
           // IdP data available using getAdditionalUserInfo(result)
           // ...
         })
@@ -163,6 +167,7 @@ function firebaseAuth() {
           "Content-Type": "application/json",
         },
       });
+      return apiRes;
     }
   });
 }

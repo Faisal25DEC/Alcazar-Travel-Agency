@@ -108,7 +108,11 @@ function updateDisplay(userObject) {
     remove_btn.textContent = "Remove";
     card_btn.append(btn, remove_btn);
     btn.addEventListener("click", function () {
-      window.location.href = "../pages/payment.html";
+      localStorage.setItem(
+        "touristDestinationDetails",
+        JSON.stringify(element)
+      );
+      window.location.href = "../pages/productDetails.html";
     });
 
     remove_btn.addEventListener("click", () => {
