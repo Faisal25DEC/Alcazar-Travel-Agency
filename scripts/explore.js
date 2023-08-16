@@ -4,9 +4,9 @@ import { authenticationObject } from "../components/firebaseAuth.js";
 firebaseAuth();
 
 const baseUrl = `https://jittery-puce-spider.cyclic.cloud`;
-var placeDetails =
-  JSON.parse(localStorage.getItem("stateName")).fromHome ||
-  JSON.parse(localStorage.getItem("touristDestinationDetails"));
+var placeDetails = JSON.parse(localStorage.getItem("stateName")).fromHome
+  ? JSON.parse(localStorage.getItem("stateName"))
+  : JSON.parse(localStorage.getItem("touristDestinationDetails"));
 
 function displayStateImages(stateData) {
   let { img } = stateData;
@@ -77,6 +77,7 @@ const navigationButtons = document.querySelectorAll(
   "#explore-navigation-buttons button"
 );
 var getStateDetails = async function () {
+  console.log(placeDetails);
   let { state } = placeDetails;
   let apiResponse = await fetch(`${baseUrl}/state`);
   let data = await apiResponse.json();

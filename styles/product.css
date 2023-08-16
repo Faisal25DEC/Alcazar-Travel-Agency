@@ -10,6 +10,27 @@
 }
 body {
   margin: 5px;
+  box-sizing: border-box;
+  height: 100vh;
+}
+.added-to-saved {
+  display: none;
+
+  place-items: center;
+  position: fixed;
+  background-color: rgb(7, 197, 4);
+  color: white;
+  font-size: 16px;
+  width: 12rem;
+  height: 4rem;
+  font-weight: 700;
+  z-index: 101;
+  top: 3%;
+  left: 45%;
+  border-radius: 15px;
+}
+.show-alert {
+  display: grid;
 }
 #navbar {
   z-index: 12;
@@ -186,6 +207,9 @@ body {
   color: white;
   font-size: 16px;
   font-weight: bold;
+}
+section {
+  position: relative;
 }
 #products-body {
   width: 85%;

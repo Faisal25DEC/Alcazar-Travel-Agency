@@ -333,6 +333,11 @@ var displayTouristDestinations = function (
           console.log("what");
           saveIcon.src = "../Product-images/saved.png";
           userObj.wishlist.push(touristDestination);
+          let saveAlert = document.querySelector(".added-to-saved");
+          saveAlert.classList.add("show-alert");
+          setTimeout(() => {
+            saveAlert.classList.remove("show-alert");
+          }, 2000);
           updateUser(userObj, userObj.id);
         } else {
           alert("already saved");
@@ -414,10 +419,7 @@ var displayTouristDestinations = function (
       touristDestination["duration"] = durationV;
       touristDestination["state"] = stateName.textContent;
       window.location.assign("../pages/productDetails.html");
-      localStorage.setItem(
-        "stateName",
-        JSON.stringify({ state: state, fromHome: null })
-      );
+
       localStorage.setItem(
         "touristDestinationDetails",
 

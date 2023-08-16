@@ -310,6 +310,10 @@ var getStateTouristDestinations = async function () {
 };
 const exploreButton = document.querySelector(".explore-button");
 exploreButton.addEventListener("click", () => {
+  localStorage.setItem(
+    "stateName",
+    JSON.stringify({ state: placeDetails.state, fromHome: null })
+  );
   window.location.assign("../pages/explore.html");
 });
 getPlaceImages();
