@@ -415,6 +415,10 @@ var displayTouristDestinations = function (
       touristDestination["state"] = stateName.textContent;
       window.location.assign("../pages/productDetails.html");
       localStorage.setItem(
+        "stateName",
+        JSON.stringify({ state: state, fromHome: null })
+      );
+      localStorage.setItem(
         "touristDestinationDetails",
 
         JSON.stringify(touristDestination)

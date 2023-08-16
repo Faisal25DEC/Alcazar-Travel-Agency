@@ -5,7 +5,7 @@ firebaseAuth();
 
 const baseUrl = `https://jittery-puce-spider.cyclic.cloud`;
 var placeDetails =
-  JSON.parse(localStorage.getItem("stateName")) ||
+  JSON.parse(localStorage.getItem("stateName")).fromHome ||
   JSON.parse(localStorage.getItem("touristDestinationDetails"));
 
 function displayStateImages(stateData) {

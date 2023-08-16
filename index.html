@@ -459,9 +459,9 @@
         p1.addEventListener("click", function () {
           localStorage.setItem(
             "stateName",
-            JSON.stringify({ state: p1.textContent })
+            JSON.stringify({ state: p1.textContent, fromHome: true })
           );
-          window.location.assign("./explore.html");
+          window.location.assign("./pages/explore.html");
         });
       });
     }
