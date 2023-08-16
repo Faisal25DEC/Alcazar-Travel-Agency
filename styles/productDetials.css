@@ -418,6 +418,9 @@
   .other-details-wrapper > .right {
     width: 98%;
   }
+  .description-container {
+    display: none;
+  }
 }
 @media screen and (max-width: 650px) {
   .product-details-wrapper
@@ -431,5 +434,8 @@
     > .product-details-left-images
     > .product-details-left-images-left {
     width: 100%;
+  }
+  .description-container {
+    display: none;
   }
 }
