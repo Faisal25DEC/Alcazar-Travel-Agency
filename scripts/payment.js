@@ -1,7 +1,7 @@
 import firebaseAuth from "../components/firebaseAuth.js";
 import { authenticationObject } from "../components/firebaseAuth.js";
 
-const baseUrl = `https://jittery-puce-spider.cyclic.cloud`;
+const baseUrl = `https://alcazar.onrender.com`;
 const paymentButton = document.querySelector("#submit");
 const priceTag = document.querySelector("#payment-price");
 

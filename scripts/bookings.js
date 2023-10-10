@@ -1,6 +1,6 @@
 import firebaseAuth from "../components/firebaseAuth.js";
 import { authenticationObject } from "../components/firebaseAuth.js";
-const baseUrl = `https://jittery-puce-spider.cyclic.cloud`;
+const baseUrl = `https://alcazar.onrender.com`;
 
 let userGlobalData = {};
 

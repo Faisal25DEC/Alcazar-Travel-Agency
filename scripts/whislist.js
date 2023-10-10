@@ -53,7 +53,7 @@ import { authenticationObject } from "../components/firebaseAuth.js";
 //     guest: "4",
 //   },
 // ];
-const baseUrl = `https://jittery-puce-spider.cyclic.cloud`;
+const baseUrl = `https://alcazar.onrender.com`;
 console.log(wishlist);
 
 var content = document.querySelector("#wishlist-content");
