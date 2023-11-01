@@ -16,6 +16,9 @@ nav .nav-search {
 nav {
   justify-content: space-between;
 }
+#wishlist h1 {
+  text-align: center;
+}
 #wishlist-content {
   display: flex;
   flex-direction: column;

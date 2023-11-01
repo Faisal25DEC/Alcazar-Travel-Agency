@@ -138,10 +138,6 @@ function firebaseAuth() {
 
                 console.log(userObject);
               }
-              setTimeout(() => {
-                console.log("first");
-                window.location.reload();
-              }, 2000);
             })
             .catch((err) => console.log("User Not fetched"));
           // IdP data available using getAdditionalUserInfo(result)
