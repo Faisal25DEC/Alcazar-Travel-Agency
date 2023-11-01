@@ -4,7 +4,7 @@
   "description": "A Dynamic Website built on HTML, CSS and JS that lets you book travel destinations.em space (8195 in UTF-8)",
   "main": "server.js",
   "scripts": {
-    "start": "node start server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
