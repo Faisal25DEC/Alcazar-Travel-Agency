@@ -3,7 +3,7 @@ import { authenticationObject } from "../components/firebaseAuth.js";
 
 firebaseAuth();
 
-const baseUrl = `https://alcazar.onrender.com`;
+const baseUrl = `https://weak-gray-tortoise-fez.cyclic.app`;
 var placeDetails = JSON.parse(localStorage.getItem("stateName")).fromHome
   ? JSON.parse(localStorage.getItem("stateName"))
   : JSON.parse(localStorage.getItem("touristDestinationDetails"));

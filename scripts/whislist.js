@@ -53,7 +53,7 @@ import { authenticationObject } from "../components/firebaseAuth.js";
 //     guest: "4",
 //   },
 // ];
-const baseUrl = `https://alcazar.onrender.com`;
+const baseUrl = `https://weak-gray-tortoise-fez.cyclic.app`;
 console.log(wishlist);
 
 var content = document.querySelector("#wishlist-content");

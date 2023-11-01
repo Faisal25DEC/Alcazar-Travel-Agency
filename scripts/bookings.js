@@ -1,6 +1,6 @@
 import firebaseAuth from "../components/firebaseAuth.js";
 import { authenticationObject } from "../components/firebaseAuth.js";
-const baseUrl = `https://alcazar.onrender.com`;
+const baseUrl = `https://weak-gray-tortoise-fez.cyclic.app`;
 
 let userGlobalData = {};
 
