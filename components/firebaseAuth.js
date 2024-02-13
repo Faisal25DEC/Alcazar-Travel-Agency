@@ -10,7 +10,7 @@ import {
 import { signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 
 let authenticationObject = {};
-const baseUrl = `https://weak-gray-tortoise-fez.cyclic.app`;
+const baseUrl = `https://difficult-cyan-jersey.cyclic.app`;
 function firebaseAuth() {
   return new Promise((resolve, reject) => {
     const firebaseConfig = {

@@ -1,7 +1,7 @@
 import firebaseAuth from "../components/firebaseAuth.js";
 import { authenticationObject } from "../components/firebaseAuth.js";
 
-const baseUrl = `https://weak-gray-tortoise-fez.cyclic.app`;
+const baseUrl = `https://difficult-cyan-jersey.cyclic.app`;
 const paymentButton = document.querySelector("#submit");
 const priceTag = document.querySelector("#payment-price");
 

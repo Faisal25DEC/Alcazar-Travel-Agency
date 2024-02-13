@@ -53,7 +53,7 @@ import { authenticationObject } from "../components/firebaseAuth.js";
 //     guest: "4",
 //   },
 // ];
-const baseUrl = `https://weak-gray-tortoise-fez.cyclic.app`;
+const baseUrl = `https://difficult-cyan-jersey.cyclic.app`;
 console.log(wishlist);
 
 var content = document.querySelector("#wishlist-content");
